@@ -1,0 +1,60 @@
+.nav {
+    width: 267px;
+    height: 80px;
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.nav_login {
+
+}
+
+.nav__link {
+    position: relative;
+    font-size: 18px;
+    font-weight: 500;
+    line-height: 24px;
+    text-decoration-line: none;
+    color: #000;
+    cursor: pointer;
+    margin: 0 ;
+    padding: 0;
+}
+
+.nav__link::after {
+    position: absolute;
+    bottom: -23px;
+    left: 50%;
+    width: 100%;
+    display: none;
+    visibility: hidden;
+}
+
+.nav__link:hover::after {
+    visibility: visible;
+}
+
+.nav__link_hidden {
+    display: none;
+    visibility: hidden;
+}
+
+.nav__button {
+    position: relative;
+    width: 176px;
+    height: 24px;
+    background: none;
+    border: hidden;
+    padding: 0;
+}
+
+.nav__img {
+    position: absolute;
+    top: -50%;
+    left: 0;
+    width: 176px;
+    height: 48px;
+    
+}

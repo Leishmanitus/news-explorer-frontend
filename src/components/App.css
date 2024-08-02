@@ -1,0 +1,5 @@
+.app {
+    z-index: 1;
+    position:relative;
+    width: 1440px;
+}
