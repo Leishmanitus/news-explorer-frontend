@@ -1,5 +1,7 @@
 .app {
     z-index: 1;
     position:relative;
-    width: 1440px;
+    width: 100%;
+    display: flex;
+    align-content: center;
 }

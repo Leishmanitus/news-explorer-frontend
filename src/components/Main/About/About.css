@@ -1,0 +1,43 @@
+.about {
+    z-index: 1;
+    position: relative;
+    width: 100%;
+    height: 624px;
+    display: flex;
+    flex-flow: row nowrap;
+}
+
+.about__img {
+    width: 464px;
+    height: 464px;
+    object-fit: cover;
+    border-radius: 50%;
+    margin: auto 0 auto 104px;
+}
+
+.about__info {
+    width: 600px;
+    display: flex;
+    flex-flow: column nowrap;
+    text-align: start;
+    margin: 131px 0 0 56px;
+}
+
+.about__title {
+    width: 100%;
+    height: 46px;
+    font-weight: 400;
+    font-size: 40px;
+    line-height: 46px;
+    color: #1a1b22;
+    margin: 0;
+}
+
+.about__description {
+    width: 100%;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 24px;
+    color: #1a1b22;
+    margin: 24px 0 0 0;
+}

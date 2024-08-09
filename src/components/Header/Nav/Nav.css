@@ -5,6 +5,8 @@
     flex-flow: row nowrap;
     align-items: center;
     justify-content: space-between;
+    margin: 0;
+    padding: 0 104px 0 0;
 }
 
 .nav_login {

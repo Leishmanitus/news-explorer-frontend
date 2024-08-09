@@ -13,6 +13,7 @@ function Main() {
                 <img className='main__img' src={mainBackground} alt='A newspaper and tea on a wooden table.' />
                 <Header />
                 <SearchForm />
+                {/* {searchResults && <NewsCardList />} */}
             </div>
             <div className='main__group main__group_bot'>
                 <NewsCardList />
