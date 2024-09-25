@@ -1,0 +1,145 @@
+.popup {
+    z-index: 3;
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0.5);
+    transition: opacity 0.5s, visibility 0.5s;
+}
+
+.popup__container {
+    width: 430px;
+    position: relative;
+    display: flex;
+    flex-flow: column nowrap;
+    background-color: #fff;
+    border: 1px solid rgba(0, 0, 0, 0.3);
+    margin: auto;
+}
+
+.popup__button_close {
+    width: 40px;
+    height: 40px;
+    position: fixed;
+    top: -6px;
+    right: -6px;
+    background: url('../../assets/close-button.svg');
+}
+
+.popup__button_close:hover {
+    opacity: 0.6;
+}
+
+.popup__form {
+    width: 100%;
+    height: 100%;
+}
+
+.form {
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: flex-start;
+    border: 1px solid #000;
+    border-radius: 16px;
+    margin: 34px 36px 28px 36px;
+}
+
+.form__title {
+    width: 76px;
+    height: 32px;
+    color: #1a1b22;
+    font-weight: 900;
+    font-size: 24px;
+    line-height: 1.2;
+    margin: 0 auto 22px 0;
+}
+
+.form__title_complete {
+    text-align: left;
+    margin: 43px auto 0 0;
+}
+
+.form__label {
+    width: 66px;
+    height: 14px;
+    font-size: 12px;
+    color: #2f71e5;
+    margin: 0 0 9px 0;
+}
+
+.form__input {
+    width: 358px;
+    height: 24px;
+    border: 0;
+    border-bottom: 1px solid #000;
+    margin: 0 0 4px 0;
+}
+
+.form__text {
+    font-family: Inter;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 1.2;
+}
+
+.form__error-message {
+    width: 148px;
+    height: 11px;
+    font-family: Inter;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 1.2;
+    color: #f00;
+    visibility: hidden;
+    margin: 0 auto 16px 0;
+}
+.form__error-message_active {
+    visibility: visible;
+}
+
+.form__button_submit {
+    width: 358px;
+    height: 64px;
+    text-align: center;
+    font-family: Roboto;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 24px;
+    color: #fff;
+    background-color: #2f71e5;
+    border: none;
+    border-radius: 20px;
+    margin: 24px 0 16px 0;
+    padding: 0;
+}
+
+.form__link {
+    width: 226px;
+    height: 20px;
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: center;
+    align-items: center;
+    font-family: Inter;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 1.2;
+    color: #000;
+    margin: 16px 0 0 0;
+}
+
+.form__link_anchor {
+    color: #2f71e5;
+}
+
+.form__link_complete {
+    text-align: left;
+    font-size: 18px;
+    margin: 14px auto 51px 0;
+}
