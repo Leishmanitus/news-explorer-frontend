@@ -1,6 +1,6 @@
 import './Footer.css';
-import socialFacebook from '../../assets/social-fb.png';
-import socialGithub from '../../assets/social-gh.png';
+import socialFacebook from '../../images/social-fb.png';
+import socialGithub from '../../images/social-gh.png';
 
 function Footer() {
     return (

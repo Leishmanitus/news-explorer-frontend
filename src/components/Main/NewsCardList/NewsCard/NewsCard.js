@@ -1,6 +1,6 @@
 import './NewsCard.css';
-import tempCard from '../../../../assets/temp-card.png';
-import bookMark from '../../../../assets/bookmark.svg';
+import tempCard from '../../../../images/temp-card.png';
+import bookMark from '../../../../images/bookmark.svg';
 
 function NewsCard() {
     return (

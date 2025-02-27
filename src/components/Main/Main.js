@@ -1,5 +1,5 @@
 import './Main.css';
-import mainBackground from '../../assets/main-background.jpg'
+import mainBackground from '../../images/main-background.jpg'
 import SearchForm from './SearchForm/SearchForm';
 import NewsCardList from './NewsCardList/NewsCardList';
 import About from './About/About';

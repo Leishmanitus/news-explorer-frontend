@@ -1,5 +1,5 @@
 import './Nav.css';
-import navButtonBorder from '../../../assets/nav-button-border.svg';
+import navButtonBorder from '../../../images/nav-button-border.svg';
 
 //call constants for button text
 

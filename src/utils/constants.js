@@ -9,4 +9,7 @@ export const formTextOptions = {
 
 export const url = "http://localhost:3001";
 
-export const newsApiKey = '66678982549440b19fdc6627a619c096';
+export const apiInfo = {
+    API_KEY:'66678982549440b19fdc6627a619c096',
+    API_URL:'https://newsapi.org/v2/everything?'
+};
