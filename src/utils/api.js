@@ -1,28 +1,57 @@
-import { apiInfo } from "./constants";
-
-const { API_KEY, API_URL } = apiInfo;
+import { url } from "./constants";
 
 const handleResponse = (res) => {
   return res.ok ? res.json() : Promise.reject(`Error: ${res.status}`);
 };
 
-export const request = (options) => {
-  return fetch(`{API_URL}apiKey={API_KEY}`, options).then(handleResponse);
+export const request = (url, options) => {
+  return fetch(url, options).then(handleResponse);
 };
 
-// const updateUser = ({name, avatar}, token) => {
-//   return request(`${API_URL}/users/me`, {
-//     method: "PATCH",
-//     headers: {
-//       'Content-Type': 'application/json',
-//       'Authorization': `Bearer ${token}`
-//     },
-//     body: JSON.stringify({ name, avatar }),
-//   });
-// };
+const getArticlesList = () => {
+  return request(`${url}/saved-news`, {
+    method: "GET",
+    headers: {"Content-Type": "applicaiton/json",},
+  });
+};
 
-// const api = {
-//   updateUser,
-// };
+const addArticle = ({ name, imageUrl }, token) => {
+  return request(`${url}/saved-news`, {
+    method: "POST",
+    headers: {
+      'Content-Type': 'application/json',
+      'Authorization': `Bearer ${token}`
+    },
+    body: JSON.stringify({ name, imageUrl }),
+  });
+};
 
-// export default api;
+const removeArticle = (_id, token) => {
+  return request(`${url}/saved-news/${_id}`, {
+    method: "DELETE",
+    headers: {
+      'Content-Type': 'application/json',
+      'Authorization': `Bearer ${token}`
+    },
+  });
+};
+
+const updateUser = ({ name }, token) => {
+  return request(`${url}/users/me`, {
+    method: "PATCH",
+    headers: {
+      'Content-Type': 'application/json',
+      'Authorization': `Bearer ${token}`
+    },
+    body: JSON.stringify({ name }),
+  });
+};
+
+const api = {
+  getArticlesList,
+  addArticle,
+  removeArticle,
+  updateUser,
+};
+
+export default api;

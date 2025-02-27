@@ -14,6 +14,33 @@ function App() {
   const [searchResults, setSearchResults] = useState([]);
   const [savedArticles, setSavedArticles] = useState([]);
 
+  const handleModalChange = (modalName) => {
+    setActiveModal(modalName);
+  };
+
+  const handleClose = () => {
+    setActiveModal("");
+  };
+
+  const handleOverlay = (event) => {
+    if (event.target === event.currentTarget) {
+      handleClose();
+    }
+  };
+
+  const handleRequest = (request) => {
+    setIsLoading(true);
+    return request()
+      .then(() => handleClose())
+      .catch(console.error)
+      .finally(() => setIsLoading(false));
+  };
+
+  const setUserState = ({ name, _id, token }, log) => {
+    setUser({ name, _id, token });
+    setIsLoggedIn(log);
+  };
+
   const handleCheckToken = () => {
     const jwt = localStorage.getItem("jwt");
     if (jwt) {
