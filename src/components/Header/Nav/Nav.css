@@ -1,6 +1,7 @@
 .nav {
     width: 267px;
     height: 80px;
+    position: relative;
     display: flex;
     flex-flow: row nowrap;
     align-items: center;
@@ -10,46 +11,61 @@
 }
 
 .nav_login {
-
+    width: 415px;
 }
 
 .nav__link {
+    width: fit-content;
+    height: 24px;
     position: relative;
     font-size: 18px;
     font-weight: 500;
     line-height: 24px;
     text-decoration-line: none;
-    color: #000;
+    text-wrap: nowrap;
+    color: #545454;
     cursor: pointer;
     margin: 0 ;
     padding: 0;
 }
 
+.nav__link:hover {
+    color: #fff;
+}
+
 .nav__link::after {
+    content: '';
     position: absolute;
-    bottom: -23px;
+    bottom: -29px;
     left: 50%;
-    width: 100%;
-    display: none;
-    visibility: hidden;
+    width: 0%;
+    height: 3px;
+    background-color: #fff;
+    transition: width 0.3s ease-in-out, left 0.3s ease-in-out;
 }
 
 .nav__link:hover::after {
-    visibility: visible;
-}
-
-.nav__link_hidden {
-    display: none;
-    visibility: hidden;
+    width: calc(100% + 40%);
+    left: calc(70% - 70% - 17.5%);
 }
 
 .nav__button {
     position: relative;
     width: 176px;
     height: 24px;
+    color: #fff;
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: center;
+    justify-content:space-around;
     background: none;
     border: hidden;
     padding: 0;
+    margin: 0;
+}
+
+.nav__button_login {
+    width: 112px;
 }
 
 .nav__img {
@@ -58,5 +74,15 @@
     left: 0;
     width: 176px;
     height: 48px;
-    
+}
+
+.nav__img_profile {
+    width: 112px;
+}
+
+.nav__img_logout {
+    position: relative;
+    top: 0;
+    width: 18px;
+    height: 16px;
 }

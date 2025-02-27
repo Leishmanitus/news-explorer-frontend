@@ -6,3 +6,7 @@ export const formTextOptions = {
     usernameText: 'Username',
     completionText: 'Registration successfully completed!'
 };
+
+export const url = "http://localhost:3001";
+
+export const newsApiKey = '66678982549440b19fdc6627a619c096';
