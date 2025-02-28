@@ -9,6 +9,7 @@ function NewsCardList() {
                 <NewsCard />
                 <NewsCard />
                 <NewsCard />
+                {/* {searchResults.map((article, i) => <NewsCard key={i} article={article} />)} */}
             </div>
             <button className='card-list__button'>Show more</button>
         </div>
