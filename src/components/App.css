@@ -3,5 +3,6 @@
     position:relative;
     width: 100%;
     display: flex;
+    flex-flow: column nowrap;
     align-content: center;
 }
