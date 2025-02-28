@@ -85,3 +85,7 @@
     margin: 0;
     padding: 0;
 }
+
+.search__form-button:hover {
+    background: #e8e8e8;
+}
