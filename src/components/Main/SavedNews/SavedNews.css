@@ -1,0 +1,31 @@
+.news {
+    width: 100%;
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: flex-start;
+    align-items: flex-start;
+}
+
+.news__title {
+  font-family: "Cabinet Grotesk";
+  font-size: 40px;
+  line-height: 46px;
+  font-weight: 400;
+  margin: 0;
+}
+
+.news__text {
+  font-family: "Cabinet Grotesk";
+  font-size: 18px;
+  line-height: 24px;
+  font-weight: 400;
+  margin: 0;
+}
+
+.news__text_bold {
+  font-family: "Cabinet Grotesk";
+  font-size: 18px;
+  line-height: 24px;
+  font-weight: 700;
+  margin: 0;
+}

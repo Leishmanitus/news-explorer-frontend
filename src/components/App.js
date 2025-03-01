@@ -1,18 +1,25 @@
 import { useState, useEffect } from 'react';
 import { Routes, Route } from 'react-router-dom'
 import './App.css';
+import mainBackground from '../assets/main-background.jpg';
 import auth from '../utils/auth';
 import UserContext from '../contexts/UserContext';
 import Main from './Main/Main';
+import SavedNews from './Main/SavedNews/SavedNews';
+import Header from './Header/Header';
+import SearchForm from './Main/SearchForm/SearchForm';
+import NewsCardList from './Main/NewsCardList/NewsCardList';
+import About from './Main/About/About';
 import Footer from './Footer/Footer';
 
 function App() {
-  const [user, setUser] = useState({ name: 'Tyler', _id: '', token: '', });
-  const [isLoggedIn, setIsLoggedIn] = useState(false);
+  const [user, setUser] = useState({ name: 'Tyler Leishman', _id: '', token: '', });
+  const [isLoggedIn, setIsLoggedIn] = useState(true);
   const [activeModal, setActiveModal] = useState('');
   const [isLoading, setIsLoading] = useState(false);
-  const [searchResults, setSearchResults] = useState([]);
+  const [searchResults, setSearchResults] = useState(null);
   const [savedArticles, setSavedArticles] = useState([]);
+  const [keywords, setKeywords] = useState([]);
 
   const handleModalChange = (modalName) => {
     setActiveModal(modalName);
@@ -60,18 +67,40 @@ function App() {
   return (
     <UserContext.Provider value={{
       user, isLoading, isLoggedIn, activeModal,
-      searchResults, savedArticles, setUser,
+      searchResults, savedArticles, keywords, setUser,
       setIsLoading, setIsLoggedIn, setActiveModal,
-      setSearchResults, setSavedArticles
+      setSearchResults, setSavedArticles, setKeywords
     }}>
       <div className="app">
         <Routes>
-          <Route exact path='/' element={<Main />} />
+          <Route exact path='/' element={
+            (
+              <main className='main'>
+                  <div className='main__group main__group_top'>
+                      <Header />
+                      <img className='main__img' src={mainBackground} alt='A newspaper and tea on a wooden table.' />
+                      <SearchForm />
+                  </div>
+                  <div className='main__group main__group_bot'>
+                      {searchResults && (<NewsCardList />)}
+                      <About />
+                      <Footer />
+                  </div>
+              </main>
+            )
+          } />
           <Route path='/signup'></Route>
           <Route path='/signin'></Route>
-          <Route path='/saved-news'></Route>
+          <Route path='/saved-news' element={
+            (
+              <main className='main'>
+                <Header />
+                <SavedNews />
+                <Footer />
+              </main>
+            )
+          } />
         </Routes>
-        <Footer />
       </div>
     </UserContext.Provider>
   );

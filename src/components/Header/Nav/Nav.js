@@ -1,6 +1,6 @@
 import './Nav.css';
 import { useContext } from 'react';
-import navButtonBorder from '../../../images/nav-button-border.svg';
+import navButtonBorder from '../../../assets/nav-button-border.svg';
 import logoutButton from '../../../assets/logout-button-image.svg';
 import UserContext from '../../../contexts/UserContext';
 

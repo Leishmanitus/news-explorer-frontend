@@ -1,5 +1,5 @@
 import './About.css';
-import authorPic from '../../../images/author.jpg';
+import authorPic from '../../../assets/author.jpg';
 
 function About() {
     return (

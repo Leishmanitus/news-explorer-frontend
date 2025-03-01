@@ -70,6 +70,10 @@
     color: #b6bcbf;
 }
 
+.search__form-inpt:focus-visible {
+    border-color: #fff;
+}
+
 .search__form-button {
     z-index: 2;
     position: absolute;
@@ -84,4 +88,14 @@
     cursor: pointer;
     margin: 0;
     padding: 0;
+    transition: background-color 0.3s ease-in-out;
+}
+
+.search__form-button:hover {
+    background: #347EFF;
+}
+
+.search__form-button:active {
+    transition: background-color 0.1s ease-in-out;
+    background: #2A65CC;
 }
