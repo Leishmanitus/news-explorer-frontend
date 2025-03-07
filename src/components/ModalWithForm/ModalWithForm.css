@@ -38,7 +38,7 @@
     position: absolute;
     top: 20px;
     right: 28px;
-    background: url("../../images/close-icon-grey.svg") center/cover no-repeat;
+    background: url("../../assets/active-close-button.svg") center/cover no-repeat;
     border: none;
     cursor: pointer;
   }

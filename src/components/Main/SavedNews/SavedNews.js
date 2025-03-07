@@ -1,7 +1,7 @@
 import { useContext } from 'react';
 import './SavedNews.css';
 import UserContext from '../../../contexts/UserContext';
-import NewsCardList from '../NewsCardList/NewsCardList';
+import NewsCard from '../NewsCardList/NewsCard/NewsCard';
 
 function SavedNews() {
     const {
@@ -24,10 +24,12 @@ function SavedNews() {
 
     return (
         <div className='news'>
-            <p className='news__text'>Saved articles</p>
-            <h2 className='news__title'>{userName}, you have {articleCount} saved articles</h2>
-            {savedArticles && (<p className='news__text'>By keywords: <span className='news__text_bold'>{handleKeywords()}</span></p>)}
-            <NewsCardList />
+            <h2 className='news__title'>Saved articles</h2>
+            <h3 className='news__subtitle'>{userName}, you have {articleCount} saved articles</h3>
+            {savedArticles && (<p className='news__keyword'>By keywords: <span className='news__bold'>{handleKeywords()}</span></p>)}
+            <div className='news__grid'>
+                {savedArticles.map((article, i) => <NewsCard key={i} article={article} />)}
+            </div>
         </div>
     )
 }

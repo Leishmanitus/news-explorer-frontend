@@ -3,27 +3,23 @@ import { useContext, useEffect } from "react";
 import ModalWithForm from "../ModalWithForm";
 import { useForm } from "../../../hooks/useForm";
 import ModalContext from "../../../contexts/ModalContext";
-import { modalOptions } from "../../../utils/constants";
-import { NavLink } from "react-router-dom/cjs/react-router-dom.min";
+import UserContext from "../../../contexts/UserContext";
+import { NavLink } from "react-router-dom";
 
 const LoginModal = () => {
-    const initialValues = {
-        email: "",
-        password: "",
-    };
+  const { isLoading } = useContext(UserContext);
+  const { handleLogin, modalOptions, handleModalChange } = useContext(ModalContext);
+  const { loginFormName, loginTitle, loginButton, signupButton, loginLoadingText } = modalOptions.loginOptions;
+  const { values, handleChange, setValues } = useForm(modalOptions.loginValues);
+  const { email, password } = values;
 
-    const { handleLogin, isLoading, handleModalChange } = useContext(ModalContext);
-    const { loginFormName, loginTitle, loginButton, signupButton, loginLoadingText } = modalOptions.loginOptions;
-    const { values, handleChange, setValues } = useForm(initialValues);
+  useEffect(() => {
+    setValues(modalOptions.loginValues);
+  }, [setValues, modalOptions.loginValues]);
 
-    const { email, password } = values;
-    useEffect(() => {
-      setValues(initialValues);
-    }, [setValues]);
-
-    const handleUserLogin = () => {
-        handleLogin(values);
-    };
+  const handleUserLogin = () => {
+      handleLogin(values);
+  };
 
   return (
     <ModalWithForm handleSubmit={handleUserLogin} formName={loginFormName}>

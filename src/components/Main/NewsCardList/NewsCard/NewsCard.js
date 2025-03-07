@@ -1,23 +1,29 @@
+import { useContext } from 'react';
 import './NewsCard.css';
-import tempCard from '../../../../assets/temp-card.png';
-import bookMark from '../../../../assets/bookmark.svg';
+import UserContext from '../../../../contexts/UserContext';
 
-function NewsCard({ searchData }) {
+function NewsCard({ article }) {
+    const { savedArticles, handleDeleteArticle, handleSaveArticle } = useContext(UserContext);
+
+    const handleBookmark = (article) => {
+        if (savedArticles.some((savedArticle) => savedArticle.url === article.url)) {
+            handleDeleteArticle(article);
+        } else {
+            handleSaveArticle(article);
+        }
+    };
+
     return (
         <div className='card'>
-            <img className='card__img' src={tempCard} alt='Not found' />
+            <img className='card__img' src={article.urlToImage} alt='Not found' />
             <div className='card__bookmark-group'>
-                <span className='card__bookmark-img' />
+                <span className='card__bookmark-img' onClick={() => handleBookmark(article)}/>
             </div>
             <div className='card__info'>
-                <p className='card__date'>November 4, 2024</p>
-                <h3 className='card__title'>Everyone Needs a Special 'Sit Spot' in Nature</h3>
-                <p className='card__description'>
-                    Ever since I read Richard Louv's influential book, "Last Child in the Woods," the idea of having a special "sit spot" 
-                    in the woods has stuck with me. This advice, which Louv attributes to nature educator Jon Young, is for both adults 
-                    and children to find while out in the woods on a hike. 
-                </p>
-                <p className='card__source'>TREEHUGGER</p>
+                <p className='card__date'>{article.publishedAt.split('T')[0]}</p>
+                <h3 className='card__title'>{article.title}</h3>
+                <p className='card__description'>{article.content}</p>
+                <p className='card__source'>{article.source.name}</p>
             </div>
         </div>
     )

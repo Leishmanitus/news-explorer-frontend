@@ -4,6 +4,8 @@
     flex-flow: column nowrap;
     justify-content: flex-start;
     align-items: flex-start;
+    padding: 0;
+    margin: 0 auto;
 }
 
 .news__title {
@@ -11,21 +13,48 @@
   font-size: 40px;
   line-height: 46px;
   font-weight: 400;
-  margin: 0;
+  color: #1a1b22;
+  padding-left: 104px;
+  margin: 40px 0 0 0;
 }
 
-.news__text {
+.news__subtitle {
+  font-family: "Cabinet Grotesk";
+  font-size: 40px;
+  line-height: 46px;
+  font-weight: 400;
+  color: #1a1b22;
+  padding-left: 104px;
+  margin: 28px 0 0 0;
+}
+
+.news__keyword {
   font-family: "Cabinet Grotesk";
   font-size: 18px;
   line-height: 24px;
   font-weight: 400;
-  margin: 0;
+  color: #1a1b22;
+  padding-left: 104px;
+  margin: 30px 0 0 0;
 }
 
-.news__text_bold {
+.news__bold {
   font-family: "Cabinet Grotesk";
   font-size: 18px;
   line-height: 24px;
   font-weight: 700;
   margin: 0;
+}
+
+.news__grid {
+  width: 1440px;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(400px, auto));
+  grid-template-rows: repeat(auto-fill, minmax(576px, auto));
+  grid-gap: 16px;
+  align-items: center;
+  justify-content: center;
+  background: #f5f6f7;
+  padding: 0;
+  margin: 30px auto 0 auto;
 }

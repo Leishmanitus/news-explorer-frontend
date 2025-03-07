@@ -1,123 +1,87 @@
-import "./AddItemModal.css";
 import { useContext, useEffect } from "react";
+import "./RegisterModal.css";
 import ModalWithForm from "../ModalWithForm";
-import { useForm } from "../../../hooks/useForm";
 import ModalContext from "../../../contexts/ModalContext";
-import CurrentUserContext from "../../../contexts/CurrentUserContext";
+import UserContext from "../../../contexts/UserContext";
+import { useForm } from "../../../hooks/useForm";
+import { NavLink } from "react-router-dom";
 
-const AddItemModal = () => {
-  const initialValues = {
-    name: "",
-    imageUrl: "",
-    weather: "hot",
-  };
+const RegisterModal = () => {
+  const { isLoading } = useContext(UserContext);
+  const { handleRegistration, modalOptions, handleModalChange } = useContext(ModalContext);
+  const { signupFormName, signupTitle, loginButton, signupButton, signupLoadingText } = modalOptions.loginOptions;
+  const { values, handleChange, setValues } = useForm(modalOptions.registrationValues);
 
-  const { user } = useContext(CurrentUserContext);
-  const { handleSubmitItem, isLoading, modalOptions } = useContext(ModalContext);
-  const { formTitle, formName, formButtonText, formLoadingText } = modalOptions.formOptions;
-  const { values, handleChange, setValues } = useForm(initialValues);
-
-  const { name, imageUrl, weather } = values;
-
+  const { name, email, password } = values;
   useEffect(() => {
-    setValues(initialValues);
-  }, [setValues]);
+    setValues(modalOptions.registrationValues);
+  }, [setValues, modalOptions.registrationValues]);
 
-  const handleSubmit = () => {
-    handleSubmitItem(values, user.token);
+  const handleUserRegistration = () => {
+      handleRegistration(values);
   };
 
   return (
-    <ModalWithForm handleSubmit={handleSubmit} formName={formName}>
-      <h3 className="modal__title">{formTitle}</h3>
-      <label className="form__label" htmlFor={"garment-name"}>
+    <ModalWithForm handleSubmit={handleUserRegistration} formName={signupFormName}>
+      <h3 className="modal__title">{signupTitle}</h3>
+      <label className="form__label" htmlFor={"user-email"}>
+        Email
+        <input
+            className="form__input"
+            id="user-email"
+            name="email"
+            placeholder="Email"
+            minLength="2"
+            maxLength="40"
+            type="email"
+            value={email}
+            onChange={handleChange}
+            required
+        />
+      </label>
+
+      <label className="form__label" htmlFor={"user-password"}>
+        Password
+        <input
+            className="form__input"
+            id="user-password"
+            name="password"
+            placeholder="Password"
+            minLength="2"
+            maxLength="40"
+            type="password"
+            value={password}
+            onChange={handleChange}
+            required
+        />
+      </label>
+
+      <label className="form__label" htmlFor={"user-name"}>
         Name
         <input
-          className="form__input"
-          id="garment-name"
-          name="name"
-          placeholder="Name"
-          minLength="2"
-          maxLength="40"
-          type="text"
-          value={name}
-          onChange={handleChange}
-          required
+            className="form__input"
+            id="user-name"
+            name="name"
+            placeholder="Name"
+            minLength="2"
+            maxLength="40"
+            type="text"
+            value={name}
+            onChange={handleChange}
+            required
         />
       </label>
 
-      <label className="form__label" htmlFor={"garment-image"}>
-        Image
-        <input
-          className="form__input"
-          id="garment-image"
-          name="imageUrl"
-          placeholder="Image URL"
-          minLength="2"
-          maxLength="200"
-          type="text"
-          value={imageUrl}
-          onChange={handleChange}
-          required
-        />
-      </label>
-
-      <p className="form__message">Select the weather type:</p>
-
-      <ul className="form__list">
-        <li className="form__list-item">
-          <input
-            className="form__radio"
-            type="radio"
-            name="weather"
-            id="hot"
-            value="hot"
-            onChange={handleChange}
-            checked={weather === "hot"}
-          />
-
-          <label className="form__radio-text" htmlFor="hot">
-            Hot
-          </label>
-        </li>
-
-        <li className="form__list-item">
-          <input
-            className="form__radio"
-            type="radio"
-            name="weather"
-            id="warm"
-            value="warm"
-            onChange={handleChange}
-            checked={weather === "warm"}
-          />
-
-          <label className="form__radio-text" htmlFor="warm">
-            Warm
-          </label>
-        </li>
-
-        <li className="form__list-item">
-          <input
-            className="form__radio"
-            type="radio"
-            name="weather"
-            id="cold"
-            value="cold"
-            onChange={handleChange}
-            checked={weather === "cold"}
-          />
-
-          <label className="form__radio-text" htmlFor="cold">
-            Cold
-          </label>
-        </li>
-      </ul>
-      <button className="form__submit" type="submit">
-        {isLoading ? formLoadingText : formButtonText}
-      </button>
+      <div className="form__button-group">
+        <button className="form__submit" type="submit">
+          {isLoading ? signupLoadingText : signupButton}
+        </button>
+        <NavLink className="form__link" to={"/"} onClick={() => handleModalChange("signin")}>
+          <p className="form__text">or {loginButton}</p>
+        </NavLink>
+      </div>
     </ModalWithForm>
-  );
-};
+  )
+}
 
-export default AddItemModal;
+export default RegisterModal;
