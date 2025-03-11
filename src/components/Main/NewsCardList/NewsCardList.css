@@ -20,7 +20,7 @@
 .card-list__grid {
     display: grid;
     grid-template-columns: repeat(3, 400px);
-    grid-template-rows: repeat(auto, 576px);
+    grid-template-rows: repeat(auto-fill, 576px);
     gap: 16px;
     margin: 64px 0;
     padding: 0 104px;

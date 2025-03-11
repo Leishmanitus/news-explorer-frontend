@@ -1,9 +1,7 @@
 import { apiInfo } from "./constants";
-import { request } from "./api";
-
-const { API_KEY, API_URL } = apiInfo;
 
 export const getSearchResults = (searchWord) => {
+  const { API_KEY, API_URL } = apiInfo;
   const currentDate = new Date();
   const pastDate = new Date(currentDate);
   pastDate.setDate(currentDate.getDate() - 7);
@@ -13,9 +11,9 @@ export const getSearchResults = (searchWord) => {
 
   const url = `${API_URL}?q=${searchWord}&from=${formattedPastDate}&to=${formattedCurrentDate}&language=en&pageSize=100&sortBy=relevancy&apiKey=${API_KEY}`;
 
-  return request(url, {
+  return fetch(url, {
     method: "GET",
-  });
+  }).then(res => res.ok ? res.json() : Promise.reject(`Error: ${res.status}`));
 };
 
 const api = {

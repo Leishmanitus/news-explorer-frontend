@@ -1,17 +1,18 @@
 import { url } from "./constants";
 
 const handleResponse = (res) => {
-  return res.status === "ok" ? res.json() : Promise.reject(`Error: ${res.message}`);
+  console.log(res);
+  return res.ok ? res.json() : Promise.reject(`Error: ${res.status}`);
 };
 
-export const request = (url, options) => {
-  return fetch(url, options).then(handleResponse);
+export const request = (urlVar, options) => {
+  return fetch(urlVar, options).then(handleResponse);
 };
 
 const getArticleList = () => {
   return request(`${url}/saved-news`, {
     method: "GET",
-    headers: {"Content-Type": "applicaiton/json",},
+    headers: {"Content-Type": "application/json",},
   });
 };
 
