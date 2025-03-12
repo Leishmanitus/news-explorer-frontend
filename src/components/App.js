@@ -29,6 +29,7 @@ function App() {
   const [shownResults, setShownResults] = useState(3);
   const [savedArticles, setSavedArticles] = useState(null);
   const [keywords, setKeywords] = useState([]);
+  const [errorMessage, setErrorMessage] = useState('');
 
   const location = useLocation();
   const isSavedNews = location.pathname.includes('saved-news');
@@ -142,8 +143,8 @@ function App() {
   return (
     <UserContext.Provider value={{
       user, isLoading, isSavedNews, isLoggedIn, activeModal, shownResults,
-      searchResults, savedArticles, keywords, hasSearched,
-      setUser, setIsLoading, setIsLoggedIn, setActiveModal,
+      searchResults, savedArticles, keywords, hasSearched, errorMessage,
+      setUser, setIsLoading, setIsLoggedIn, setActiveModal, setErrorMessage,
       setSearchResults, setSavedArticles, setKeywords, setHasSearched,
       handleSaveArticle, handleDeleteArticle, handleLogin,
       handleLogout, handleRegistration, setShownResults,
@@ -199,6 +200,7 @@ function App() {
               } />
             )
           } />
+          
         </Routes>
 
         <ModalContext.Provider value={{

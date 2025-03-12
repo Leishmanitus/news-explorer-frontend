@@ -1,10 +1,10 @@
 import { useContext } from "react";
 import "./ModalWithForm.css";
-import UserContext from "../../contexts/UserContext";
 import { useEscape } from "../../hooks/useEscape";
+import ModalContext from "../../contexts/ModalContext";
 
 function ModalWithForm({ children, handleSubmit, formName }) {
-  const { handleClose, handleOverlay } = useContext(UserContext);
+  const { handleClose, handleOverlay } = useContext(ModalContext);
 
   useEscape(handleClose);
 

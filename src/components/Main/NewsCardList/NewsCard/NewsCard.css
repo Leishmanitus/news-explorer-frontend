@@ -42,8 +42,41 @@
     background: url('../../../../assets/bookmark.svg') center no-repeat;
 }
 
+.card__tooltip {
+    z-index: 4;
+    position: absolute;
+    top: 0;
+    left: -187px;
+    width: 182px;
+    height: 40px;
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: center;
+    align-items: center;
+    background: #fff;
+    color: #1A1B22;
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 100%;
+    border-radius: 10px;
+    margin: 0;
+    padding: 0;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s, visibility 0.3s;
+}
+
 .card__bookmark-group .card__bookmark-img:hover {
     background-image: url('../../../../assets/bookmark-hover.svg');
+}
+
+.card__bookmark-group_disabled .card__bookmark-img:hover {
+    background-image: url('../../../../assets/bookmark.svg');
+}
+
+.card__bookmark-group_disabled:hover .card__tooltip {
+    visibility: visible;
+    opacity: 1;
 }
 
 .card__info {
@@ -62,7 +95,14 @@
     line-height: 30px;
     overflow: hidden;
     text-overflow: ellipsis;
+    text-decoration: none;
+    color: #1A1B22;
+    cursor: pointer;
     margin: 12px 0 0 0;
+}
+
+.card__title:hover {
+    text-decoration: underline;
 }
 
 .card__description {
@@ -91,8 +131,6 @@
     font-weight: 700;
     font-size: 16px;
     line-height: 20px;
-    text-decoration: none;
     color: #1A1B22;
-    cursor: pointer;
     margin: 18px 0 24px 0;
 }

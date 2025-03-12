@@ -7,7 +7,8 @@ import blackLogoutButton from '../../../assets/black-logout-button-image.svg';
 import UserContext from '../../../contexts/UserContext';
 
 function Nav() {
-    const { isLoggedIn, isSavedNews, user } = useContext(UserContext);
+    const { isLoggedIn, isSavedNews, user, setActiveModal } = useContext(UserContext);
+    const userName = user.name.split(' ')[0].charAt(0).toUpperCase()+user.name.split(' ')[0].slice(1);
 
     const handleLinkClassName = () => {
         return isSavedNews ? 'nav__link nav__link_alt' : 'nav__link'
@@ -23,7 +24,7 @@ function Nav() {
             </a>
             <button className={`${handleLinkClassName()} nav__button nav__button_login`} type='button' border-image={navButtonBorder}>
                 <img className='nav__img nav__img_profile' src={isSavedNews ? blackNavButtonBorder : navButtonBorder} alt='button border' />
-                <p>{user.name ? user.name.split(' ')[0].charAt(0).toUpperCase()+user.name.split(' ')[0].slice(1) : "Unknown"}</p>
+                <p>{user.name ? userName : "Anonymous"}</p>
                 <img className='nav__img nav__img_logout' src={isSavedNews ? blackLogoutButton : logoutButton} alt='logout' />
             </button>
         </div>
@@ -32,7 +33,7 @@ function Nav() {
             <a className='nav__link' href='/'>
                 Home
             </a>
-            <button className='nav__link nav__button' type='button' border-image={navButtonBorder}>
+            <button className='nav__link nav__button' type='button' border-image={navButtonBorder} onClick={() => setActiveModal('signin')}>
                 <img className='nav__img' src={navButtonBorder} alt='button border' />
                 Sign In
             </button>

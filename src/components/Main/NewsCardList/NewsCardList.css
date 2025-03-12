@@ -41,12 +41,15 @@
 }
 
 .card-list__message-group {
+    width: 100%;
+    min-height: 374px;
     display: flex;
     flex-flow: column nowrap;
     align-items: center;
     justify-content: center;
-    padding: 0;
-    margin: 0 auto;
+    background-color: #F5F6F7;
+    padding: 0 auto;
+    margin: 0;
 }
 
 .card-list__not-found-img{
