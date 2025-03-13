@@ -23,14 +23,27 @@
     line-height: 24px;
     text-decoration-line: none;
     text-wrap: nowrap;
-    color: #545454;
+    color: #fff;
     cursor: pointer;
     margin: 0 ;
     padding: 0;
+    transition: color 0.3s ease-in-out;
+}
+
+.nav__link_alt {
+    color: #1a1b22;
+}
+
+.nav__link_alt p {
+    color: #1a1b22;
 }
 
 .nav__link:hover {
     color: #fff;
+}
+
+.nav__link_alt:hover {
+    color: #1a1b22;
 }
 
 .nav__link::after {
@@ -42,6 +55,10 @@
     height: 3px;
     background-color: #fff;
     transition: width 0.3s ease-in-out, left 0.3s ease-in-out;
+}
+
+.nav__link_alt::after {
+    background-color: #1a1b22;
 }
 
 .nav__link:hover::after {

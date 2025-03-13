@@ -1,0 +1,148 @@
+.modal {
+    z-index: 2;
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0.5);
+    transition: opacity 0.5s, visibility 0.5s;
+  }
+  
+  .modal__container {
+    z-index: 1;
+    width: 496px;
+    position: relative;
+    display: flex;
+    flex-flow: column nowrap;
+    background-color: #fff;
+    border-radius: 20px;
+    border: 1px solid rgba(0, 0, 0, 0.3);
+    margin: auto;
+  }
+  
+  .modal__title {
+    font-family: "Cabinet Grotesk";
+    font-size: 16px;
+    line-height: 125%;
+    font-weight: 700;
+    margin: 0 auto 24px 0;
+  }
+  
+  .modal__close-button {
+    width: 40px;
+    height: 40px;
+    position: absolute;
+    top: -40px;
+    right: -40px;
+    background: url("../../assets/active-close-button.svg") center/cover no-repeat;
+    border: none;
+    cursor: pointer;
+  }
+  
+  .modal__close-button:hover {
+    opacity: 0.6;
+  }
+  
+  .modal__form {
+    width: 440px;
+    border: none;
+    margin: 24px 28px 36px;
+  }
+  
+  .form {
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: flex-start;
+  }
+  
+  .form__label {
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: flex-start;
+    align-items: flex-start;
+    font-family: "Cabinet Grotesk";
+    font-size: 16px;
+    line-height: 125%;
+    font-weight: 700;
+    margin: 0;
+  }
+  
+  .form__input {
+    position: relative;
+    z-index: 2;
+    width: 358px;
+    border: none;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+    padding: 0;
+    margin: 5px 0 13px;
+  }
+  
+  .form__message {
+    margin: 0;
+  }
+  
+  .form__list {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .form__list-item {
+    margin: 12px 0 0 0;
+  }
+  
+  .form__radio {
+    margin: 0 8px 0 0;
+  }
+  
+  .form__radio-text {
+    margin: 0;
+  }
+  
+  .form__submit {
+    width: 124px;
+    height: 36px;
+    font-family: "Cabinet Grotesk";
+    font-size: 16px;
+    line-height: 125%;
+    font-weight: 700;
+    cursor: pointer;
+    border-radius: 4px;
+    border: none;
+    background-color: rgba(0, 0, 0, 0.3);
+    padding: 0;
+    margin: 19px 0 0 0;
+  }
+  
+  .form__link {
+    width: 73px;
+    height: 20px;
+    text-wrap: nowrap;
+    text-decoration: none;
+    padding: 0;
+    margin: 17px 0 0 12px;
+  }
+  
+  .form__text {
+    color: rgba(0, 0, 0, 0.5);
+    font-family: "Cabinet Grotesk";
+    font-size: 16px;
+    line-height: 125%;
+    font-weight: 700;
+    cursor: pointer;
+    border: none;
+    padding: 0;
+    margin: 0;
+  }
+  
+  .form__button-group {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: flex-start;
+    align-items: center;
+    margin: 0;
+  }
+  

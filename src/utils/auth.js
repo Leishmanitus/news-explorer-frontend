@@ -17,7 +17,7 @@ const signin = ({ email, password }) => {
   })
 };
 
-const getContent = (token) => {
+const getUser = (token) => {
   return request(`${url}/users/me`, {
     method: 'GET',
     headers: {
@@ -25,12 +25,24 @@ const getContent = (token) => {
       'Authorization': `Bearer ${token}`,
     }
   })
-}
+};
+
+const updateUser = ({ name }, token) => {
+  return request(`${url}/users/me`, {
+    method: "PATCH",
+    headers: {
+      'Content-Type': 'application/json',
+      'Authorization': `Bearer ${token}`
+    },
+    body: JSON.stringify({ name }),
+  });
+};
 
 const auth = {
   signup,
   signin,
-  getContent,
+  getUser,
+  updateUser,
 };
 
 export default auth;
