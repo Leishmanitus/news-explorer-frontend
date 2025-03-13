@@ -20,7 +20,7 @@ import LoginModal from './ModalWithForm/LoginModal/LoginModal';
 import RegisterModal from './ModalWithForm/RegisterModal/RegisterModal';
 
 function App() {
-  const [user, setUser] = useState({ name: 'Ty', _id: '', token: '', });
+  const [user, setUser] = useState({ name: '', _id: '', token: '', });
   const [isLoggedIn, setIsLoggedIn] = useState(false);
   const [activeModal, setActiveModal] = useState('');
   const [isLoading, setIsLoading] = useState(false);
@@ -60,10 +60,6 @@ function App() {
     setUser({ name, _id, token });
     setIsLoggedIn(log);
   };
-
-  // const setTempToken = () => {
-  //   localStorage.setItem('jwt', tempToken);
-  // }
 
   const handleCheckToken = () => {
     const jwt = localStorage.getItem("jwt");

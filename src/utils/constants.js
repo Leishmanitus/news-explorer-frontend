@@ -52,4 +52,3 @@ export const apiInfo = {
 };
 
 export const url = "http://localhost:3001";
-export const tempToken = 'Bearer 61178982549440b19fdc6627a619c096';
