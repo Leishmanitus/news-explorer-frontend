@@ -8,7 +8,7 @@ import { NavLink } from "react-router-dom";
 
 const RegisterModal = () => {
   const { isLoading } = useContext(UserContext);
-  const { handleRegistration, modalOptions, handleModalChange } = useContext(ModalContext);
+  const { handleTempRegistration, modalOptions, handleModalChange } = useContext(ModalContext);
   const { signupFormName, signupTitle, loginButton, signupButton, signupLoadingText } = modalOptions.loginOptions;
   const { values, handleChange, setValues } = useForm(modalOptions.registrationValues);
 
@@ -18,7 +18,8 @@ const RegisterModal = () => {
   }, [setValues, modalOptions.registrationValues]);
 
   const handleUserRegistration = () => {
-      handleRegistration(values);
+    const { name } = values;
+    handleTempRegistration(name);
   };
 
   return (

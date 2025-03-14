@@ -3,7 +3,7 @@ import { Routes, Route, useLocation } from 'react-router-dom'
 import './App.css';
 import auth from '../utils/auth';
 import api from '../utils/api';
-import { modalOptions } from '../utils/constants';
+import { modalOptions, tempToken } from '../utils/constants';
 import mainBackground from '../assets/main-background.jpg';
 import notFoundImage from '../assets/not-found.svg';
 import UserContext from '../contexts/UserContext';
@@ -20,7 +20,7 @@ import LoginModal from './ModalWithForm/LoginModal/LoginModal';
 import RegisterModal from './ModalWithForm/RegisterModal/RegisterModal';
 
 function App() {
-  const [user, setUser] = useState({ name: '', _id: '', token: '', });
+  const [user, setUser] = useState({ name: '', _id: '', token: '' });
   const [isLoggedIn, setIsLoggedIn] = useState(false);
   const [activeModal, setActiveModal] = useState('');
   const [isLoading, setIsLoading] = useState(false);
@@ -89,7 +89,7 @@ function App() {
         .then(({ data: { name, _id, token } }) => {
           if (token) {
             localStorage.setItem('jwt', token)
-            setUserState({ name, _id, token }, true);
+            setUserState({ name, _id, token });
           }
 
           return user;
@@ -99,7 +99,7 @@ function App() {
 
   const handleLogout = () => {
     localStorage.removeItem("jwt");
-    setUserState({ name: "", _id: "" }, "", false);
+    setUserState({ name: "", _id: "", token: "" });
   };
 
   const handleDeleteArticle = (article) => {
@@ -120,6 +120,20 @@ function App() {
     });
   };
 
+  const handleTempLogin = () => {
+    setUserState({ name: "Test User", _id: "123", token: tempToken }, true);
+    handleClose();
+  };
+
+  const handleTempRegistration = (name) => {
+    setUserState({ name: name, _id: "123", token: tempToken }, true);
+    handleClose();
+  };
+
+  const handleTempLogout = () => {
+    setUserState({ name: "", _id: "", token: "" }, false);
+  };
+
   useEffect(() => {
     if (!handleCheckToken()) {
       setIsLoggedIn(false);
@@ -134,7 +148,7 @@ function App() {
         })
         .catch(console.error);
     }
-  }, [isLoggedIn, user.token]);
+  }, []);
 
   return (
     <UserContext.Provider value={{
@@ -188,7 +202,6 @@ function App() {
             (
               <Main children={
                 <main className='main'>
-                  {hasSearched && setHasSearched(false)}
                   <Header />
                   <SavedNews />
                   <Footer />
@@ -202,7 +215,8 @@ function App() {
         <ModalContext.Provider value={{
           handleModalChange, handleClose, handleOverlay,
           handleRegistration, handleLogin, handleLogout,
-          modalOptions
+          handleTempLogin, handleTempLogout, handleTempRegistration,
+          modalOptions,
         }}>
 
           {activeModal === 'signin' && (<LoginModal />)}

@@ -66,40 +66,68 @@
     left: calc(70% - 70% - 17.5%);
 }
 
-.nav__button {
+.nav__profile {
     position: relative;
-    width: 176px;
-    height: 24px;
+    width: fit-content;
+    min-width: 176px;
+    height: 48px;
     color: #fff;
     display: flex;
     flex-flow: row nowrap;
     align-items: center;
-    justify-content:space-around;
+    justify-content: center;
     background: none;
-    border: hidden;
+    border: white 1px solid;
+    border-radius: 100px;
     padding: 0;
     margin: 0;
 }
 
-.nav__button_login {
-    width: 112px;
+.nav__profile_login {
+    min-width: 112px;
+    justify-content: space-between;
+}
+
+.nav__profile_alt {
+    border: #1a1b22 1px solid;
+    color: #1a1b22;
+}
+
+.nav__text {
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 24px;
+    padding: 0;
+    margin: 0;
+}
+
+.nav__text_profile {
+    padding: 0 0 0 16px;
+    margin: 0 15px 0 0;
+}
+
+.nav__text_alt {
+    color: #1a1b22;
 }
 
 .nav__img {
     position: absolute;
-    top: -50%;
+    top: 0;
     left: 0;
-    width: 176px;
+    min-width: 176px;
     height: 48px;
+    margin: 0;
 }
 
 .nav__img_profile {
-    width: 112px;
+    min-width: 112px;
 }
 
 .nav__img_logout {
     position: relative;
     top: 0;
-    width: 18px;
+    min-width: 18px;
     height: 16px;
+    padding: 0 16px 0 0;
+    margin: 0;
 }
