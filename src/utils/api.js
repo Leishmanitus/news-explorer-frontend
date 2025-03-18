@@ -10,14 +10,15 @@ export const request = (urlVar, options) => {
 };
 
 const getArticleList = () => {
-  return request(`${url}/saved-news`, {
+  return request(`${url}/articles`, {
     method: "GET",
     headers: {"Content-Type": "application/json",},
-  });
+  }).then((res) => res.data);
 };
 
-const addArticle = ({ source, author, title, description, url, urlToImage, publishedAt, content }, token) => {
-  return request(`${url}/saved-news`, {
+const addArticle = (data, token) => {
+  const { source, author, title, description, url, urlToImage, publishedAt, content } = data;
+  return request(`${url}/articles`, {
     method: "POST",
     headers: {
       'Content-Type': 'application/json',
@@ -28,7 +29,7 @@ const addArticle = ({ source, author, title, description, url, urlToImage, publi
 };
 
 const removeArticle = (_id, token) => {
-  return request(`${url}/saved-news/${_id}`, {
+  return request(`${url}/articles/${_id}`, {
     method: "DELETE",
     headers: {
       'Content-Type': 'application/json',

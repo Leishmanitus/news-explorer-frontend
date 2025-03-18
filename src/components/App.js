@@ -24,6 +24,7 @@ function App() {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
   const [activeModal, setActiveModal] = useState('');
   const [isLoading, setIsLoading] = useState(false);
+  const [isSearching, setIsSearching] = useState(false);
   const [hasSearched, setHasSearched] = useState(false);
   const [searchResults, setSearchResults] = useState(null);
   const [shownResults, setShownResults] = useState(3);
@@ -75,24 +76,31 @@ function App() {
   };
 
   const handleRegistration = (values) => {
+    const { name, email, password } = values;
     return handleRequest(() => {
-      return auth.signup(values)
+      return auth.signup({ name, email, password })
         .then(() => {
-          return handleLogin(values);
+          return handleLogin({ email, password });
         });
     });
   }
 
   const handleLogin = (values) => {
+    const { email, password } = values;
     return handleRequest(() => {
-      return auth.signin(values)
-        .then(({ data: { name, _id, token } }) => {
+      return auth.signin({ email, password })
+        .then((data) => {
+          const { name, _id, token } = data;
           if (token) {
             localStorage.setItem('jwt', token)
             setUserState({ name, _id, token });
-          }
 
-          return user;
+            return data;
+          }
+          localStorage.setItem('jwt', tempToken);
+          setUserState({ name, _id, token: tempToken });
+
+          return data;
         });
     });
   };
@@ -114,33 +122,17 @@ function App() {
   const handleSaveArticle = (article) => {
     return handleRequest(() => {
       return api.addArticle(article, user.token)
-        .then(({ data }) => {
+        .then((data) => {
           setSavedArticles([...savedArticles, data]);
         });
     });
   };
 
-  const handleTempLogin = () => {
-    setUserState({ name: "Test User", _id: "123", token: tempToken }, true);
-    handleClose();
-  };
-
-  const handleTempRegistration = (name) => {
-    setUserState({ name: name, _id: "123", token: tempToken }, true);
-    handleClose();
-  };
-
-  const handleTempLogout = () => {
-    setUserState({ name: "", _id: "", token: "" }, false);
-  };
+  useEffect(() => {
+    handleCheckToken();
+  }, []);
 
   useEffect(() => {
-    if (!handleCheckToken()) {
-      setIsLoggedIn(false);
-    } else {
-      setIsLoggedIn(true);
-    }
-
     if (isLoggedIn) {
       api.getArticleList(user.token)
         .then(({ data }) => {
@@ -148,16 +140,15 @@ function App() {
         })
         .catch(console.error);
     }
-  }, []);
+  }, [isLoggedIn, user.token]);
 
   return (
     <UserContext.Provider value={{
-      user, isLoading, isSavedNews, isLoggedIn, activeModal, shownResults,
+      user, isLoading, isSavedNews, isLoggedIn, activeModal, isSearching, shownResults,
       searchResults, savedArticles, keywords, hasSearched, errorMessage,
       setUser, setIsLoading, setIsLoggedIn, setActiveModal, setErrorMessage,
-      setSearchResults, setSavedArticles, setKeywords, setHasSearched,
-      handleSaveArticle, handleDeleteArticle, handleLogin,
-      handleLogout, handleRegistration, setShownResults,
+      setSearchResults, setSavedArticles, setKeywords, setHasSearched, setIsSearching,
+      handleSaveArticle, handleDeleteArticle, handleLogout, setShownResults,
     }}>
 
       <div className="app">
@@ -174,7 +165,7 @@ function App() {
                       <SearchForm />
                   </div>
                   <div className='main__group main__group_bot'>
-                      {isLoading ? 
+                      {isSearching ? 
                         (<div className='card-list__message-group' ><Preloader /></div>)
                         :
                         searchResults ?
@@ -214,9 +205,7 @@ function App() {
 
         <ModalContext.Provider value={{
           handleModalChange, handleClose, handleOverlay,
-          handleRegistration, handleLogin, handleLogout,
-          handleTempLogin, handleTempLogout, handleTempRegistration,
-          modalOptions,
+          handleRegistration, handleLogin, modalOptions,
         }}>
 
           {activeModal === 'signin' && (<LoginModal />)}

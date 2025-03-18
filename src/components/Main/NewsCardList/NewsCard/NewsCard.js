@@ -1,15 +1,15 @@
-import { useContext } from 'react';
+import { useContext, useRef } from 'react';
 import './NewsCard.css';
 import UserContext from '../../../../contexts/UserContext';
 
 function NewsCard({ article }) {
     const { savedArticles, handleDeleteArticle, handleSaveArticle, isLoggedIn } = useContext(UserContext);
-    const isBookmarked = savedArticles ? savedArticles.some((savedArticle) => savedArticle.url === article.url) : false;
+    const isBookmarked = useRef(savedArticles ? savedArticles.some((savedArticle) => savedArticle.url === article.url) : false);
     const aticleDate = new Date(article.publishedAt);
     const articleDateFormatted = aticleDate.toLocaleString('en-US', { month: 'long', day: 'numeric', year: 'numeric' });
 
     const handleBookmark = (article) => {
-        if (isBookmarked) {
+        if (isBookmarked.current) {
             handleDeleteArticle(article);
         } else {
             handleSaveArticle(article);
@@ -22,7 +22,13 @@ function NewsCard({ article }) {
             {
                 isLoggedIn ? (
                     <div className='card__bookmark-group'>
-                        <span className='card__bookmark-img' onClick={() => handleBookmark(article)} />
+                        <span className={isBookmarked.current ? 'card__bookmark-img card__bookmark-img_checked' : 'card__bookmark-img'} onClick={(event) => {
+                                    event.preventDefault();
+                                    isBookmarked.current = !isBookmarked.current;
+                                    handleBookmark(article);
+                                }
+                            }
+                        />
                     </div>
                     ) : (
                     <div className='card__bookmark-group card__bookmark-group_disabled'>

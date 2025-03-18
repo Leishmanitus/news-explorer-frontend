@@ -7,7 +7,7 @@ import UserContext from '../../../contexts/UserContext';
 
 function Nav() {
     const { isLoggedIn, isSavedNews, user, setActiveModal, handleLogout } = useContext(UserContext);
-    const userName = user.name.split(' ')[0].charAt(0).toUpperCase()+user.name.split(' ')[0].slice(1);
+    const userName = typeof user.name === String ? user.name.split(' ')[0].charAt(0).toUpperCase()+user.name.split(' ')[0].slice(1) : user.name;
 
     const handleAltClassName = (className) => {
         return isSavedNews ? `${className} ${className}_alt` : className;
@@ -15,10 +15,10 @@ function Nav() {
 
     return (isLoggedIn) ? (
         <div className='nav nav_login'>
-            <a className={handleAltClassName('nav__link')} href='/'>
+            <a className={handleAltClassName('nav__link')} href='/news-explorer-frontend'>
                 <p className={handleAltClassName('nav__text')}>Home</p>
             </a>
-            <a className={handleAltClassName('nav__link')} href='/saved-news'>
+            <a className={handleAltClassName('nav__link')} href='/news-explorer-frontend/saved-news'>
                 <p className={handleAltClassName('nav__text')}>Saved articles</p>
             </a>
             <div className={`${handleAltClassName('nav__link')} ${handleAltClassName('nav__profile')} nav__profile_login`} border-image={navButtonBorder}>
@@ -29,7 +29,7 @@ function Nav() {
         </div>
     ) : (
         <div className='nav'>
-            <a className='nav__link' href='/'>
+            <a className='nav__link' href='/news-explorer-frontend'>
                 Home
             </a>
             <div className={`nav__link nav__profile`} border-image={navButtonBorder} onClick={() => setActiveModal('signin')}>

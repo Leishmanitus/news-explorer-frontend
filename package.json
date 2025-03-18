@@ -2,7 +2,8 @@
   "name": "news-explorer-frontend",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://Leishmanitus.github.io/news-explorer-frontend",
+  "homepage": "https://localhost:3000",
+  "description": "Frontend for the News Explorer project",
   "dependencies": {
     "@testing-library/jest-dom": "^5.17.0",
     "@testing-library/react": "^13.4.0",
@@ -15,6 +16,7 @@
   },
   "scripts": {
     "start": "react-scripts start",
+    "mock-server": "json-server --watch db.json --port 3001",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",

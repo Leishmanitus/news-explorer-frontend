@@ -42,6 +42,10 @@
     background: url('../../../../assets/bookmark.svg') center no-repeat;
 }
 
+.card__bookmark-img_checked {
+    background: url('../../../../assets/bookmark-checked.svg') center no-repeat;
+}
+
 .card__tooltip {
     z-index: 4;
     position: absolute;

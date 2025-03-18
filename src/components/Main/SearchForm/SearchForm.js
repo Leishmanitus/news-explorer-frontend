@@ -5,7 +5,7 @@ import { getSearchResults } from '../../../utils/newsApi';
 import { useForm } from '../../../hooks/useForm';
 
 function SearchForm() {
-    const { setIsLoading, setSearchResults, setHasSearched, setErrorMessage } = useContext(UserContext);
+    const { setIsSearching, setSearchResults, setHasSearched, setErrorMessage } = useContext(UserContext);
     const {values, handleChange, setValues} = useForm('');
     const { searchWord } = values;
     useEffect(() => {
@@ -13,7 +13,7 @@ function SearchForm() {
     }, [setValues]);
     
     const handleSearch = () => {
-        setIsLoading(true);
+        setIsSearching(true);
         getSearchResults(searchWord)
             .then((data) => {
                 const {articles} = data;
@@ -25,7 +25,7 @@ function SearchForm() {
                 setSearchResults([]);
             })
             .finally(() => {
-                setIsLoading(false);
+                setIsSearching(false);
                 setHasSearched(true);
             });
     };
