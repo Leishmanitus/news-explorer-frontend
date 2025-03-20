@@ -1,6 +1,11 @@
 import { url } from "./constants";
 import { request } from "./api";
 
+const handleCreateToken = () => {
+  const token = Math.random().toString(36).substr(2);
+  return token;
+}
+
 const handleUserCheck = (user) => {
   if (user) {
     return { data: user };
@@ -13,7 +18,7 @@ const signup = ({ name, email, password }) => {
   return request(`${url}/users`, {
     method: "POST",
     headers: {'Content-Type': 'application/json'},
-    body: JSON.stringify({ name, email, password }),
+    body: JSON.stringify({ name, email, password, token: handleCreateToken() }),
   })
 };
   
@@ -28,15 +33,14 @@ const signin = ({ email, password }) => {
 };
 
 const getUser = (token) => {
-  return request(`${url}/users`, {
+  return request(`${url}/users?token=${token}`, {
     method: 'GET',
     headers: {
       'Content-Type': 'application/json',
-      'Authorization': `Bearer ${token}`,
     }
   }).then(users => {
-    const user = users.find(users, user => user.token === token);
-    return handleUserCheck(user);
+    const user = users[0]
+    return handleUserCheck({ ...user, token });
   });
 };
 

@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useCallback } from 'react';
 import { Routes, Route, useLocation } from 'react-router-dom'
 import './App.css';
 import auth from '../utils/auth';
@@ -93,12 +93,14 @@ function App() {
           const { name, _id, token } = data;
           if (token) {
             localStorage.setItem('jwt', token)
-            setUserState({ name, _id, token });
+            setUserState({ name, _id, token }, true);
+            handleArticleList(token);
 
             return data;
           }
           localStorage.setItem('jwt', tempToken);
-          setUserState({ name, _id, token: tempToken });
+          setUserState({ name, _id, token: tempToken }, true);
+          handleArticleList(tempToken);
 
           return data;
         });
@@ -107,8 +109,21 @@ function App() {
 
   const handleLogout = () => {
     localStorage.removeItem("jwt");
-    setUserState({ name: "", _id: "", token: "" });
+    setUserState({ name: "", _id: "", token: "" }, false);
+    setSavedArticles([]);
   };
+
+  const handleArticleList = useCallback((token) => {
+    if (isLoggedIn) {
+      api.getArticleList(token)
+        .then(({ data }) => {
+          setSavedArticles(data);
+        })
+        .catch(console.error);
+    }
+
+    return null;
+  }, [isLoggedIn]);
 
   const handleDeleteArticle = (article) => {
     return handleRequest(() => {
@@ -119,9 +134,9 @@ function App() {
     });
   };
 
-  const handleSaveArticle = (article) => {
+  const handleSaveArticle = (article, token) => {
     return handleRequest(() => {
-      return api.addArticle(article, user.token)
+      return api.addArticle(article, token)
         .then((data) => {
           setSavedArticles([...savedArticles, data]);
         });
@@ -133,14 +148,8 @@ function App() {
   }, []);
 
   useEffect(() => {
-    if (isLoggedIn) {
-      api.getArticleList(user.token)
-        .then(({ data }) => {
-          setSavedArticles(data);
-        })
-        .catch(console.error);
-    }
-  }, [isLoggedIn, user.token]);
+    handleArticleList(user.token);
+  }, [handleArticleList, user.token]);
 
   return (
     <UserContext.Provider value={{

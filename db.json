@@ -5,7 +5,44 @@
       "name": "New User",
       "email": "newuser@example.com",
       "password": "password"
+    },
+    {
+      "id": "0aef",
+      "name": "example",
+      "email": "example@example.com",
+      "password": "password"
+    },
+    {
+      "id": "9a38",
+      "name": "example",
+      "email": "example@example.com",
+      "password": "password"
+    },
+    {
+      "id": "758e",
+      "name": "example",
+      "email": "example@example.com",
+      "password": "password"
     }
   ],
-  "articles": []
+  "articles": [
+    {
+      "list": [
+        {
+          "source": {
+            "id": "bbc-news",
+            "name": "BBC News"
+          },
+          "author": "BBC News",
+          "title": "Covid: US backs waiver on vaccine patents to boost supply",
+          "description": "The US supports a move to suspend intellectual property protection for Covid-19 vaccines - but not all countries are on board.",
+          "url": "https://www.bbc.co.uk/news/world-57094856",
+          "urlToImage": "https://ichef.bbci.co.uk/news/1024/branded_news/1A3B/production/_118007073_gettyimages-1231306184.jpg",
+          "publishedAt": "2021-05-06T17:00:00Z",
+          "content": "The US has thrown its support behind a move at the World Trade Organization (WTO) to temporarily lift patent protection for coronavirus vaccines.\r\nIndia and South Africa proposed the plan, which they… [+4424 chars]"
+        }
+      ],
+      "token": "Bearer 61178982549440b19fdc6627a619c096"
+    }
+  ]
 }

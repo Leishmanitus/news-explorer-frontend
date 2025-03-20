@@ -15,10 +15,10 @@ function Nav() {
 
     return (isLoggedIn) ? (
         <div className='nav nav_login'>
-            <a className={handleAltClassName('nav__link')} href='/news-explorer-frontend'>
+            <a className={handleAltClassName('nav__link')} href='/'>
                 <p className={handleAltClassName('nav__text')}>Home</p>
             </a>
-            <a className={handleAltClassName('nav__link')} href='/news-explorer-frontend/saved-news'>
+            <a className={handleAltClassName('nav__link')} href='/saved-news'>
                 <p className={handleAltClassName('nav__text')}>Saved articles</p>
             </a>
             <div className={`${handleAltClassName('nav__link')} ${handleAltClassName('nav__profile')} nav__profile_login`} border-image={navButtonBorder}>
