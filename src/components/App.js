@@ -28,8 +28,9 @@ function App() {
   const [hasSearched, setHasSearched] = useState(false);
   const [searchResults, setSearchResults] = useState(null);
   const [shownResults, setShownResults] = useState(3);
-  const [savedArticles, setSavedArticles] = useState(null);
+  const [savedArticles, setSavedArticles] = useState([]);
   const [keywords, setKeywords] = useState([]);
+  const [hasError, setHasError] = useState(false);
   const [errorMessage, setErrorMessage] = useState('');
 
   const location = useLocation();
@@ -51,6 +52,7 @@ function App() {
 
   const handleRequest = (request) => {
     setIsLoading(true);
+    
     return request()
       .then(() => handleClose())
       .catch(console.error)
@@ -64,22 +66,30 @@ function App() {
 
   const handleCheckToken = () => {
     const jwt = localStorage.getItem("jwt");
+
     if (jwt) {
+
       return auth.getUser(jwt)
-        .then(( { data: { name, _id } }) => {
+        .then(( { data }) => {
+          const { name, _id } = data;
+
           setUser({ name, _id, token: jwt });
           setIsLoggedIn(true);
         })
         .catch(console.error);
     }
+
     return jwt;
   };
 
   const handleRegistration = (values) => {
     const { name, email, password } = values;
+
     return handleRequest(() => {
+
       return auth.signup({ name, email, password })
         .then(() => {
+
           return handleLogin({ email, password });
         });
     });
@@ -87,11 +97,15 @@ function App() {
 
   const handleLogin = (values) => {
     const { email, password } = values;
+
     return handleRequest(() => {
+
       return auth.signin({ email, password })
         .then((data) => {
           const { name, _id, token } = data;
+          
           if (token) {
+            console.log(token);
             localStorage.setItem('jwt', token)
             setUserState({ name, _id, token }, true);
             handleArticleList(token);
@@ -113,34 +127,46 @@ function App() {
     setSavedArticles([]);
   };
 
+  const checkSavedArticles = (articles) => {
+    if (savedArticles.length === 0) {
+      setSavedArticles([...articles]);
+    } else {
+      setSavedArticles([...savedArticles, ...articles]);
+    }
+  };
+
   const handleArticleList = useCallback((token) => {
     if (isLoggedIn) {
       api.getArticleList(token)
-        .then(({ data }) => {
-          setSavedArticles(data);
+        .then((articles) => {
+          checkSavedArticles(articles.list);
         })
         .catch(console.error);
     }
 
     return null;
-  }, [isLoggedIn]);
+    // eslint-disable-next-line
+  }, [isLoggedIn, savedArticles]);
 
   const handleDeleteArticle = (article) => {
-    return handleRequest(() => {
-      return api.removeArticle(article._id, user.token)
-        .then(() => {
-          setSavedArticles(savedArticles.filter((item) => item._id !== article._id));
-        });
-    });
+
+    return api.removeArticle(article.url, user.token)
+      .then(() => {
+        setSavedArticles(savedArticles.filter((item) => item.url !== article.url));
+      })
+      .catch(console.error);
   };
 
-  const handleSaveArticle = (article, token) => {
-    return handleRequest(() => {
-      return api.addArticle(article, token)
-        .then((data) => {
-          setSavedArticles([...savedArticles, data]);
-        });
-    });
+  const handleSaveArticle = (article) => {
+    if (savedArticles.some((item) => article.url === item.url)) {
+      return Promise.reject({ message: 'Article already in database.' });
+    } else {
+      return api.addArticle(article, user.token)
+        .then(articles => {
+          checkSavedArticles(articles.list);
+        })
+        .catch(console.error);
+    }
   };
 
   useEffect(() => {
@@ -149,13 +175,14 @@ function App() {
 
   useEffect(() => {
     handleArticleList(user.token);
-  }, [handleArticleList, user.token]);
+    // eslint-disable-next-line
+  }, []);
 
   return (
     <UserContext.Provider value={{
       user, isLoading, isSavedNews, isLoggedIn, activeModal, isSearching, shownResults,
-      searchResults, savedArticles, keywords, hasSearched, errorMessage,
-      setUser, setIsLoading, setIsLoggedIn, setActiveModal, setErrorMessage,
+      searchResults, savedArticles, keywords, hasSearched, errorMessage, hasError,
+      setUser, setIsLoading, setIsLoggedIn, setActiveModal, setErrorMessage, setHasError,
       setSearchResults, setSavedArticles, setKeywords, setHasSearched, setIsSearching,
       handleSaveArticle, handleDeleteArticle, handleLogout, setShownResults,
     }}>
@@ -175,9 +202,9 @@ function App() {
                   </div>
                   <div className='main__group main__group_bot'>
                       {isSearching ? 
-                        (<div className='card-list__message-group' ><Preloader /></div>)
-                        :
-                        searchResults ?
+                        (
+                          <div className='card-list__message-group' ><Preloader /></div>
+                        ) : searchResults ?
                           (
                             <NewsCardList />
                           ) : hasSearched ?

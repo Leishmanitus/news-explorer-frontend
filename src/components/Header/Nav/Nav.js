@@ -22,18 +22,16 @@ function Nav() {
                 <p className={handleAltClassName('nav__text')}>Saved articles</p>
             </a>
             <div className={`${handleAltClassName('nav__link')} ${handleAltClassName('nav__profile')} nav__profile_login`} border-image={navButtonBorder}>
-                {/* <img className='nav__img nav__img_profile' src={isSavedNews ? blackNavButtonBorder : navButtonBorder} alt='button border' /> */}
                 <p className={`${handleAltClassName('nav__text')} nav__text_profile`}>{user.name ? userName : "Anonymous"}</p>
                 <img className='nav__img nav__img_logout' src={isSavedNews ? blackLogoutButton : logoutButton} alt='logout' onClick={() => handleLogout()} />
             </div>
         </div>
     ) : (
         <div className='nav'>
-            <a className='nav__link' href='/news-explorer-frontend'>
+            <a className='nav__link' href='/'>
                 Home
             </a>
             <div className={`nav__link nav__profile`} border-image={navButtonBorder} onClick={() => setActiveModal('signin')}>
-                {/* <img className='nav__img' src={navButtonBorder} alt='button border' /> */}
                 <p className='nav__text'>Sign In</p>
             </div>
         </div>

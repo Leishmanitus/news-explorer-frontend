@@ -10,8 +10,7 @@ function SavedNews() {
         user
     } = useContext(UserContext);
     const userName = user.name ? user.name.split(' ')[0][0].toUpperCase() + user.name.split(' ')[0].slice(1) : 'Unknown';
-    const isArray = typeof savedArticles === Array;
-    const articleCount = isArray ? savedArticles.length : 0;
+    const articleCount = savedArticles ? savedArticles.length : 0;
 
     const handleKeywords = () => {
         const keywordCount = keywords.length - 3;
@@ -29,7 +28,7 @@ function SavedNews() {
             <h3 className='news__subtitle'>{userName}, you have {articleCount} saved articles</h3>
             {savedArticles && (<p className='news__keyword'>By keywords: <span className='news__bold'>{handleKeywords()}</span></p>)}
             <div className='news__grid'>
-                {isArray ? savedArticles.map((article, i) => <NewsCard key={i} article={article} />) : null}
+                {articleCount !== 0 ? savedArticles.map((article, i) => <NewsCard key={i} article={article} />) : null}
             </div>
         </div>
     )

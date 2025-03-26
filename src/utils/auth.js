@@ -1,8 +1,11 @@
 import { url } from "./constants";
-import { request } from "./api";
+import api from "./api";
+
+const { request } = api;
 
 const handleCreateToken = () => {
   const token = Math.random().toString(36).substr(2);
+  console.log(token);
   return token;
 }
 

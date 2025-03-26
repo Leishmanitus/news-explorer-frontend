@@ -5,7 +5,7 @@ import { getSearchResults } from '../../../utils/newsApi';
 import { useForm } from '../../../hooks/useForm';
 
 function SearchForm() {
-    const { setIsSearching, setSearchResults, setHasSearched, setErrorMessage } = useContext(UserContext);
+    const { setIsSearching, setSearchResults, setHasSearched, setHasError, setErrorMessage } = useContext(UserContext);
     const {values, handleChange, setValues} = useForm('');
     const { searchWord } = values;
     useEffect(() => {
@@ -14,6 +14,7 @@ function SearchForm() {
     
     const handleSearch = () => {
         setIsSearching(true);
+        setHasError(false);
         getSearchResults(searchWord)
             .then((data) => {
                 const {articles} = data;
@@ -21,6 +22,7 @@ function SearchForm() {
             })
             .catch(error => {
                 console.error(error);
+                setHasError(true);
                 setErrorMessage('Sorry, something went wrong during the request. Please try again later.');
                 setSearchResults([]);
             })
@@ -54,7 +56,6 @@ function SearchForm() {
                     minLength={3}
                     maxLength={100}
                     type='text'
-                    value={searchWord}
                     onChange={handleChange}
                 />
                 <button className='search__form-button' type='submit' >

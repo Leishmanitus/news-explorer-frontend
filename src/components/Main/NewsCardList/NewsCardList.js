@@ -4,7 +4,7 @@ import NewsCard from './NewsCard/NewsCard';
 import UserContext from '../../../contexts/UserContext';
 
 function NewsCardList() {
-    const { searchResults, shownResults, setShownResults, errorMessage, hasSearched } = useContext(UserContext);
+    const { searchResults, shownResults, setShownResults, hasError, errorMessage, hasSearched } = useContext(UserContext);
     const moreToShow = shownResults <= searchResults.length;
     const showMoreButtonText = moreToShow ? "Show more" : "No more to show";
 
@@ -22,7 +22,7 @@ function NewsCardList() {
             {hasSearched && <h2 className='card-list__title'>Search Results</h2>}
             {
                 searchResults &&
-                    errorMessage ?
+                    hasError ?
                             <div className='card-list__message-group'>
                                 <h3 className='card-list__message-title'>{errorMessage}</h3>
                             </div>
