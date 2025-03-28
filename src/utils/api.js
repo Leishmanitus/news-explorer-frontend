@@ -11,71 +11,52 @@ const request = (urlVar, options) => {
 
 const getArticleList = (token) => {
 
-  return request(`${url}/articles?token=${token}`, {
+  return request(`${url}/articles`, {
     method: "GET",
     headers: {
       "Content-Type": "application/json",
     },
-  }).then((res) => {
-    return res.length !== 0 ? res : Promise.reject({ message: "Articles not found" });
+  }).then((articles) => {
+    const filteredArticles = articles.filter((article) => article.token === token);
+    if (filteredArticles.length === 0) {
+      return Promise.reject({ message: "Articles not found" })
+    }
+    if (typeof articles !== "object" || articles === null) {
+      console.error("Invalid response from server:", articles);
+      return Promise.reject({ message: "Invalid articles data" });
+    }
+    return filteredArticles;
   });
 };
 
 const addArticle = (article, token) => {
+  const articleWithToken = { ...article, token };
 
-  return getArticleList(token)
-    .then(articles => {
-      const { list, id } = articles[0];
-      console.log(list);
-
-      if (list.length === 0 || !articles) {
-
-        return request(`${url}/articles/${id}`, {
-          method: "POST",
-          headers: {
-            'Content-Type': 'application/json',
-          },
-          body: JSON.stringify({
-            list: [article],
-            token: token,
-          }),
-        }).then(res => res);
-      } else {
-
-        return request(`${url}/articles/${id}`, {
-          method: "PATCH",
-          headers: {
-            'Content-Type': 'application/json',
-          },
-          body: JSON.stringify({
-            list: [...list, article],
-          }),
-        }).then(res => res);
-      }
-    });
+  return request(`${url}/articles`, {
+    method: "POST",
+    headers: {
+      'Content-Type': 'application/json',
+    },
+    body: JSON.stringify(articleWithToken),
+  });
 };
 
 const removeArticle = (articleURL, token) => {
 
   return getArticleList(token)
     .then((articles) => {
-      const { list, id } = articles[0];
-      if (list.length === 0 || !articles) {
+      const articleToDelete = articles.find((article) => article.url === articleURL);
 
+      if (!articleToDelete) {
         return Promise.reject({ message: 'Article not found' });
-      } else {
-        const updatedList = list.filter((article) => article.url !== articleURL);
-
-        return request(`${url}/articles/${id}`, {
-          method: "PATCH",
-          headers: {
-            'Content-Type': 'application/json',
-          },
-          body: JSON.stringify({
-            list: updatedList,
-          }),
-        }).then(res => res);
       }
+
+      return request(`${url}/articles/${articleToDelete.id}`, {
+        method: "DELETE",
+        headers: {
+          'Content-Type': 'application/json',
+        },
+      });
     });
 };
 

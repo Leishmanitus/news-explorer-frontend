@@ -1,13 +1,17 @@
-import { useContext, useState } from 'react';
+import { useContext, useEffect, useState } from 'react';
 import './NewsCard.css';
 import UserContext from '../../../../contexts/UserContext';
 
 function NewsCard(props) {
     const { article } = props;
     const { savedArticles, handleDeleteArticle, handleSaveArticle, isLoggedIn } = useContext(UserContext);
-    const [ isBookmarked, setIsBookmarked ] = useState(savedArticles ? savedArticles.some((savedArticle) => savedArticle.url === article.url) : false);
+    const [ isBookmarked, setIsBookmarked ] = useState();
     const aticleDate = new Date(article.publishedAt);
     const articleDateFormatted = aticleDate.toLocaleString('en-US', { month: 'long', day: 'numeric', year: 'numeric' });
+
+    const checkForBookmark = () => {
+        return savedArticles ? savedArticles.some((savedArticle) => savedArticle.url === article.url) : false;
+    };
 
     const handleBookmark = (article) => {
         if (isBookmarked) {
@@ -18,13 +22,18 @@ function NewsCard(props) {
         setIsBookmarked(!isBookmarked);
     };
 
+    useEffect(() => {
+        setIsBookmarked(checkForBookmark());
+        // eslint-disable-next-line
+    }, []);
+
     return (
         <div className='card'>
             <img className='card__img' src={article.urlToImage} alt='Not found' />
             {
                 isLoggedIn ? (
                     <div className='card__bookmark-group'>
-                        <span className={isBookmarked.current ? 'card__bookmark-img card__bookmark-img_checked' : 'card__bookmark-img'} onClick={(event) => {
+                        <span className={isBookmarked ? 'card__bookmark-img card__bookmark-img_checked' : 'card__bookmark-img'} onClick={(event) => {
                                     event.preventDefault();
                                     handleBookmark(article);
                                 }

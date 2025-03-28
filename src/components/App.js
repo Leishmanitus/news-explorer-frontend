@@ -1,9 +1,9 @@
-import { useState, useEffect, useCallback } from 'react';
+import { useState, useEffect } from 'react';
 import { Routes, Route, useLocation } from 'react-router-dom'
 import './App.css';
 import auth from '../utils/auth';
 import api from '../utils/api';
-import { modalOptions, tempToken } from '../utils/constants';
+import { modalOptions } from '../utils/constants';
 import mainBackground from '../assets/main-background.jpg';
 import notFoundImage from '../assets/not-found.svg';
 import UserContext from '../contexts/UserContext';
@@ -20,7 +20,7 @@ import LoginModal from './ModalWithForm/LoginModal/LoginModal';
 import RegisterModal from './ModalWithForm/RegisterModal/RegisterModal';
 
 function App() {
-  const [user, setUser] = useState({ name: '', _id: '', token: '' });
+  const [user, setUser] = useState({ name: '', id: '', token: '' });
   const [isLoggedIn, setIsLoggedIn] = useState(false);
   const [activeModal, setActiveModal] = useState('');
   const [isLoading, setIsLoading] = useState(false);
@@ -54,99 +54,73 @@ function App() {
     setIsLoading(true);
     
     return request()
-      .then(() => handleClose())
+      .then((data) => {
+        handleClose();
+        return data;
+      })
       .catch(console.error)
       .finally(() => setIsLoading(false));
   };
 
-  const setUserState = ({ name, _id, token }, log) => {
-    setUser({ name, _id, token });
+  const setUserState = ({ name, id, token }, log) => {
+    setUser({ name, id, token });
     setIsLoggedIn(log);
   };
 
   const handleCheckToken = () => {
     const jwt = localStorage.getItem("jwt");
-
     if (jwt) {
-
       return auth.getUser(jwt)
-        .then(( { data }) => {
-          const { name, _id } = data;
-
-          setUser({ name, _id, token: jwt });
+        .then(({ name, id }) => {
+          setUser({ name, id, token: jwt });
           setIsLoggedIn(true);
         })
         .catch(console.error);
     }
-
-    return jwt;
   };
 
-  const handleRegistration = (values) => {
-    const { name, email, password } = values;
-
-    return handleRequest(() => {
-
-      return auth.signup({ name, email, password })
-        .then(() => {
-
-          return handleLogin({ email, password });
-        });
-    });
+  const handleRegistration = ({ name, email, password }) => {
+    return handleRequest(() => auth.signup({ name, email, password }))
+      .then(({ email, password }) => handleLogin({ email, password }));
   }
 
-  const handleLogin = (values) => {
-    const { email, password } = values;
-
-    return handleRequest(() => {
-
-      return auth.signin({ email, password })
-        .then((data) => {
-          const { name, _id, token } = data;
-          
-          if (token) {
-            console.log(token);
-            localStorage.setItem('jwt', token)
-            setUserState({ name, _id, token }, true);
-            handleArticleList(token);
-
-            return data;
-          }
-          localStorage.setItem('jwt', tempToken);
-          setUserState({ name, _id, token: tempToken }, true);
-          handleArticleList(tempToken);
-
-          return data;
-        });
-    });
+  const handleLogin = ({ email, password }) => {
+    return handleRequest(() => auth.signin({ email, password }))
+      .then(({ name, id, token }) => {
+        localStorage.setItem('jwt', token)
+        setUserState({ name, id, token }, true);
+        handleArticleList(token);
+      });
   };
 
   const handleLogout = () => {
     localStorage.removeItem("jwt");
-    setUserState({ name: "", _id: "", token: "" }, false);
+    setUserState({ name: "", id: "", token: "" }, false);
     setSavedArticles([]);
   };
 
   const checkSavedArticles = (articles) => {
+    if (typeof articles !== "object" || articles === null) {
+      console.error("Invalid articles data:", articles);
+      return;
+    }
+
     if (savedArticles.length === 0) {
-      setSavedArticles([...articles]);
+      articles.length === 0 ? setSavedArticles([]) : setSavedArticles([...articles]);
     } else {
       setSavedArticles([...savedArticles, ...articles]);
     }
   };
 
-  const handleArticleList = useCallback((token) => {
+  const handleArticleList = (token) => {
     if (isLoggedIn) {
       api.getArticleList(token)
         .then((articles) => {
-          checkSavedArticles(articles.list);
+          checkSavedArticles(articles);
         })
         .catch(console.error);
     }
-
-    return null;
-    // eslint-disable-next-line
-  }, [isLoggedIn, savedArticles]);
+  };
 
   const handleDeleteArticle = (article) => {
 
@@ -163,7 +137,7 @@ function App() {
     } else {
       return api.addArticle(article, user.token)
         .then(articles => {
-          checkSavedArticles(articles.list);
+          checkSavedArticles(articles);
         })
         .catch(console.error);
     }
@@ -174,9 +148,9 @@ function App() {
   }, []);
 
   useEffect(() => {
-    handleArticleList(user.token);
+    if(user.token !== "undefined") handleArticleList(user.token);
     // eslint-disable-next-line
-  }, []);
+  }, [isSavedNews, savedArticles]);
 
   return (
     <UserContext.Provider value={{

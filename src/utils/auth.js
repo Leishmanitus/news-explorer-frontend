@@ -11,7 +11,7 @@ const handleCreateToken = () => {
 
 const handleUserCheck = (user) => {
   if (user) {
-    return { data: user };
+    return user;
   } else {
     return Promise.reject({ message: 'User not found' });
   }
@@ -31,6 +31,7 @@ const signin = ({ email, password }) => {
     headers: {'Content-Type': 'application/json'},
   }).then(users => {
     const user = users.find(user => user.email === email && user.password === password);
+    console.log(user);
     return handleUserCheck(user);
   });
 };

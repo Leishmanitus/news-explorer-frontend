@@ -1,4 +1,4 @@
-import { useContext } from 'react';
+import { useContext, useCallback } from 'react';
 import './SavedNews.css';
 import UserContext from '../../../contexts/UserContext';
 import NewsCard from '../NewsCardList/NewsCard/NewsCard';
@@ -7,7 +7,8 @@ function SavedNews() {
     const {
         savedArticles,
         keywords,
-        user
+        user,
+        isSavedNews
     } = useContext(UserContext);
     const userName = user.name ? user.name.split(' ')[0][0].toUpperCase() + user.name.split(' ')[0].slice(1) : 'Unknown';
     const articleCount = savedArticles ? savedArticles.length : 0;
@@ -22,13 +23,22 @@ function SavedNews() {
         }
     }
 
+    const renderSavedNewsList = useCallback(() => {
+        return (
+            <>
+                {articleCount !== 0 ? savedArticles.map((article, i) => <NewsCard key={i} article={article} />) : null}
+            </>
+        );
+        // eslint-disable-next-line
+    }, [articleCount, isSavedNews]);
+
     return (
         <div className='news'>
             <h2 className='news__title'>Saved articles</h2>
             <h3 className='news__subtitle'>{userName}, you have {articleCount} saved articles</h3>
             {savedArticles && (<p className='news__keyword'>By keywords: <span className='news__bold'>{handleKeywords()}</span></p>)}
             <div className='news__grid'>
-                {articleCount !== 0 ? savedArticles.map((article, i) => <NewsCard key={i} article={article} />) : null}
+                {renderSavedNewsList()}
             </div>
         </div>
     )

@@ -28,11 +28,11 @@ function Nav() {
         </div>
     ) : (
         <div className='nav'>
-            <a className='nav__link' href='/'>
+            <a className={handleAltClassName('nav__link')} href='/'>
                 Home
             </a>
-            <div className={`nav__link nav__profile`} border-image={navButtonBorder} onClick={() => setActiveModal('signin')}>
-                <p className='nav__text'>Sign In</p>
+            <div className={handleAltClassName(`nav__link nav__profile`)} border-image={navButtonBorder} onClick={() => setActiveModal('signin')}>
+                <p className={handleAltClassName('nav__text')}>Sign In</p>
             </div>
         </div>
     )

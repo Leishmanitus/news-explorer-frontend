@@ -1,306 +1,58 @@
 {
   "users": [
     {
-      "id": "8d39",
-      "name": "ex",
-      "email": "example@gmail.com",
-      "password": "password",
-      "token": "0.x6lophsvr"
-    },
-    {
-      "id": "df31",
-      "name": "ty",
-      "email": "ty.leish@gmail.com",
-      "password": "password",
-      "token": "mydjkcti20k"
-    },
-    {
-      "id": "da0a",
-      "name": "ex",
+      "id": "34ed",
+      "name": "example",
       "email": "example@example.com",
       "password": "password",
-      "token": "fmrqcnll7wq"
+      "token": "eeeom710lzo"
     }
   ],
   "articles": [
     {
-      "list": [
-        {
-          "source": {
-            "id": "bbc-news",
-            "name": "BBC News"
-          },
-          "author": "BBC News",
-          "title": "Covid: US backs waiver on vaccine patents to boost supply",
-          "description": "The US supports a move to suspend intellectual property protection for Covid-19 vaccines - but not all countries are on board.",
-          "url": "https://www.bbc.co.uk/news/world-57094856",
-          "urlToImage": "https://ichef.bbci.co.uk/news/1024/branded_news/1A3B/production/_118007073_gettyimages-1231306184.jpg",
-          "publishedAt": "2021-05-06T17:00:00Z",
-          "content": "The US has thrown its support behind a move at the World Trade Organization (WTO) to temporarily lift patent protection for coronavirus vaccines.\r\nIndia and South Africa proposed the plan, which they… [+4424 chars]"
-        },
-        {
-          "source": {
-            "id": "wired",
-            "name": "Wired"
-          },
-          "author": "Will Knight",
-          "title": "Hot New Thermodynamic Chips Could Trump Classical Computers",
-          "description": "Guillaume Verdon is building a new kind of chip to accelerate AI. His alter ego wants to accelerate humanity itself.",
-          "url": "https://www.wired.com/story/thermodynamic-computing-ai-guillaume-verdon-based-beff-jezos/",
-          "urlToImage": "https://media.wired.com/photos/67dc60348b6656749fbf9d0a/191:100/w_1280,c_limit/Thermo_BeffJezos_Copy-of-Extropic-8166.jpg",
-          "publishedAt": "2025-03-24T10:00:00Z",
-          "content": "Guillaume Verdon stands before me with a new kind of computer chip in his handa piece of hardware he believes is so important to the future of humanity that hes asked me not to reveal our exact locat… [+3636 chars]"
-        },
-        {
-          "source": {
-            "id": "the-verge",
-            "name": "The Verge"
-          },
-          "author": "David Pierce",
-          "title": "Trump’s confusing crusade against Big Tech",
-          "description": "President Trump wanted to ban TikTok. Now he wants to save TikTok. There might even be a plan to save TikTok, though right now it feels more like a âconcepts of a planâ situation. Meanwhile, the Trump administration continues to press hard on regulating B…",
-          "url": "https://www.theverge.com/the-vergecast/633757/trump-big-tech-tiktok-ftc-siri-vergecast",
-          "urlToImage": "https://platform.theverge.com/wp-content/uploads/sites/2/2025/03/VST_0321_Site_2.jpg?quality=90&strip=all&crop=0%2C10.732984293194%2C100%2C78.534031413613&w=1200",
-          "publishedAt": "2025-03-21T13:27:50Z",
-          "content": "On The Vergecast: Siris still bad, Pebbles so back, Starlinks in the White House, and chaos at the FTC.\r\nOn The Vergecast: Siris still bad, Pebbles so back, Starlinks in the White House, and chaos at… [+1751 chars]"
-        },
-        {
-          "source": {
-            "id": null,
-            "name": "Gizmodo.com"
-          },
-          "author": "AJ Dellinger",
-          "title": "Trump Threatens to Defund the NYC Subway",
-          "description": "Transportation Secretary Sean Duffy is demanding a \"safety plan\" from the city.",
-          "url": "https://gizmodo.com/trump-threatens-to-defund-the-nyc-subway-2000578134",
-          "urlToImage": "https://gizmodo.com/app/uploads/2022/10/65b378ff6b649409da71a99bec8c8b58.jpg",
-          "publishedAt": "2025-03-19T18:20:38Z",
-          "content": "There are few things scarier to the conservative mind than mass transportation in a major metropolitan city. To that end, Donald Trump’s pick to run the Department of Transportation, Sean Duffy, is d… [+3068 chars]"
-        },
-        {
-          "source": {
-            "id": null,
-            "name": "Gizmodo.com"
-          },
-          "author": "Matt Novak",
-          "title": "Netanyahu Gives John Fetterman Silver-Plated Pager as Ghoulish Gift",
-          "description": "The Israeli prime minister previously gave Donald Trump one too.",
-          "url": "https://gizmodo.com/netanyahu-gives-john-fetterman-silver-plated-pager-as-ghoulish-gift-2000578432",
-          "urlToImage": "https://gizmodo.com/app/uploads/2025/03/bibi-fetterman-pagers.jpg",
-          "publishedAt": "2025-03-20T12:35:12Z",
-          "content": "Israel’s prime minister Benjamin Netanyahu met with Sen. John Fetterman on Wednesday. And Bibi’s gift to the senator from Pennsylvania is likely to raise more than a few eyebrows. Fetterman was prese… [+2564 chars]"
-        },
-        {
-          "source": {
-            "id": null,
-            "name": "Gizmodo.com"
-          },
-          "author": "Lucas Ropek",
-          "title": "White House Announces Plan to Use Federal Lands to ‘Reduce Housing Costs’",
-          "description": "The Trump White House is ready to divvy up public lands for private profits.",
-          "url": "https://gizmodo.com/white-house-announces-plan-to-use-federal-lands-to-reduce-housing-costs-2000577144",
-          "urlToImage": "https://gizmodo.com/app/uploads/2025/03/Trump-in-a-helicopter.jpg",
-          "publishedAt": "2025-03-18T13:25:49Z",
-          "content": "The White House has announced plans to “use” federal lands to create more “affordable housing.” While the effort would presumably destroy areas of wildlife that have been deliberately protected for g… [+4464 chars]"
-        },
-        {
-          "source": {
-            "id": null,
-            "name": "Gizmodo.com"
-          },
-          "author": "Lucas Ropek",
-          "title": "Some National Security Operations to Counter Russian Sabotage Are Reportedly at a ‘Standstill’",
-          "description": "A new report claims the Trump administration has paused some activity aimed at countering Russian aggression.",
-          "url": "https://gizmodo.com/some-national-security-operations-to-counter-russian-sabotage-are-reportedly-at-a-standstill-2000578420",
-          "urlToImage": "https://gizmodo.com/app/uploads/2021/05/d8a741aa56482f1ea5cca56d0ae1a499.jpg",
-          "publishedAt": "2025-03-20T14:10:48Z",
-          "content": "A new report from Reuters claims that, under the Trump administration, a variety of U.S. national security operations designed to counter Russian aggression in Europe have been halted or slowed to a … [+3388 chars]"
-        },
-        {
-          "source": {
-            "id": null,
-            "name": "Gizmodo.com"
-          },
-          "author": "Ed Cara",
-          "title": "HIV Is on the Brink of Defeat, but Trump’s Pending Funding Cuts Could Bring It Back",
-          "description": "The Trump White House has pushed for drastic cuts to global HIV prevention efforts; now it's reportedly eyeing cuts at home, too.",
-          "url": "https://gizmodo.com/hiv-is-on-the-brink-of-defeat-but-trumps-pending-funding-cuts-could-bring-it-back-2000578042",
-          "urlToImage": "https://gizmodo.com/app/uploads/2025/02/donald-trump-feb-11-2025-white-house.jpg",
-          "publishedAt": "2025-03-19T16:30:16Z",
-          "content": "The Trump administration might be looking to give HIV a hand. The federal government is reportedly eyeing drastic cuts to its funding for HIV prevention efforts at home.\r\nThe Wall Street Journal firs… [+3786 chars]"
-        },
-        {
-          "source": {
-            "id": "the-verge",
-            "name": "The Verge"
-          },
-          "author": "Umar Shakir",
-          "title": "Elon Musk made more promises about Optimus and Cybercabs at Tesla’s surprise all-hands meeting",
-          "description": "At a surprise all-hands-on meeting Thursday night in Texas, Tesla CEO Elon Musk rallied up his company’s employees as the brand’s public reputation continues to plummet, Business Insider reports. At the livestreamed meeting, Musk told employees to “hang on to…",
-          "url": "https://www.theverge.com/news/633907/elon-musk-tesla-employee-meeting-stock-value-drop-cybercab-optimus",
-          "urlToImage": "https://platform.theverge.com/wp-content/uploads/sites/2/2025/01/STK022_ELON_MUSK_2_CVIRGINIA_B.jpg?quality=90&strip=all&crop=0%2C9.9676601489831%2C100%2C80.064679702034&w=1200",
-          "publishedAt": "2025-03-21T16:35:15Z",
-          "content": "The Tesla CEO pleads with employees (and, indirectly, to investors) to hang onto their stocks.\r\nThe Tesla CEO pleads with employees (and, indirectly, to investors) to hang onto their stocks.\r\nAt a su… [+2089 chars]"
-        },
-        {
-          "source": {
-            "id": null,
-            "name": "NPR"
-          },
-          "author": "Michel Martin",
-          "title": "Former head of Social Security says Elon Musk and DOGE are wrong about the agency",
-          "description": "Micheal Astrue, former commissioner of Social Security Administration under George W. Bush and Barack Obama, told NPR Elon Musk is wrong about Social Security and that there is no widespread fraud.",
-          "url": "https://www.npr.org/2025/03/24/nx-s1-5337999/elon-musk-doge-social-security-cuts",
-          "urlToImage": "https://npr.brightspotcdn.com/dims3/default/strip/false/crop/6750x3797+0+352/resize/1400/quality/100/format/jpeg/?url=http%3A%2F%2Fnpr-brightspot.s3.amazonaws.com%2Fbb%2F9e%2Fe7c5f10f400a80b0ce5573539c27%2Fgettyimages-2203694533.jpg",
-          "publishedAt": "2025-03-24T09:15:11Z",
-          "content": "The Trump administration says big changes are coming to Social Security as it works to weed out alleged fraud.\r\nBut Michael Asture, a former commissioner of the Social Security Administration (SSA), … [+5248 chars]"
-        },
-        {
-          "source": {
-            "id": "business-insider",
-            "name": "Business Insider"
-          },
-          "author": "Steven Tweedie",
-          "title": "Elon Musk uses a $1,799 curved gaming monitor in his DOGE office",
-          "description": "Elon Musk shared a photo of his DOGE office setup at the Eisenhower Executive Office Building on Friday, revealing a massive gaming screen.",
-          "url": "https://www.businessinsider.com/elon-musk-doge-office-photo-pc-monitor-screen-pepe-frog-2025-3",
-          "urlToImage": "https://i.insider.com/67dda202b8b41a9673fb625f?width=1200&format=jpeg",
-          "publishedAt": "2025-03-21T17:48:01Z",
-          "content": "Elon Musk has a gaming rig in his DOGE office.Graeme Sloan for The Washington Post via Getty Images\r\n<ul><li>Elon Musk shared a photo of his DOGE office on Friday.</li><li>On his desk is a $1,799 cur… [+3384 chars]"
-        },
-        {
-          "source": {
-            "id": "business-insider",
-            "name": "Business Insider"
-          },
-          "author": "Noah Sheidlower",
-          "title": "A veteran takes us inside his rollercoaster 2025, thanks to DOGE",
-          "description": "Monte Burns, 55, was fired from the IRS in February, then reinstated and put on administrative leave this week. It's a relief but stress inducer.",
-          "url": "https://www.businessinsider.com/reinstated-federal-worker-jobs-fired-musk-doge-trump-probationary-irs-2025-3",
-          "urlToImage": "https://i.insider.com/67db27a9585f1dff88b2a364?width=1200&format=jpeg",
-          "publishedAt": "2025-03-20T08:14:01Z",
-          "content": "Monte Burns was fired and then reinstated from his IRS position.Monte Burns\r\n<ul><li>Monte Burns was fired from the IRS, reinstated, and placed on administrative leave within a month.</li><li>Burns' … [+5498 chars]"
-        },
-        {
-          "source": {
-            "id": "business-insider",
-            "name": "Business Insider"
-          },
-          "author": "Eammon Jacobs",
-          "title": "Elon Musk calls Jimmy Kimmel an 'unfunny jerk' after his jokes about Tesla and DOGE",
-          "description": "Jimmy Kimmel poked fun at Elon Musk over two nights following the Tesla arson and vandalism attacks — and the Tesla CEO was listening.",
-          "url": "https://www.businessinsider.com/elon-musk-jimmy-kimmel-unfunny-jerk-tesla-recall-doge-cuts-2025-3",
-          "urlToImage": "https://i.insider.com/67dd497663d72727e197ddd4?width=1200&format=jpeg",
-          "publishedAt": "2025-03-21T12:35:56Z",
-          "content": "Jimmy Kimmel took aim at Elon Musk on his show this week.Tommaso Boddi/Getty Images/Saul Loeb/AFP via Getty Images\r\n<ul><li>Jimmy Kimmel joked about Elon Musk on two shows this week.</li><li>\"When yo… [+2324 chars]"
-        },
-        {
-          "source": {
-            "id": "business-insider",
-            "name": "Business Insider"
-          },
-          "author": "Lloyd Lee,Kwan Wei Kevin Tan",
-          "title": "Tesla's most bullish analyst says 2 things need to change",
-          "description": "Dan Ives, a Wedbush analyst who has been bullish on Tesla, called the automaker's latest woes a \"crisis\" that only one person can fix: Elon Musk.",
-          "url": "https://www.businessinsider.com/tesla-protests-vandalism-crisis-dan-ives-doge-2025-3",
-          "urlToImage": "https://i.insider.com/67db961369253ccddf99c753?width=1200&format=jpeg",
-          "publishedAt": "2025-03-20T07:23:06Z",
-          "content": "Wedbush Securities analyst Dan Ives wrote in a joint note on Wednesday that becoming a \"political symbol\" is a \"bad thing\" for Tesla.Samuel Corum via Getty Images\r\n<ul><li>Wedbush Securities analyst … [+3640 chars]"
-        },
-        {
-          "source": {
-            "id": "wired",
-            "name": "Wired"
-          },
-          "author": "Vittoria Elliott",
-          "title": "'It's a Heist': Real Federal Auditors Are Horrified by DOGE",
-          "description": "WIRED talked to actual federal auditors about how government auditing works—and how DOGE is doing the opposite.",
-          "url": "https://www.wired.com/story/federal-auditors-doge-elon-musk/",
-          "urlToImage": "https://media.wired.com/photos/67cb57696903f85a9f0e1f82/191:100/w_1280,c_limit/doge-auditing-pol-2199925384.jpg",
-          "publishedAt": "2025-03-18T20:04:53Z",
-          "content": "Elon Musks so-called Department of Government Efficiency (DOGE) has spent the first six weeks of the new Trump administration turning the federal government upside down. Its moved from agency to agen… [+3104 chars]"
-        },
-        {
-          "source": {
-            "id": "wired",
-            "name": "Wired"
-          },
-          "author": "Zoë Schiffer",
-          "title": "'We Don’t Want an AI Demo, We Want Answers’: Federal Workers Grill Trump Appointee During All-Hands",
-          "description": "Leaked chats obtained by WIRED detail a Trump appointee's plans for the General Services Administration—and the staff's angry response.",
-          "url": "https://www.wired.com/story/gsa-staff-all-hands-meeting-ai/",
-          "urlToImage": "https://media.wired.com/photos/67dc7e9c8b6656749fbf9d0c/191:100/w_1280,c_limit/GSA-Elon-All-Hands-Business-2201176517.jpg",
-          "publishedAt": "2025-03-20T23:43:24Z",
-          "content": "When there are great tools out there, GSAs job is to procure them, not make mediocre replacements, a colleague added.\r\nDid you use this AI to organize the [reduction in force]? asked another federal … [+2756 chars]"
-        },
-        {
-          "source": {
-            "id": "the-verge",
-            "name": "The Verge"
-          },
-          "author": "David Pierce",
-          "title": "Trump’s confusing crusade against Big Tech",
-          "description": "President Trump wanted to ban TikTok. Now he wants to save TikTok. There might even be a plan to save TikTok, though right now it feels more like a âconcepts of a planâ situation. Meanwhile, the Trump administration continues to press hard on regulating B…",
-          "url": "https://www.theverge.com/the-vergecast/633757/trump-big-tech-tiktok-ftc-siri-vergecast",
-          "urlToImage": "https://platform.theverge.com/wp-content/uploads/sites/2/2025/03/VST_0321_Site_2.jpg?quality=90&strip=all&crop=0%2C10.732984293194%2C100%2C78.534031413613&w=1200",
-          "publishedAt": "2025-03-21T13:27:50Z",
-          "content": "On The Vergecast: Siris still bad, Pebbles so back, Starlinks in the White House, and chaos at the FTC.\r\nOn The Vergecast: Siris still bad, Pebbles so back, Starlinks in the White House, and chaos at… [+1751 chars]"
-        },
-        {
-          "source": {
-            "id": "wired",
-            "name": "Wired"
-          },
-          "author": "Zoë Schiffer",
-          "title": "'We Don’t Want an AI Demo, We Want Answers’: Federal Workers Grill Trump Appointee During All-Hands",
-          "description": "Leaked chats obtained by WIRED detail a Trump appointee's plans for the General Services Administration—and the staff's angry response.",
-          "url": "https://www.wired.com/story/gsa-staff-all-hands-meeting-ai/",
-          "urlToImage": "https://media.wired.com/photos/67dc7e9c8b6656749fbf9d0c/191:100/w_1280,c_limit/GSA-Elon-All-Hands-Business-2201176517.jpg",
-          "publishedAt": "2025-03-20T23:43:24Z",
-          "content": "When there are great tools out there, GSAs job is to procure them, not make mediocre replacements, a colleague added.\r\nDid you use this AI to organize the [reduction in force]? asked another federal … [+2756 chars]"
-        },
-        {
-          "source": {
-            "id": "wired",
-            "name": "Wired"
-          },
-          "author": "Will Knight",
-          "title": "Hot New Thermodynamic Chips Could Trump Classical Computers",
-          "description": "Guillaume Verdon is building a new kind of chip to accelerate AI. His alter ego wants to accelerate humanity itself.",
-          "url": "https://www.wired.com/story/thermodynamic-computing-ai-guillaume-verdon-based-beff-jezos/",
-          "urlToImage": "https://media.wired.com/photos/67dc60348b6656749fbf9d0a/191:100/w_1280,c_limit/Thermo_BeffJezos_Copy-of-Extropic-8166.jpg",
-          "publishedAt": "2025-03-24T10:00:00Z",
-          "content": "Guillaume Verdon stands before me with a new kind of computer chip in his handa piece of hardware he believes is so important to the future of humanity that hes asked me not to reveal our exact locat… [+3636 chars]"
-        },
-        {
-          "source": {
-            "id": "wired",
-            "name": "Wired"
-          },
-          "author": "Vittoria Elliott",
-          "title": "'It's a Heist': Real Federal Auditors Are Horrified by DOGE",
-          "description": "WIRED talked to actual federal auditors about how government auditing works—and how DOGE is doing the opposite.",
-          "url": "https://www.wired.com/story/federal-auditors-doge-elon-musk/",
-          "urlToImage": "https://media.wired.com/photos/67cb57696903f85a9f0e1f82/191:100/w_1280,c_limit/doge-auditing-pol-2199925384.jpg",
-          "publishedAt": "2025-03-18T20:04:53Z",
-          "content": "Elon Musks so-called Department of Government Efficiency (DOGE) has spent the first six weeks of the new Trump administration turning the federal government upside down. Its moved from agency to agen… [+3104 chars]"
-        },
-        {
-          "source": {
-            "id": "business-insider",
-            "name": "Business Insider"
-          },
-          "author": "Grace Eliza Goodwin",
-          "title": "DOGE reduced the number of leases it said it canceled, dropping its claimed savings by $150 million",
-          "description": "DOGE slashed its claimed real estate savings by $150 million after removing 136 federal lease terminations from its website.",
-          "url": "https://www.businessinsider.com/doge-reduces-savings-claimed-from-ending-leases-150-million-2025-3",
-          "urlToImage": "https://i.insider.com/67646d571cee543535a855e8?width=1200&format=jpeg",
-          "publishedAt": "2025-03-20T21:34:41Z",
-          "content": "President Donald Trump and Elon Musk have been working to cut federal spending, including how much the government spends on its buildings' leases.Chris Unger/Getty Images\r\n<ul><li>DOGE has removed ov… [+4308 chars]"
-        }
-      ],
-      "token": "Bearer 61178982549440b19fdc6627a619c096",
-      "id": "62fd"
+      "id": "0fea",
+      "source": {
+        "id": null,
+        "name": "Gizmodo.com"
+      },
+      "author": "Thomas Maxwell",
+      "title": "National Park Summer Bookings Down Amid DOGE-Fueled Turmoil",
+      "description": "Industry insiders say uncertainty around park access is causing travelers to hold off on bookings or cancel plans entirely.",
+      "url": "https://gizmodo.com/national-park-summer-bookings-down-amid-doge-fueled-turmoil-2000579301",
+      "urlToImage": "https://gizmodo.com/app/uploads/2023/05/de952e4f1465864a1970d92453362e0e.jpg",
+      "publishedAt": "2025-03-22T13:00:52Z",
+      "content": "After recent years of overcrowding, this summer might be a good time to visit your favorite national park, and you can thank Elon Musk and Big Balls for that. Tourist reservations at key hot spots ar… [+4312 chars]",
+      "token": "eeeom710lzo"
+    },
+    {
+      "id": "d4be",
+      "source": {
+        "id": "the-verge",
+        "name": "The Verge"
+      },
+      "author": "Kylie Robison",
+      "title": "X’s head of engineering is out",
+      "description": "Xâs director of engineering, Haofei Wang, has suddenly left the company, according to sources with knowledge of the matter. Wang first joined Elon Muskâs X in July 2023 and has been an integral part of the companyâs leadership, often serving as a condui…",
+      "url": "https://www.theverge.com/twitter/634833/x-head-engineering-leaves-elon-musk",
+      "urlToImage": "https://platform.theverge.com/wp-content/uploads/sites/2/2025/02/STK160_X_TWITTER_2__C.jpg?quality=90&strip=all&crop=0%2C10.732984293194%2C100%2C78.534031413613&w=1200",
+      "publishedAt": "2025-03-24T19:32:25Z",
+      "content": "The sudden departure comes after Musk shifted his attention to DOGE and xAI.\r\nThe sudden departure comes after Musk shifted his attention to DOGE and xAI.\r\nXs director of engineering, Haofei Wang, ha… [+1790 chars]",
+      "token": "eeeom710lzo"
+    },
+    {
+      "id": "be93",
+      "source": {
+        "id": "the-verge",
+        "name": "The Verge"
+      },
+      "author": "Justine Calma",
+      "title": "“This man is not our boss” — EPA workers rally against DOGE cuts",
+      "description": "Environmental Protection Agency workers took to the streets across the US today to protest drastic cuts President Donald Trump and Elon Musk’s DOGE have made at the federal agency whose mission is to “protect human health and the environment.”  Musk, the face…",
+      "url": "https://www.theverge.com/news/635710/doge-musk-trump-environmental-protection-agency-epa",
+      "urlToImage": "https://platform.theverge.com/wp-content/uploads/sites/2/2025/03/257640_EPA_workers_protest_AKrales_0285.jpg?quality=90&strip=all&crop=0%2C10.732984293194%2C100%2C78.534031413613&w=1200",
+      "publishedAt": "2025-03-25T21:48:56Z",
+      "content": "How do you spell corruption? E-L-O-N, demonstrators chanted while marching in support of the Environmental Protection Agency.\r\nHow do you spell corruption? E-L-O-N, demonstrators chanted while marchi… [+4522 chars]",
+      "token": "eeeom710lzo"
     }
   ]
 }
