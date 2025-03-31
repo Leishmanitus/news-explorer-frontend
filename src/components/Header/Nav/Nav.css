@@ -38,6 +38,12 @@
     color: #1a1b22;
 }
 
+.nav__link_logout {
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: center;
+}
+
 .nav__link:hover {
     color: #fff;
 }

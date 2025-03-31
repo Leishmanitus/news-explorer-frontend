@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import { Routes, Route, useLocation } from 'react-router-dom'
 import './App.css';
 import auth from '../utils/auth';
@@ -32,6 +32,8 @@ function App() {
   const [keywords, setKeywords] = useState([]);
   const [hasError, setHasError] = useState(false);
   const [errorMessage, setErrorMessage] = useState('');
+
+  const isInitialLoad = useRef(true);
 
   const location = useLocation();
   const isSavedNews = location.pathname.includes('saved-news');
@@ -75,7 +77,10 @@ function App() {
           setUser({ name, id, token: jwt });
           setIsLoggedIn(true);
         })
-        .catch(console.error);
+        .catch((error) => {
+          console.error('Error validating token: ', error);
+          setIsLoggedIn(false);
+        });
     }
   };
 
@@ -90,7 +95,8 @@ function App() {
         localStorage.setItem('jwt', token)
         setUserState({ name, id, token }, true);
         handleArticleList(token);
-      });
+      })
+      .catch((error) => console.error('Error during login: ', error));
   };
 
   const handleLogout = () => {
@@ -99,27 +105,21 @@ function App() {
     setSavedArticles([]);
   };
 
-  const checkSavedArticles = (articles) => {
-    if (typeof articles !== "object" || articles === null) {
-      console.error("Invalid articles data:", articles);
-      return;
-    }
-
-    if (savedArticles.length === 0) {
-      articles.length === 0 ? setSavedArticles([]) : setSavedArticles([...articles]);
-    } else {
-      setSavedArticles([...savedArticles, ...articles]);
+  const checkArticles = (articles) => {
+    if (!articles) {
+      return Promise.reject({ message: `Invalid article data: ${articles}` });
     }
   };
 
   const handleArticleList = (token) => {
-    if (isLoggedIn) {
-      api.getArticleList(token)
-        .then((articles) => {
-          checkSavedArticles(articles);
-        })
-        .catch(console.error);
-    }
+    console.log(token);
+    api.getArticleList(token)
+      .then((articles) => {
+        checkArticles(articles);
+        setSavedArticles([...articles]);
+      })
+      .catch(console.error);
+
   };
 
   const handleDeleteArticle = (article) => {
@@ -134,23 +134,31 @@ function App() {
   const handleSaveArticle = (article) => {
     if (savedArticles.some((item) => article.url === item.url)) {
       return Promise.reject({ message: 'Article already in database.' });
-    } else {
-      return api.addArticle(article, user.token)
-        .then(articles => {
-          checkSavedArticles(articles);
-        })
-        .catch(console.error);
     }
+    return api.addArticle(article, user.token)
+      .then(articles => {
+        checkArticles(articles);
+        if (savedArticles.length === 0) {
+          articles.length === 0 ? setSavedArticles([]) : setSavedArticles([...articles]);
+        } else {
+          setSavedArticles([...savedArticles, ...articles]);
+        }
+      })
+      .catch(console.error);
+    
   };
 
   useEffect(() => {
-    handleCheckToken();
-  }, []);
+    if(isInitialLoad.current) handleCheckToken();
+  }, [user]);
 
   useEffect(() => {
-    if(user.token !== "undefined") handleArticleList(user.token);
+    if (isInitialLoad.current && user.token) {
+      isInitialLoad.current = false; // Mark initial load as complete
+      handleArticleList(user.token);
+    }
     // eslint-disable-next-line
-  }, [isSavedNews, savedArticles]);
+  }, [isLoggedIn, savedArticles]);
 
   return (
     <UserContext.Provider value={{

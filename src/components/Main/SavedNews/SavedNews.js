@@ -26,11 +26,13 @@ function SavedNews() {
     const renderSavedNewsList = useCallback(() => {
         return (
             <>
-                {articleCount !== 0 ? savedArticles.map((article, i) => <NewsCard key={i} article={article} />) : null}
+                {savedArticles && savedArticles.length > 0
+                ? savedArticles.map((article, i) => <NewsCard key={i} article={article} />)
+                : null}
             </>
         );
         // eslint-disable-next-line
-    }, [articleCount, isSavedNews]);
+    }, [savedArticles]);
 
     return (
         <div className='news'>
@@ -38,7 +40,7 @@ function SavedNews() {
             <h3 className='news__subtitle'>{userName}, you have {articleCount} saved articles</h3>
             {savedArticles && (<p className='news__keyword'>By keywords: <span className='news__bold'>{handleKeywords()}</span></p>)}
             <div className='news__grid'>
-                {renderSavedNewsList()}
+                {isSavedNews && renderSavedNewsList()}
             </div>
         </div>
     )

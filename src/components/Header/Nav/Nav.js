@@ -23,7 +23,9 @@ function Nav() {
             </a>
             <div className={`${handleAltClassName('nav__link')} ${handleAltClassName('nav__profile')} nav__profile_login`} border-image={navButtonBorder}>
                 <p className={`${handleAltClassName('nav__text')} nav__text_profile`}>{user.name ? userName : "Anonymous"}</p>
-                <img className='nav__img nav__img_logout' src={isSavedNews ? blackLogoutButton : logoutButton} alt='logout' onClick={() => handleLogout()} />
+                <a className='nav__link nav__link_logout' href='/'>
+                    <img className='nav__img nav__img_logout' src={isSavedNews ? blackLogoutButton : logoutButton} alt='logout' onClick={() => handleLogout()} />
+                </a>
             </div>
         </div>
     ) : (
