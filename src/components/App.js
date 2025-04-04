@@ -112,7 +112,6 @@ function App() {
   };
 
   const handleArticleList = (token) => {
-    console.log(token);
     api.getArticleList(token)
       .then((articles) => {
         checkArticles(articles);
@@ -154,7 +153,7 @@ function App() {
 
   useEffect(() => {
     if (isInitialLoad.current && user.token) {
-      isInitialLoad.current = false; // Mark initial load as complete
+      isInitialLoad.current = false;
       handleArticleList(user.token);
     }
     // eslint-disable-next-line

@@ -30,7 +30,7 @@ const LoginModal = () => {
           className="form__input"
           id="user-email"
           name="email"
-          placeholder="Email"
+          placeholder="Enter email"
           minLength="2"
           maxLength="40"
           type="email"
@@ -45,7 +45,7 @@ const LoginModal = () => {
           className="form__input"
           id="user-password"
           name="password"
-          placeholder="Password"
+          placeholder="Enter password"
           minLength="2"
           maxLength="40"
           type="password"
@@ -59,9 +59,12 @@ const LoginModal = () => {
         <button className="form__submit" type="submit">
           {isLoading ? loginLoadingText : loginButton}
         </button>
-        <NavLink className="form__link" to={"/"} onClick={() => handleModalChange("signup")}>
-          <p className="form__text">or {signupButton}</p>
-        </NavLink>
+        <p className="form__text">
+          or{" "}
+          <NavLink className="form__link" to={"/"} onClick={() => handleModalChange("signup")}>
+             {signupButton}
+          </NavLink>
+        </p>
       </div>
     </ModalWithForm>
   )

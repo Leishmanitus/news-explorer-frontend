@@ -14,7 +14,7 @@
   
   .modal__container {
     z-index: 1;
-    width: 496px;
+    width: 430px;
     position: relative;
     display: flex;
     flex-flow: column nowrap;
@@ -25,10 +25,12 @@
   }
   
   .modal__title {
-    font-family: "Cabinet Grotesk";
-    font-size: 16px;
-    line-height: 125%;
-    font-weight: 700;
+    width: 358px;
+    height: 32px;
+    font-family: "Roboto";
+    font-size: 24px;
+    line-height: 100%;
+    font-weight: 900;
     margin: 0 auto 24px 0;
   }
   
@@ -48,9 +50,9 @@
   }
   
   .modal__form {
-    width: 440px;
+    width: 358px;
     border: none;
-    margin: 24px 28px 36px;
+    margin: 34px 36px 28px;
   }
   
   .form {
@@ -60,61 +62,49 @@
   }
   
   .form__label {
+    width: 358px;
     display: flex;
     flex-flow: column nowrap;
     justify-content: flex-start;
     align-items: flex-start;
-    font-family: "Cabinet Grotesk";
-    font-size: 16px;
-    line-height: 125%;
-    font-weight: 700;
-    margin: 0;
+    color: #2f71e5;
+    font-family: "Inter";
+    font-size: 12px;
+    line-height: 100%;
+    font-weight: 400;
+    margin: 0 0 31px;
   }
   
   .form__input {
     position: relative;
     z-index: 2;
     width: 358px;
+    height: 47px;
     border: none;
     border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+    color: #000;
+    background-color: #fff;
+    font-family: "Inter";
+    font-size: 14px;
+    line-height: 100%;
+    font-weight: 400;
     padding: 0;
-    margin: 5px 0 13px;
-  }
-  
-  .form__message {
-    margin: 0;
-  }
-  
-  .form__list {
-    list-style: none;
-    padding: 0;
-  }
-  
-  .form__list-item {
-    margin: 12px 0 0 0;
-  }
-  
-  .form__radio {
-    margin: 0 8px 0 0;
-  }
-  
-  .form__radio-text {
-    margin: 0;
+    margin: 8px 0 0;
   }
   
   .form__submit {
-    width: 124px;
-    height: 36px;
-    font-family: "Cabinet Grotesk";
-    font-size: 16px;
+    width: 358px;
+    height: 64px;
+    font-family: "Roboto";
+    font-size: 18px;
     line-height: 125%;
-    font-weight: 700;
+    font-weight: 500;
     cursor: pointer;
-    border-radius: 4px;
+    border-radius: 50px;
     border: none;
     background-color: rgba(0, 0, 0, 0.3);
     padding: 0;
-    margin: 19px 0 0 0;
+    margin: 8px 0 16px 0;
   }
   
   .form__link {
@@ -122,13 +112,14 @@
     height: 20px;
     text-wrap: nowrap;
     text-decoration: none;
+    color: #2f71e5;
     padding: 0;
-    margin: 17px 0 0 12px;
+    margin: 0;
   }
   
   .form__text {
     color: rgba(0, 0, 0, 0.5);
-    font-family: "Cabinet Grotesk";
+    font-family: "Inter";
     font-size: 16px;
     line-height: 125%;
     font-weight: 700;
@@ -139,9 +130,9 @@
   }
   
   .form__button-group {
+    width: 358px;
     display: flex;
-    flex-flow: row nowrap;
-    justify-content: flex-start;
+    flex-flow: column nowrap;
     align-items: center;
     margin: 0;
   }
