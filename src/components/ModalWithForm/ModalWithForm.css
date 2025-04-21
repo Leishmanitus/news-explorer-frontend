@@ -23,6 +23,13 @@
     border: 1px solid rgba(0, 0, 0, 0.3);
     margin: auto;
   }
+
+  .modal__success {
+    width: 100%;
+    position: relative;
+    display: flex;
+    flex-flow: column nowrap;
+  }
   
   .modal__title {
     width: 358px;

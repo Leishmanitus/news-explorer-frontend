@@ -3,6 +3,7 @@
     position: relative;
     width: 100%;
     display: flex;
+    background-color: #F5F6F7;
     flex-flow: column nowrap;
 }
 

@@ -8,7 +8,7 @@ function Header() {
 
     return (
         <div className='header'>
-            <p className={isSavedNews ? 'header__title header__title_alt' : 'header__title'}>News Explorer</p>
+            <p className={isSavedNews ? 'header__title header__title_alt' : 'header__title'}>NewsExplorer</p>
             <Nav />
         </div>
     )

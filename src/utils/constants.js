@@ -17,6 +17,11 @@ export const modalOptions = {
       confirmCancelText: "Cancel",
       confirmLoadingText: "...Deleting",
     },
+    successOptions: {
+      successFormName: "success",
+      successTitle: "Registration successfully completed!",
+      successText: "Sign in",
+    },
     loginOptions: {
       loginFormName: "signin",
       signupFormName: "signup",

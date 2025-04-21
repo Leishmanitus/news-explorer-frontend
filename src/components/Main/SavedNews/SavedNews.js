@@ -6,7 +6,6 @@ import NewsCard from '../NewsCardList/NewsCard/NewsCard';
 function SavedNews() {
     const {
         savedArticles,
-        keywords,
         user,
         isSavedNews
     } = useContext(UserContext);
@@ -14,12 +13,17 @@ function SavedNews() {
     const articleCount = savedArticles ? savedArticles.length : 0;
 
     const handleKeywords = () => {
-        const keywordCount = keywords.length - 3;
+        const keywordCount = user.keywords ? user.keywords.length - 3 : 0;
+        console.log(user.keywords, keywordCount);
 
-        if (keywords.length > 3) {
-            return `${keywords[0]}, ${keywords[1]}, ${keywords[2]} and ${keywordCount} other`
+        if (keywordCount > 2) {
+            return `${user.keywords[0]}, ${user.keywords[1]}, and ${keywordCount} others`;
+        } else if (keywordCount === 0) {
+            return null;
+        } else if (keywordCount === 1) {
+            return user.keywords[0];
         } else {
-            return keywords.join(', ')
+            return user.keywords.join(', ')
         }
     }
 

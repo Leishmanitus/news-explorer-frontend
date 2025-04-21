@@ -4,8 +4,7 @@ import './App.css';
 import auth from '../utils/auth';
 import api from '../utils/api';
 import { modalOptions } from '../utils/constants';
-import mainBackground from '../assets/main-background.jpg';
-import notFoundImage from '../assets/not-found.svg';
+import mainBackground from '../assets/main-background.png';
 import UserContext from '../contexts/UserContext';
 import ModalContext from '../contexts/ModalContext';
 import Main from './Main/Main';
@@ -18,9 +17,10 @@ import About from './Main/About/About';
 import SavedNews from './Main/SavedNews/SavedNews';
 import LoginModal from './ModalWithForm/LoginModal/LoginModal';
 import RegisterModal from './ModalWithForm/RegisterModal/RegisterModal';
+import SuccessModal from './ModalWithForm/SuccessModal/SuccessModal';
 
 function App() {
-  const [user, setUser] = useState({ name: '', id: '', token: '' });
+  const [user, setUser] = useState({ name: '', id: '', token: '', keywords: [] });
   const [isLoggedIn, setIsLoggedIn] = useState(false);
   const [activeModal, setActiveModal] = useState('');
   const [isLoading, setIsLoading] = useState(false);
@@ -29,7 +29,8 @@ function App() {
   const [searchResults, setSearchResults] = useState(null);
   const [shownResults, setShownResults] = useState(3);
   const [savedArticles, setSavedArticles] = useState([]);
-  const [keywords, setKeywords] = useState([]);
+  // const [keywords, setKeywords] = useState([]);
+  const [currentKeyword, setCurrentKeyword] = useState('');
   const [hasError, setHasError] = useState(false);
   const [errorMessage, setErrorMessage] = useState('');
 
@@ -64,8 +65,17 @@ function App() {
       .finally(() => setIsLoading(false));
   };
 
-  const setUserState = ({ name, id, token }, log) => {
+  const updateUserKeywords = (keywords) => {
+    if (!Array.isArray(keywords)) {
+      console.error('Invalid keywords format. Expected an array.');
+      return;
+    }
+    setUser({ ...user, keywords: [...keywords]});
+  };
+
+  const setUserState = ({ name, id, token, keywords }, log) => {
     setUser({ name, id, token });
+    updateUserKeywords(keywords);
     setIsLoggedIn(log);
   };
 
@@ -85,15 +95,14 @@ function App() {
   };
 
   const handleRegistration = ({ name, email, password }) => {
-    return handleRequest(() => auth.signup({ name, email, password }))
-      .then(({ email, password }) => handleLogin({ email, password }));
+    return handleRequest(() => auth.signup({ name, email, password }).then(() => handleModalChange("success")));
   }
 
   const handleLogin = ({ email, password }) => {
     return handleRequest(() => auth.signin({ email, password }))
-      .then(({ name, id, token }) => {
+      .then(({ name, id, token, keywords }) => {
         localStorage.setItem('jwt', token)
-        setUserState({ name, id, token }, true);
+        setUserState({ name, id, token, keywords }, true);
         handleArticleList(token);
       })
       .catch((error) => console.error('Error during login: ', error));
@@ -101,7 +110,7 @@ function App() {
 
   const handleLogout = () => {
     localStorage.removeItem("jwt");
-    setUserState({ name: "", id: "", token: "" }, false);
+    setUserState({ name: "", id: "", token: "", keywords: [] }, false);
     setSavedArticles([]);
   };
 
@@ -140,7 +149,7 @@ function App() {
         if (savedArticles.length === 0) {
           articles.length === 0 ? setSavedArticles([]) : setSavedArticles([...articles]);
         } else {
-          setSavedArticles([...savedArticles, ...articles]);
+          setSavedArticles([articles[0], ...savedArticles]);
         }
       })
       .catch(console.error);
@@ -162,10 +171,10 @@ function App() {
   return (
     <UserContext.Provider value={{
       user, isLoading, isSavedNews, isLoggedIn, activeModal, isSearching, shownResults,
-      searchResults, savedArticles, keywords, hasSearched, errorMessage, hasError,
+      searchResults, savedArticles, hasSearched, errorMessage, hasError, currentKeyword,
       setUser, setIsLoading, setIsLoggedIn, setActiveModal, setErrorMessage, setHasError,
-      setSearchResults, setSavedArticles, setKeywords, setHasSearched, setIsSearching,
-      handleSaveArticle, handleDeleteArticle, handleLogout, setShownResults,
+      setSearchResults, setSavedArticles, setKeywords: (keywords) => {setUser({ name: user.name, id: user.id, token: user.token, keywords})}, setHasSearched, setIsSearching,
+      handleSaveArticle, handleDeleteArticle, handleLogout, setShownResults, setCurrentKeyword,
     }}>
 
       <div className="app">
@@ -188,14 +197,7 @@ function App() {
                         ) : searchResults ?
                           (
                             <NewsCardList />
-                          ) : hasSearched ?
-                            (
-                              <div className='card-list__message-group'>
-                                <img className='card-list__not-found-img' src={notFoundImage} alt='Nothing found' />
-                                <h3 className='card-list__message-title'>{searchResults}</h3>
-                                <p className='card-list__message'>Sorry, but nothing matched your search terms.</p>
-                              </div>
-                            ) : null
+                          ) : null
                       }
                       <About />
                       <Footer />
@@ -223,10 +225,12 @@ function App() {
         <ModalContext.Provider value={{
           handleModalChange, handleClose, handleOverlay,
           handleRegistration, handleLogin, modalOptions,
+          activeModal,
         }}>
 
           {activeModal === 'signin' && (<LoginModal />)}
           {activeModal === 'signup' && (<RegisterModal />)}
+          {activeModal === 'success' && (<SuccessModal />)}
 
         </ModalContext.Provider>
 

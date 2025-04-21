@@ -5,7 +5,11 @@ import { getSearchResults } from '../../../utils/newsApi';
 import { useForm } from '../../../hooks/useForm';
 
 function SearchForm() {
-    const { setIsSearching, setSearchResults, setHasSearched, setHasError, setErrorMessage } = useContext(UserContext);
+    const {
+        setIsSearching, setSearchResults, setHasSearched,
+        setHasError, setErrorMessage,
+        setCurrentKeyword, setKeywords,
+    } = useContext(UserContext);
     const {values, handleChange, setValues} = useForm('');
     const { searchWord } = values;
     useEffect(() => {
@@ -17,8 +21,14 @@ function SearchForm() {
         setHasError(false);
         getSearchResults(searchWord)
             .then((data) => {
-                const {articles} = data;
-                articles ? setSearchResults(articles) : setSearchResults([]);
+                const { articles } = data;
+                if (articles) {
+                    setSearchResults(articles);
+                    setCurrentKeyword(searchWord);
+                    setKeywords(searchWord);
+                } else {
+                    setSearchResults([]);
+                }
             })
             .catch(error => {
                 console.error(error);

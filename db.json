@@ -5,83 +5,66 @@
       "name": "example",
       "email": "example@example.com",
       "password": "password",
-      "token": "eeeom710lzo"
+      "token": "eeeom710lzo",
+      "keywords": [
+        "trump"
+      ]
+    },
+    {
+      "id": "44d2",
+      "name": "ex",
+      "email": "example@gmail.com",
+      "password": "password",
+      "token": "qknqu9s059b"
     }
   ],
   "articles": [
     {
-      "id": "0fea",
-      "source": {
-        "id": null,
-        "name": "Gizmodo.com"
-      },
-      "author": "Thomas Maxwell",
-      "title": "National Park Summer Bookings Down Amid DOGE-Fueled Turmoil",
-      "description": "Industry insiders say uncertainty around park access is causing travelers to hold off on bookings or cancel plans entirely.",
-      "url": "https://gizmodo.com/national-park-summer-bookings-down-amid-doge-fueled-turmoil-2000579301",
-      "urlToImage": "https://gizmodo.com/app/uploads/2023/05/de952e4f1465864a1970d92453362e0e.jpg",
-      "publishedAt": "2025-03-22T13:00:52Z",
-      "content": "After recent years of overcrowding, this summer might be a good time to visit your favorite national park, and you can thank Elon Musk and Big Balls for that. Tourist reservations at key hot spots ar… [+4312 chars]",
-      "token": "eeeom710lzo"
-    },
-    {
-      "id": "be93",
+      "id": "3896",
       "source": {
         "id": "the-verge",
         "name": "The Verge"
       },
-      "author": "Justine Calma",
-      "title": "“This man is not our boss” — EPA workers rally against DOGE cuts",
-      "description": "Environmental Protection Agency workers took to the streets across the US today to protest drastic cuts President Donald Trump and Elon Musk’s DOGE have made at the federal agency whose mission is to “protect human health and the environment.”  Musk, the face…",
-      "url": "https://www.theverge.com/news/635710/doge-musk-trump-environmental-protection-agency-epa",
-      "urlToImage": "https://platform.theverge.com/wp-content/uploads/sites/2/2025/03/257640_EPA_workers_protest_AKrales_0285.jpg?quality=90&strip=all&crop=0%2C10.732984293194%2C100%2C78.534031413613&w=1200",
-      "publishedAt": "2025-03-25T21:48:56Z",
-      "content": "How do you spell corruption? E-L-O-N, demonstrators chanted while marching in support of the Environmental Protection Agency.\r\nHow do you spell corruption? E-L-O-N, demonstrators chanted while marchi… [+4522 chars]",
+      "author": "Tim Stevens",
+      "title": "The Trump tariff auto sales rush is on",
+      "description": "If there’s one thing the auto industry hates, it’s uncertainty. When it takes upward of five or six years to bring a new car model to market, a certain administration throwing caution and global goodwill to the wind with a raft of unpredictable tariffs is dec…",
+      "url": "https://www.theverge.com/cars/651021/car-panic-shopping-tariffs-dealers-prices-trump",
+      "urlToImage": "https://platform.theverge.com/wp-content/uploads/sites/2/2025/04/gettyimages-2208317237.jpg?quality=90&strip=all&crop=0%2C10.75214828329%2C100%2C78.49570343342&w=1200",
+      "publishedAt": "2025-04-17T17:44:33Z",
+      "content": "The Trump tariff auto sales rush is on\r\nIn the market for a new car? You may already be too late.\r\nThe Trump tariff auto sales rush is on\r\nIn the market for a new car? You may already be too late.\r\nI… [+6288 chars]",
+      "keyword": "trump",
       "token": "eeeom710lzo"
     },
     {
-      "id": "d9a0",
+      "id": "77f3",
       "source": {
         "id": "the-verge",
         "name": "The Verge"
       },
-      "author": "Andrew J. Hawkins",
-      "title": "Trump pardons ex-Nikola CEO Trevor Milton",
-      "description": "Trevor Milton, the founder of Nikola Motors who was convicted of defrauding investors in his zero-emission truck company, has been pardoned by President Donald Trump, the White House confirmed Friday. A federal jury convicted Milton of lying about Nikola’s ca…",
-      "url": "https://www.theverge.com/news/638340/nikola-ceo-trevor-milton-trump-pardon",
-      "urlToImage": "https://platform.theverge.com/wp-content/uploads/sites/2/2025/03/gettyimages-1243177965.jpg?quality=90&strip=all&crop=0%2C10.752607989199%2C100%2C78.494784021602&w=1200",
-      "publishedAt": "2025-03-28T15:39:55Z",
-      "content": "Trevor Milton, founder of Nikola Corp., exits court in New York, US, on Monday, Sept. 12, 2022.\r\n\n\nTrevor Milton, the founder of Nikola Motors who was convicted of defrauding investors in his zero-em… [+2019 chars]",
+      "author": "Gaby Del Valle",
+      "title": "Trump says he wants to deport some US citizens, too",
+      "description": "President Donald Trump wants to expand his already chaotic and cruel mass deportations. On Monday, he told reporters that heâs looking into the possibility of sending US citizens to a megaprison in El Salvador. âIâd like to go a step further,â Trump c…",
+      "url": "https://www.theverge.com/policy/648338/trump-deport-us-citizens-el-salvador",
+      "urlToImage": "https://platform.theverge.com/wp-content/uploads/sites/2/2025/02/STK466_ELECTION_2024_CVirginia_E.jpg?quality=90&strip=all&crop=0%2C9.9676601489831%2C100%2C80.064679702034&w=1200",
+      "publishedAt": "2025-04-14T20:19:50Z",
+      "content": "Trump claims hed like to send Americans to a notorious megaprison in El Salvador.\r\nTrump claims hed like to send Americans to a notorious megaprison in El Salvador.\r\nPresident Donald Trump wants to e… [+4328 chars]",
+      "keyword": "trump",
       "token": "eeeom710lzo"
     },
     {
-      "id": "581b",
+      "id": "9ff9",
       "source": {
         "id": "wired",
         "name": "Wired"
       },
-      "author": "Makena Kelly",
-      "title": "DOGE Plans to Rebuild SSA Codebase In Months, Risking Benefits and System Collapse",
-      "description": "Social Security systems contain tens of millions of lines of code written in COBOL, an archaic programming language. Safely rewriting that code would take years—DOGE wants it done in months.",
-      "url": "https://www.wired.com/story/doge-rebuild-social-security-administration-cobol-benefits/",
-      "urlToImage": "https://media.wired.com/photos/67e42d41c92dedbbb76ae8dd/191:100/w_1280,c_limit/Politics_SSA_GettyImages-2206443388.jpg",
-      "publishedAt": "2025-03-28T14:07:09Z",
-      "content": "The so-called Department of Government Efficiency (DOGE) is starting to put together a team to migrate the Social Security Administrations (SSA) computer systems entirely off one of its oldest progra… [+3155 chars]",
-      "token": "eeeom710lzo"
-    },
-    {
-      "id": "a308",
-      "source": {
-        "id": null,
-        "name": "NPR"
-      },
-      "author": "Elizabeth Blair",
-      "title": "'Twain hated bullies.' Conan O'Brien receives Mark Twain Prize at the Kennedy Center.",
-      "description": "Comedian Conan O'Brien received the Mark Twain Prize at the Kennedy Center on Sunday night, which David Letterman called \"the most entertaining gathering of the resistance ever.\"",
-      "url": "https://www.npr.org/2025/03/24/nx-s1-5336358/conan-obrien-mark-twain-prize-kennedy-center",
-      "urlToImage": "https://npr.brightspotcdn.com/dims3/default/strip/false/crop/2048x1152+0+107/resize/1400/quality/100/format/jpeg/?url=http%3A%2F%2Fnpr-brightspot.s3.amazonaws.com%2F8a%2Fbf%2Ff34bf9094d53ae52fb7d683de25a%2F26th-mark-twain-prize-for-american-humor-recipient-conan-obrien-photo-by-clifton-prescod-for-netflix.jpg",
-      "publishedAt": "2025-03-24T09:00:00Z",
-      "content": "It was a night of silliness, scatological humor, cutting political satire, and poignancy as Conan O'Brien received the 26th Mark Twain Prize for American Humor.\r\nAmong those celebrating O'Brien were … [+3667 chars]",
+      "author": "Dell Cameron",
+      "title": "Here's What Happened to Those SignalGate Messages",
+      "description": "A lawsuit over the Trump administration's infamous Houthi Signal group chat has revealed what steps departments took to preserve the messages—and how little they actually saved.",
+      "url": "https://www.wired.com/story/heres-what-happened-to-those-signalgate-messages/",
+      "urlToImage": "https://media.wired.com/photos/67fe5c614b2dc5696a402201/191:100/w_1280,c_limit/GettyImages-2209060705.jpg",
+      "publishedAt": "2025-04-15T21:27:40Z",
+      "content": "The US Treasury Department was initially alone in providing the court a timeline of the messages that it was able to retrieve. Treasury Secretary Scott Bessent had received a preservation memo on Mar… [+3494 chars]",
+      "keyword": "trump",
       "token": "eeeom710lzo"
     }
   ]

@@ -5,7 +5,6 @@ const { request } = api;
 
 const handleCreateToken = () => {
   const token = Math.random().toString(36).substr(2);
-  console.log(token);
   return token;
 }
 
