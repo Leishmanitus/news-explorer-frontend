@@ -9,11 +9,11 @@ function Footer() {
             <div className='footer__group'>
                 <div className='footer__link-group'>
                     <a className='footer__link' href='/'>Home</a>
-                    <a className='footer__link' href='https://tripleten.com'>TripleTen</a>
+                    <a className='footer__link' href='https://tripleten.com' target='_blank' rel='noopener noreferrer'>TripleTen</a>
                 </div>
                 <div className='footer__social-group'>
-                    <a className='footer__social-link' href='https://github.com/Leishmanitus'><img className='footer__social' src={socialGithub} alt='GitHub Icon' /></a>
-                    <a className='footer__social-link' href='https://www.facebook.com/tyler.leishman3/'><img className='footer__social' src={socialFacebook} alt='Facebook Icon' /></a>
+                    <a className='footer__social-link' href='https://github.com/Leishmanitus' target='_blank' rel='noopener noreferrer'><img className='footer__social' src={socialGithub} alt='GitHub Icon' /></a>
+                    <a className='footer__social-link' href='https://www.facebook.com/tyler.leishman3/' target='_blank' rel='noopener noreferrer'><img className='footer__social' src={socialFacebook} alt='Facebook Icon' /></a>
                 </div>
             </div>
         </div>

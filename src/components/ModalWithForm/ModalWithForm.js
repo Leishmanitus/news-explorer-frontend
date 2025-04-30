@@ -3,7 +3,7 @@ import "./ModalWithForm.css";
 import { useEscape } from "../../hooks/useEscape";
 import ModalContext from "../../contexts/ModalContext";
 
-function ModalWithForm({ children, handleSubmit=()=>{}, formName }) {
+function ModalWithForm({ children, handleSubmit, formName }) {
   const { handleClose, handleOverlay, activeModal } = useContext(ModalContext);
 
   useEscape(handleClose);

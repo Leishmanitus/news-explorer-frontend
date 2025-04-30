@@ -95,7 +95,7 @@ function App() {
   };
 
   const handleRegistration = ({ name, email, password }) => {
-    return handleRequest(() => auth.signup({ name, email, password }).then(() => handleModalChange("success")));
+    return handleRequest(() => auth.signup({ name, email, password }));
   }
 
   const handleLogin = ({ email, password }) => {

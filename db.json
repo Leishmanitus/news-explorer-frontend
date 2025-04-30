@@ -16,6 +16,27 @@
       "email": "example@gmail.com",
       "password": "password",
       "token": "qknqu9s059b"
+    },
+    {
+      "id": "3140",
+      "name": "exam",
+      "email": "example@example.com",
+      "password": "pass",
+      "token": "q4t3v7ffonf"
+    },
+    {
+      "id": "6d69",
+      "name": "exam",
+      "email": "example@example.com",
+      "password": "pass",
+      "token": "u88u221e64n"
+    },
+    {
+      "id": "7f82",
+      "name": "exam",
+      "email": "example@example.com",
+      "password": "pass",
+      "token": "9vzwd3oe99u"
     }
   ],
   "articles": [
@@ -64,6 +85,22 @@
       "urlToImage": "https://media.wired.com/photos/67fe5c614b2dc5696a402201/191:100/w_1280,c_limit/GettyImages-2209060705.jpg",
       "publishedAt": "2025-04-15T21:27:40Z",
       "content": "The US Treasury Department was initially alone in providing the court a timeline of the messages that it was able to retrieve. Treasury Secretary Scott Bessent had received a preservation memo on Mar… [+3494 chars]",
+      "keyword": "trump",
+      "token": "eeeom710lzo"
+    },
+    {
+      "id": "dee8",
+      "source": {
+        "id": "wired",
+        "name": "Wired"
+      },
+      "author": "Paresh Dave",
+      "title": "Judge Blocks DOGE From Laying Off 90 Percent of CFPB",
+      "description": "The Trump administration and DOGE tried to cut more than 1,400 employees at the Consumer Financial Protection Bureau. An employee union and other groups are fighting to keep the regulator intact.",
+      "url": "https://www.wired.com/story/cfpb-terminations-paused-trump/",
+      "urlToImage": "https://media.wired.com/photos/680290b93de19aa1189a9e31/191:100/w_1280,c_limit/cfpb-pol-2198196175.jpg",
+      "publishedAt": "2025-04-18T18:41:50Z",
+      "content": "Over 1,400 employees who were about to be laid off from the Consumer Financial Protection Bureau (CFPB) will be able to keep working for at least another week after a federal judge intervened in the … [+3060 chars]",
       "keyword": "trump",
       "token": "eeeom710lzo"
     }

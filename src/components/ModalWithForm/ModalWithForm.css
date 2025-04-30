@@ -113,6 +113,20 @@
     padding: 0;
     margin: 8px 0 16px 0;
   }
+
+  .form__submit_success {
+    width: 228px;
+    height: 18px;
+    font-family: "Inter";
+    font-size: 18px;
+    line-height: 100%;
+    font-weight: 400;
+    text-wrap: nowrap;
+    text-decoration: none;
+    color: #2f71e5;
+    padding: 0;
+    margin: 0;
+  }
   
   .form__link {
     width: 73px;

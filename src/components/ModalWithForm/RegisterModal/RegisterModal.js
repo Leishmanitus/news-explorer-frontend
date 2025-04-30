@@ -19,6 +19,7 @@ const RegisterModal = () => {
 
   const handleUserRegistration = () => {
     handleRegistration(values);
+    handleModalChange("success");
   };
 
   return (
