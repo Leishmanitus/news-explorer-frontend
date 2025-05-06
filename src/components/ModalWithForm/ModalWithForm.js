@@ -9,7 +9,7 @@ function ModalWithForm({ children, handleSubmit, formName }) {
   useEscape(handleClose);
 
   return (
-    <div onClick={(event) => handleOverlay(event)} className={`modal modal_type_${formName}`}>
+    <div onClick={(event) => handleOverlay(event)} className={`modal modal__type_${formName}`}>
       <div className={`modal__container`}>
         {
           activeModal === "success" ?

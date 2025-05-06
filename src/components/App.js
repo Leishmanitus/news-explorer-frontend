@@ -181,7 +181,7 @@ function App() {
 
         <Routes>
 
-          <Route exact path='/' element={
+          <Route exact path='/news-explorer-frontend/' element={
             (
               <Main children={
                 <main className='main'>
@@ -208,7 +208,7 @@ function App() {
             )
           } />
 
-          <Route path='/saved-news' element={
+          <Route path='news-explorer-frontend/saved-news' element={
             (
               <Main children={
                 <main className='main'>

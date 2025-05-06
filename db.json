@@ -37,6 +37,13 @@
       "email": "example@example.com",
       "password": "pass",
       "token": "9vzwd3oe99u"
+    },
+    {
+      "id": "13ff",
+      "name": "Example",
+      "email": "example@example.com",
+      "password": "pass",
+      "token": "07u7p5n5tthq"
     }
   ],
   "articles": [

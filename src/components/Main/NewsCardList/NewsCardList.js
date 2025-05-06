@@ -7,7 +7,7 @@ import UserContext from '../../../contexts/UserContext';
 function NewsCardList() {
     const { 
         searchResults, shownResults, setShownResults,
-        hasError, errorMessage, hasSearched,
+        hasError, errorMessage,
     } = useContext(UserContext);
     const moreToShow = shownResults <= searchResults.length;
     const showMoreButtonText = moreToShow ? "Show more" : "No more to show";

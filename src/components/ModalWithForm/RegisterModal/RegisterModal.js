@@ -79,7 +79,7 @@ const RegisterModal = () => {
         </button>
         <p className="form__text">
           or{" "}
-          <NavLink className="form__link" to={"/"} onClick={() => handleModalChange("signin")}>
+          <NavLink className="form__link" to={"/news-explorer-frontend/"} onClick={() => handleModalChange("signin")}>
             {loginButton}
           </NavLink>
         </p>
