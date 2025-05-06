@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/news-explorer-frontend/static/css/main.2ddca8cb.css",
-    "main.js": "/news-explorer-frontend/static/js/main.54537ab3.js",
+    "main.js": "/news-explorer-frontend/static/js/main.c998ba72.js",
     "static/media/author.jpg": "/news-explorer-frontend/static/media/author.8afaabcfdfdb19500857.jpg",
     "static/media/main-background.png": "/news-explorer-frontend/static/media/main-background.07402d823a6a8af20380.png",
     "static/media/roboto-slab-700.woff": "/news-explorer-frontend/static/media/roboto-slab-700.7cb09bef6990e87c9e2b.woff",
@@ -32,10 +32,10 @@
     "static/media/bookmark-checked.svg": "/news-explorer-frontend/static/media/bookmark-checked.cac3d1946138504db688.svg",
     "static/media/nav-button-border.svg": "/news-explorer-frontend/static/media/nav-button-border.1bc9d4030928ab131e8023dacf6203d4.svg",
     "main.2ddca8cb.css.map": "/news-explorer-frontend/static/css/main.2ddca8cb.css.map",
-    "main.54537ab3.js.map": "/news-explorer-frontend/static/js/main.54537ab3.js.map"
+    "main.c998ba72.js.map": "/news-explorer-frontend/static/js/main.c998ba72.js.map"
   },
   "entrypoints": [
     "static/css/main.2ddca8cb.css",
-    "static/js/main.54537ab3.js"
+    "static/js/main.c998ba72.js"
   ]
 }
