@@ -4,6 +4,7 @@ import navButtonBorder from '../../../assets/nav-button-border.svg';
 import logoutButton from '../../../assets/logout-button-image.svg';
 import blackLogoutButton from '../../../assets/black-logout-button-image.svg';
 import UserContext from '../../../contexts/UserContext';
+import { Link } from 'react-router-dom';
 
 function Nav() {
     const { isLoggedIn, isSavedNews, user, setActiveModal, handleLogout } = useContext(UserContext);
@@ -15,24 +16,24 @@ function Nav() {
 
     return (isLoggedIn) ? (
         <div className='nav nav_login'>
-            <a className={handleAltClassName('nav__link')} href='/news-explorer-frontend/'>
+            <Link className={handleAltClassName('nav__link')} to='/'>
                 <p className={handleAltClassName('nav__text')}>Home</p>
-            </a>
-            <a className={handleAltClassName('nav__link')} href='news-explorer-frontend/saved-news'>
+            </Link>
+            <Link className={handleAltClassName('nav__link')} to='saved-news'>
                 <p className={handleAltClassName('nav__text')}>Saved articles</p>
-            </a>
+            </Link>
             <div className={`${handleAltClassName('nav__link')} ${handleAltClassName('nav__profile')} nav__profile_login`} border-image={navButtonBorder}>
                 <p className={`${handleAltClassName('nav__text')} nav__text_profile`}>{user.name ? userName : "Anonymous"}</p>
-                <a className='nav__link nav__link_logout' href='/'>
+                <Link className='nav__link nav__link_logout' to='/' onClick={(e) => { e.preventDefault(); setActiveModal('signin'); }}>
                     <img className='nav__img nav__img_logout' src={isSavedNews ? blackLogoutButton : logoutButton} alt='logout' onClick={() => handleLogout()} />
-                </a>
+                </Link>
             </div>
         </div>
     ) : (
         <div className='nav'>
-            <a className={handleAltClassName('nav__link')} href='/news-explorer-frontend/'>
+            <Link className={handleAltClassName('nav__link')} to='/'>
                 Home
-            </a>
+            </Link>
             <div className={handleAltClassName(`nav__link nav__profile`)} border-image={navButtonBorder} onClick={() => setActiveModal('signin')}>
                 <p className={handleAltClassName('nav__text')}>Sign In</p>
             </div>

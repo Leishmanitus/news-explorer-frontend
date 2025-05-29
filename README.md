@@ -165,4 +165,4 @@ This project is licensed under the MIT License. See the [LICENSE](LICENSE) file 
 ## Acknowledgments
 
 - [News API](https://newsapi.org/) for providing the news data.
-- [GitHub Pages Server](https://Leishmanitus.github.io/news-explorer-frontend) for simulating the backend API during development.
+- [GitHub Pages Server](https://Leishmanitus.github.io/news-explorer-frontend) for simulating the web app during development.

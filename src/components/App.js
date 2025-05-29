@@ -1,5 +1,5 @@
 import { useState, useEffect, useRef } from 'react';
-import { Routes, Route, useLocation } from 'react-router-dom'
+import { Routes, Route, Navigate, useLocation } from 'react-router-dom'
 import './App.css';
 import auth from '../utils/auth';
 import api from '../utils/api';
@@ -181,7 +181,7 @@ function App() {
 
         <Routes>
 
-          <Route exact path='/news-explorer-frontend/' element={
+          <Route exact path='/' element={
             (
               <Main children={
                 <main className='main'>
@@ -208,7 +208,7 @@ function App() {
             )
           } />
 
-          <Route path='news-explorer-frontend/saved-news' element={
+          <Route path='saved-news' element={
             (
               <Main children={
                 <main className='main'>
@@ -219,6 +219,8 @@ function App() {
               } />
             )
           } />
+
+          <Route path="*" element={<Navigate to="/" replace />} />
           
         </Routes>
 
