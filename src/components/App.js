@@ -4,7 +4,7 @@ import './App.css';
 import auth from '../utils/auth';
 import api from '../utils/api';
 import { modalOptions } from '../utils/constants';
-import mainBackground from '../assets/main-background.png';
+import mainBackground from '../assets/main-background.svg';
 import UserContext from '../contexts/UserContext';
 import ModalContext from '../contexts/ModalContext';
 import Main from './Main/Main';
@@ -29,7 +29,7 @@ function App() {
   const [searchResults, setSearchResults] = useState(null);
   const [shownResults, setShownResults] = useState(3);
   const [savedArticles, setSavedArticles] = useState([]);
-  // const [keywords, setKeywords] = useState([]);
+  const [keywords, setKeywords] = useState([]);
   const [currentKeyword, setCurrentKeyword] = useState('');
   const [hasError, setHasError] = useState(false);
   const [errorMessage, setErrorMessage] = useState('');
@@ -114,17 +114,10 @@ function App() {
     setSavedArticles([]);
   };
 
-  const checkArticles = (articles) => {
-    if (!articles) {
-      return Promise.reject({ message: `Invalid article data: ${articles}` });
-    }
-  };
-
   const handleArticleList = (token) => {
     api.getArticleList(token)
       .then((articles) => {
-        checkArticles(articles);
-        setSavedArticles([...articles]);
+        articles ? setSavedArticles([...articles]) : setSavedArticles([]);
       })
       .catch(console.error);
 
@@ -134,7 +127,7 @@ function App() {
 
     return api.removeArticle(article.url, user.token)
       .then(() => {
-        setSavedArticles(savedArticles.filter((item) => item.url !== article.url));
+        setSavedArticles(prev => prev.filter((item) => item.url !== article.url));
       })
       .catch(console.error);
   };
@@ -144,13 +137,8 @@ function App() {
       return Promise.reject({ message: 'Article already in database.' });
     }
     return api.addArticle(article, user.token)
-      .then(articles => {
-        checkArticles(articles);
-        if (savedArticles.length === 0) {
-          articles.length === 0 ? setSavedArticles([]) : setSavedArticles([...articles]);
-        } else {
-          setSavedArticles([articles[0], ...savedArticles]);
-        }
+      .then(article => {
+        setSavedArticles(prev => [...prev, article]);
       })
       .catch(console.error);
     
@@ -170,10 +158,10 @@ function App() {
 
   return (
     <UserContext.Provider value={{
-      user, isLoading, isSavedNews, isLoggedIn, activeModal, isSearching, shownResults,
+      user, isLoading, isSavedNews, isLoggedIn, activeModal, isSearching, shownResults, keywords,
       searchResults, savedArticles, hasSearched, errorMessage, hasError, currentKeyword,
       setUser, setIsLoading, setIsLoggedIn, setActiveModal, setErrorMessage, setHasError,
-      setSearchResults, setSavedArticles, setKeywords: (keywords) => {setUser({ name: user.name, id: user.id, token: user.token, keywords})}, setHasSearched, setIsSearching,
+      setSearchResults, setSavedArticles, setKeywords, setHasSearched, setIsSearching,
       handleSaveArticle, handleDeleteArticle, handleLogout, setShownResults, setCurrentKeyword,
     }}>
 
@@ -185,12 +173,12 @@ function App() {
             (
               <Main children={
                 <main className='main'>
-                  <div className='main__group main__group_top'>
+                  <div className='main__header-group'>
                       <Header />
-                      <img className='main__img' src={mainBackground} alt='A newspaper and tea on a wooden table.' />
+                      <img className='main__img' src={mainBackground} alt='A smartphone showing business insights' />
                       <SearchForm />
                   </div>
-                  <div className='main__group main__group_bot'>
+                  <div className='main__content-group'>
                       {isSearching ? 
                         (
                           <div className='card-list__message-group' ><Preloader /></div>
@@ -208,7 +196,7 @@ function App() {
             )
           } />
 
-          <Route path='saved-news' element={
+          {isLoggedIn && <Route path='saved-news' element={
             (
               <Main children={
                 <main className='main'>
@@ -218,7 +206,7 @@ function App() {
                 </main>
               } />
             )
-          } />
+          } />}
 
           <Route path="*" element={<Navigate to="/" replace />} />
           

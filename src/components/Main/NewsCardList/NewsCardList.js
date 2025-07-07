@@ -10,7 +10,7 @@ function NewsCardList() {
         hasError, errorMessage,
     } = useContext(UserContext);
     const moreToShow = shownResults <= searchResults.length;
-    const showMoreButtonText = moreToShow ? "Show more" : "No more to show";
+    const showMoreButtonText = "Show more";
 
     const handleResults = () => {
         const results = searchResults.slice(0, shownResults);
@@ -45,9 +45,13 @@ function NewsCardList() {
                                     <>
                                         <h2 className='card-list__title'>Search Results</h2>
                                         <div className='card-list__grid'>
-                                            {searchResults && (handleResults().map((article, index) => <NewsCard key={index} article={article} />))}
+                                            {
+                                                searchResults && (handleResults().map((articleCard, index) => {
+                                                    return articleCard? (<NewsCard key={index} articleCard={articleCard} />) : null;
+                                                }))
+                                            }
                                         </div>
-                                        <button className='card-list__button' type='button' onClick={incrementResults}>{showMoreButtonText}</button>
+                                        <button className='card-list__button' type='button' disabled={!moreToShow} onClick={incrementResults}>{showMoreButtonText}</button>
                                     </>
             }
         </div>

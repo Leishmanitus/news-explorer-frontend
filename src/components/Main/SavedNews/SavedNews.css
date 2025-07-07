@@ -9,37 +9,37 @@
 }
 
 .news__title {
-  font-family: "Cabinet Grotesk";
+  font-family: "Roboto";
   font-size: 40px;
   line-height: 46px;
   font-weight: 400;
   color: #1a1b22;
-  padding-left: 104px;
+  padding: 0 0 0 104px;
   margin: 40px 0 0 0;
 }
 
 .news__subtitle {
-  font-family: "Cabinet Grotesk";
+  font-family: "Roboto Slab";
   font-size: 40px;
   line-height: 46px;
   font-weight: 400;
   color: #1a1b22;
-  padding-left: 104px;
+  padding: 0 0 0 104px;
   margin: 28px 0 0 0;
 }
 
 .news__keyword {
-  font-family: "Cabinet Grotesk";
+  font-family: "Roboto";
   font-size: 18px;
   line-height: 24px;
   font-weight: 400;
   color: #1a1b22;
-  padding-left: 104px;
+  padding: 0 0 0 104px;
   margin: 30px 0 56px 0;
 }
 
 .news__bold {
-  font-family: "Cabinet Grotesk";
+  font-family: "Roboto";
   font-size: 18px;
   line-height: 24px;
   font-weight: 700;
@@ -47,7 +47,9 @@
 }
 
 .news__grid {
-  width: fit-content;
+  width: 100%;
+  max-width: 1440px;
+  box-sizing: border-box;
   display: grid;
   grid-template-columns: repeat(3, minmax(400px, auto));
   grid-template-rows: repeat(auto-fill, minmax(576px, auto));
@@ -55,6 +57,65 @@
   align-items: center;
   justify-content: center;
   background: #f5f6f7;
-  padding: 62px 104px;
+  padding: 62px 0 62px 0;
   margin: 0 auto;
+}
+
+@media screen and (max-width: 1025px) {
+  .news__grid {
+    max-width: 1024px;
+    grid-template-columns: repeat(3, minmax(224px, 1fr));
+    grid-template-rows: repeat(auto-fill, minmax(420px, 1fr));
+    gap: 8px;
+  }
+
+  .news__title {
+    padding: 0 0 0 40px;
+    margin: 24px 0 0 0;
+  }
+
+  .news__subtitle {
+    padding: 0 0 0 40px;
+    margin: 16px 0 0 0;
+  }
+
+  .news__keyword {
+    padding: 0 0 0 40px;
+    margin: 16px 0 32px 0;
+  }
+
+}
+
+@media screen and (max-width: 426px) {
+  .news__grid {
+    max-width: 425px;
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(auto-fill, minmax(440px, auto));
+    gap: none;
+    padding: 0 16px;
+  }
+
+  .news__grid .card:first-child {
+    margin-top: 24px;
+  }
+  
+  .news__grid .card:last-child {
+    margin-bottom: 12px;
+  }
+
+  .news__title {
+    padding: 0 0 0 16px;
+    margin: 8px 0 0 0;
+  }
+
+  .news__subtitle {
+    padding: 0 0 0 16px;
+    margin: 16px 0 0 0;
+  }
+
+  .news__keyword {
+    padding: 0 0 0 16px;
+    margin: 50px 0 32px 0;
+  }
+  
 }

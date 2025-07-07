@@ -44,72 +44,14 @@
       "email": "example@example.com",
       "password": "pass",
       "token": "07u7p5n5tthq"
+    },
+    {
+      "id": "72a0",
+      "name": "typo",
+      "email": "example@gmail.com",
+      "password": "pass",
+      "token": "lh6d9j7qcj8"
     }
   ],
-  "articles": [
-    {
-      "id": "3896",
-      "source": {
-        "id": "the-verge",
-        "name": "The Verge"
-      },
-      "author": "Tim Stevens",
-      "title": "The Trump tariff auto sales rush is on",
-      "description": "If there’s one thing the auto industry hates, it’s uncertainty. When it takes upward of five or six years to bring a new car model to market, a certain administration throwing caution and global goodwill to the wind with a raft of unpredictable tariffs is dec…",
-      "url": "https://www.theverge.com/cars/651021/car-panic-shopping-tariffs-dealers-prices-trump",
-      "urlToImage": "https://platform.theverge.com/wp-content/uploads/sites/2/2025/04/gettyimages-2208317237.jpg?quality=90&strip=all&crop=0%2C10.75214828329%2C100%2C78.49570343342&w=1200",
-      "publishedAt": "2025-04-17T17:44:33Z",
-      "content": "The Trump tariff auto sales rush is on\r\nIn the market for a new car? You may already be too late.\r\nThe Trump tariff auto sales rush is on\r\nIn the market for a new car? You may already be too late.\r\nI… [+6288 chars]",
-      "keyword": "trump",
-      "token": "eeeom710lzo"
-    },
-    {
-      "id": "77f3",
-      "source": {
-        "id": "the-verge",
-        "name": "The Verge"
-      },
-      "author": "Gaby Del Valle",
-      "title": "Trump says he wants to deport some US citizens, too",
-      "description": "President Donald Trump wants to expand his already chaotic and cruel mass deportations. On Monday, he told reporters that heâs looking into the possibility of sending US citizens to a megaprison in El Salvador. âIâd like to go a step further,â Trump c…",
-      "url": "https://www.theverge.com/policy/648338/trump-deport-us-citizens-el-salvador",
-      "urlToImage": "https://platform.theverge.com/wp-content/uploads/sites/2/2025/02/STK466_ELECTION_2024_CVirginia_E.jpg?quality=90&strip=all&crop=0%2C9.9676601489831%2C100%2C80.064679702034&w=1200",
-      "publishedAt": "2025-04-14T20:19:50Z",
-      "content": "Trump claims hed like to send Americans to a notorious megaprison in El Salvador.\r\nTrump claims hed like to send Americans to a notorious megaprison in El Salvador.\r\nPresident Donald Trump wants to e… [+4328 chars]",
-      "keyword": "trump",
-      "token": "eeeom710lzo"
-    },
-    {
-      "id": "9ff9",
-      "source": {
-        "id": "wired",
-        "name": "Wired"
-      },
-      "author": "Dell Cameron",
-      "title": "Here's What Happened to Those SignalGate Messages",
-      "description": "A lawsuit over the Trump administration's infamous Houthi Signal group chat has revealed what steps departments took to preserve the messages—and how little they actually saved.",
-      "url": "https://www.wired.com/story/heres-what-happened-to-those-signalgate-messages/",
-      "urlToImage": "https://media.wired.com/photos/67fe5c614b2dc5696a402201/191:100/w_1280,c_limit/GettyImages-2209060705.jpg",
-      "publishedAt": "2025-04-15T21:27:40Z",
-      "content": "The US Treasury Department was initially alone in providing the court a timeline of the messages that it was able to retrieve. Treasury Secretary Scott Bessent had received a preservation memo on Mar… [+3494 chars]",
-      "keyword": "trump",
-      "token": "eeeom710lzo"
-    },
-    {
-      "id": "dee8",
-      "source": {
-        "id": "wired",
-        "name": "Wired"
-      },
-      "author": "Paresh Dave",
-      "title": "Judge Blocks DOGE From Laying Off 90 Percent of CFPB",
-      "description": "The Trump administration and DOGE tried to cut more than 1,400 employees at the Consumer Financial Protection Bureau. An employee union and other groups are fighting to keep the regulator intact.",
-      "url": "https://www.wired.com/story/cfpb-terminations-paused-trump/",
-      "urlToImage": "https://media.wired.com/photos/680290b93de19aa1189a9e31/191:100/w_1280,c_limit/cfpb-pol-2198196175.jpg",
-      "publishedAt": "2025-04-18T18:41:50Z",
-      "content": "Over 1,400 employees who were about to be laid off from the Consumer Financial Protection Bureau (CFPB) will be able to keep working for at least another week after a federal judge intervened in the … [+3060 chars]",
-      "keyword": "trump",
-      "token": "eeeom710lzo"
-    }
-  ]
+  "articles": []
 }

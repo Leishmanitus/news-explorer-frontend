@@ -30,7 +30,6 @@ const signin = ({ email, password }) => {
     headers: {'Content-Type': 'application/json'},
   }).then(users => {
     const user = users.find(user => user.email === email && user.password === password);
-    console.log(user);
     return handleUserCheck(user);
   });
 };

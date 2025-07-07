@@ -25,8 +25,8 @@ export const modalOptions = {
     loginOptions: {
       loginFormName: "signin",
       signupFormName: "signup",
-      loginTitle: "Log In",
-      loginButton: "Log In",
+      loginTitle: "Sign In",
+      loginButton: "Sign In",
       signupTitle: "Sign Up",
       signupButton: "Sign Up",
       loginLoadingText: "...Logging in",

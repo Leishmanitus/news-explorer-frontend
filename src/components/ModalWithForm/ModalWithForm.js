@@ -13,7 +13,7 @@ function ModalWithForm({ children, handleSubmit, formName }) {
       <div className={`modal__container`}>
         {
           activeModal === "success" ?
-              <div className="modal__success">{children}</div>
+              <div className={`modal__type_${formName}`}>{children}</div>
             :
               <form
                 className="modal__form form"
@@ -27,7 +27,7 @@ function ModalWithForm({ children, handleSubmit, formName }) {
                 {children}
               </form>
         }
-        <button className="modal__close-button" onClick={handleClose} />
+        <span className="modal__close-button" onClick={handleClose} />
       </div>
     </div>
   );

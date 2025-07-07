@@ -1,22 +1,25 @@
 .card {
     z-index: 2;
     position: relative;
-    width: 400px;
+    width: 100%;
+    max-width: 400px;
     height: 576px;
     display: flex;
     flex-flow: column nowrap;
     background-color: #fff;
+    text-decoration: none;
     color: #1A1B22;
+    cursor: pointer;
     border: none;
-    border-radius: 25px;
+    border-radius: 16px;
     margin: 0;
 }
 
 .card__img {
-    width: 400px;
+    width: 100%;
     height: 272px;
     object-fit: cover;
-    border-radius: 25px 25px 0 0;
+    border-radius: 16px 16px 0 0;
     margin: 0;
 }
 
@@ -71,6 +74,10 @@
     background: url('../../../../assets/trashcan.svg') center no-repeat;
 }
 
+.card__trach-img:hover {
+    background: url('../../../../assets/trashcan-dark.svg') center no-repeat;
+}
+
 .card__bookmark-img {
     width: 40px;
     height: 40px;
@@ -94,6 +101,7 @@
     align-items: center;
     background: #fff;
     color: #1A1B22;
+    font-family: 'Roboto';
     font-weight: 500;
     font-size: 12px;
     line-height: 100%;
@@ -123,58 +131,157 @@
 }
 
 .card__info {
-    width: 352px;
+    width: 100%;
     height: 304px;
     display: flex;
     flex-flow: column nowrap;
     justify-content: flex-start;
-    margin: 0 24px 0;
+    box-sizing: border-box;
+    padding: 0 24px;
+    margin: 0;
 }
 
 .card__title {
-    width: 352px;
-    height: 60px;
+    font-family: 'Roboto Slab';
     font-weight: 400;
     font-size: 26px;
     line-height: 30px;
+    display: -webkit-box;
+    line-clamp: 3;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    text-overflow: hidden;
     overflow: hidden;
-    text-overflow: ellipsis;
-    text-decoration: none;
     color: #1A1B22;
-    cursor: pointer;
     margin: 12px 0 0 0;
 }
 
-.card__title:hover {
-    text-decoration: underline;
-}
-
 .card__description {
-    width: 352px;
-    height: 110px;
+    font-family: 'Roboto';
     font-weight: 400;
     font-size: 16px;
     line-height: 22px;
+    display: -webkit-box;
+    line-clamp: 5;
+    -webkit-line-clamp: 5;
+    -webkit-box-orient: vertical;
     text-overflow: ellipsis;
     overflow: hidden;
     margin: 16px 0 0 0;
 }
 
 .card__date {
-    width: 149px;
     height: 24px;
+    font-family: 'Inter';
     font-weight: 400;
     font-size: 18px;
     line-height: 24px;
+    color: #B6BCBF;
     margin: 20px 0 0 0;
 }
 
 .card__source {
-    width: 121px;
     height: 20px;
+    font-family: 'Roboto Slab';
     font-weight: 700;
     font-size: 16px;
     line-height: 20px;
-    color: #1A1B22;
-    margin: 18px 0 24px 0;
+    color: #B6BCBF;
+    margin: auto 0 24px 0;
+}
+
+.card__link {
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+    background: transparent;
+    text-decoration: none;
+    color: inherit;
+}
+
+@media screen and (max-width: 769px) {
+    .card {
+        max-width: 224px;
+        height: 420px;
+    }
+
+    .card__img {
+        height: 150px;
+    }
+
+    .card__category-group {
+        top: 8px;
+        left: 8px;
+    }
+
+    .card__bookmark-group {
+        top: 8px;
+        right: 8px;
+    }
+
+    .card__date {
+        height: 24px;
+        margin: 16px 0 0 0;
+    }
+
+    .card__title {
+        line-clamp: 2;
+        -webkit-line-clamp: 2;
+        margin: 12px 0 0 0;
+    }
+
+    .card__description {
+        height: 88px;
+        line-clamp: 5;
+        -webkit-line-clamp: 5;
+        margin: 16px 0 0 0;
+    }
+
+    .card__source {
+        margin: 12px 0 16px 0;
+    }
+}
+
+@media screen and (max-width: 426px) {
+    .card {
+        max-width: 288px;
+        height: 440px;
+        justify-self: center;
+    }
+
+    .card__img {
+        height: 196px;
+    }
+
+    .card__category-group {
+        top: 16px;
+        left: 16px;
+    }
+
+    .card__bookmark-group {
+        top: 16px;
+        right: 16px;
+    }
+
+    .card__date {
+        height: 24px;
+        margin: 16px 0 0 0;
+    }
+
+    .card__title {
+        line-clamp: 2;
+        -webkit-line-clamp: 2;
+        margin: 10px 0 0 0;
+    }
+
+    .card__description {
+        height: 88px;
+        line-clamp: 5;
+        -webkit-line-clamp: 5;
+        margin: 14px 0 0 0;
+    }
+
+    .card__source {
+        margin: 8px 0 16px 0;
+    }
 }

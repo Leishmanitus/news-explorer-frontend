@@ -7,23 +7,23 @@ function SavedNews() {
     const {
         savedArticles,
         user,
-        isSavedNews
+        isSavedNews,
+        keywords,
     } = useContext(UserContext);
     const userName = user.name ? user.name.split(' ')[0][0].toUpperCase() + user.name.split(' ')[0].slice(1) : 'Unknown';
     const articleCount = savedArticles ? savedArticles.length : 0;
 
     const handleKeywords = () => {
-        const keywordCount = user.keywords ? user.keywords.length - 3 : 0;
-        console.log(user.keywords, keywordCount);
+        const keywordCount = keywords ? keywords.length - 3 : 0;
 
         if (keywordCount > 2) {
-            return `${user.keywords[0]}, ${user.keywords[1]}, and ${keywordCount} others`;
+            return `${keywords[0]}, ${keywords[1]}, and ${keywordCount} others`;
         } else if (keywordCount === 0) {
             return null;
         } else if (keywordCount === 1) {
-            return user.keywords[0];
+            return keywords[0];
         } else {
-            return user.keywords.join(', ')
+            return keywords.join(', ')
         }
     }
 
@@ -31,7 +31,7 @@ function SavedNews() {
         return (
             <>
                 {savedArticles && savedArticles.length > 0
-                ? savedArticles.map((article, i) => <NewsCard key={i} article={article} />)
+                ? savedArticles.map((article, i) => <NewsCard key={i} articleCard={article} />)
                 : null}
             </>
         );
@@ -42,7 +42,7 @@ function SavedNews() {
         <div className='news'>
             <h2 className='news__title'>Saved articles</h2>
             <h3 className='news__subtitle'>{userName}, you have {articleCount} saved articles</h3>
-            {savedArticles && (<p className='news__keyword'>By keywords: <span className='news__bold'>{handleKeywords()}</span></p>)}
+            <p className='news__keyword'>By keywords: <span className='news__bold'>{handleKeywords()}</span></p>
             <div className='news__grid'>
                 {isSavedNews && renderSavedNewsList()}
             </div>

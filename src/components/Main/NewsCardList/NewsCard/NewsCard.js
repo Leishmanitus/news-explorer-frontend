@@ -3,31 +3,30 @@ import './NewsCard.css';
 import UserContext from '../../../../contexts/UserContext';
 
 function NewsCard(props) {
-    const { article } = props;
+    const { articleCard } = props;
     const {
         savedArticles, handleDeleteArticle, handleSaveArticle,
         isLoggedIn, isSavedNews, currentKeyword
     } = useContext(UserContext);
+
     const [ isBookmarked, setIsBookmarked ] = useState();
-    const aticleDate = new Date(article.publishedAt);
-    const articleDateFormatted = aticleDate.toLocaleString('en-US', { month: 'long', day: 'numeric', year: 'numeric' });
-    const categoryName = isSavedNews ? article.keyword.charAt(0).toUpperCase() + article.keyword.slice(1) : currentKeyword.charAt(0).toUpperCase() + currentKeyword.slice(1);
 
     const checkForBookmark = () => {
-        return Array.isArray(savedArticles) ? savedArticles.some((savedArticle) => savedArticle.url === article.url) : false;
+        if (!articleCard || !savedArticles) return false;
+        return savedArticles.length > 0 ? savedArticles.some((savedArticle) => savedArticle.url === articleCard.url) : false;
     };
 
-    const handleBookmark = (article) => {
+    const handleBookmark = (articleCard) => {
         if (isBookmarked) {
-            handleDeleteArticle(article);
+            handleDeleteArticle(articleCard);
         } else {
-            handleSaveArticle(article);
+            handleSaveArticle(articleCard);
         }
         setIsBookmarked(!isBookmarked);
     };
 
-    const handleDelete = (article) => {
-        handleDeleteArticle(article);
+    const handleDelete = (articleCard) => {
+        handleDeleteArticle(articleCard);
         setIsBookmarked(false);
     }
 
@@ -36,9 +35,17 @@ function NewsCard(props) {
         // eslint-disable-next-line
     }, []);
 
+
+    if (!articleCard) return null;
+
+    const articleDate = new Date(articleCard.publishedAt);
+    const articleDateFormatted = articleDate.toLocaleString('en-US', { month: 'long', day: 'numeric', year: 'numeric' });
+    const categoryName = isSavedNews ? articleCard.keyword.charAt(0).toUpperCase() + articleCard.keyword.slice(1) : currentKeyword.charAt(0).toUpperCase() + currentKeyword.slice(1);
+
     return (
-        <div className='card'>
-            <img className='card__img' src={article.urlToImage} alt='Not found' />
+        <article className='card' key={articleCard.url} >
+            <a className='card__link' href={articleCard.url} target='_blank' rel='noreferrer' >{""}</a>
+            <img className='card__img' src={articleCard.urlToImage} alt='Not found' />
             {
                 isLoggedIn ? (
                         isSavedNews ? (
@@ -49,7 +56,8 @@ function NewsCard(props) {
                                     <div className='card__bookmark-group'>
                                         <span className='card__trash-img' onClick={(event) => {
                                                     event.preventDefault();
-                                                    handleDelete(article);
+                                                    handleDelete(articleCard);
+                                                    event.target.blur();
                                                 }
                                             }
                                         />
@@ -59,7 +67,8 @@ function NewsCard(props) {
                                 <div className='card__bookmark-group'>
                                     <span className={isBookmarked ? 'card__bookmark-img card__bookmark-img_checked' : 'card__bookmark-img'} onClick={(event) => {
                                                 event.preventDefault();
-                                                handleBookmark({ ...article, keyword: currentKeyword });
+                                                handleBookmark({ ...articleCard, keyword: currentKeyword });
+                                                event.target.blur();
                                             }
                                         }
                                     />
@@ -77,11 +86,11 @@ function NewsCard(props) {
             }
             <div className='card__info'>
                 <p className='card__date'>{articleDateFormatted}</p>
-                <a className='card__title' href={article.url}>{article.title}</a>
-                <p className='card__description'>{article.description}</p>
-                <p className='card__source'>{article.source.name}</p>
+                <h3 className='card__title' >{articleCard.title}</h3>
+                <p className='card__description'>{articleCard.description}</p>
+                <p className='card__source'>{articleCard.source.name}</p>
             </div>
-        </div>
+        </article>
     )
 }
 
