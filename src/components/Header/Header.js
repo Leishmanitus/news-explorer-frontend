@@ -7,10 +7,10 @@ function Header() {
     const { isSavedNews } = useContext(UserContext);
 
     return (
-        <div className='header'>
-            <p className={isSavedNews ? 'header__title header__title_alt' : 'header__title'}>News Explorer</p>
+        <header className='header'>
+            <h1 className={isSavedNews ? 'header__title header__title_alt' : 'header__title'}>NewsExplorer</h1>
             <Nav />
-        </div>
+        </header>
     )
 }
 

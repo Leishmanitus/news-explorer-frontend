@@ -1,12 +1,16 @@
 import { useContext } from 'react';
 import './NewsCardList.css';
 import NewsCard from './NewsCard/NewsCard';
+import notFoundImage from '../../../assets/not-found.svg';
 import UserContext from '../../../contexts/UserContext';
 
 function NewsCardList() {
-    const { searchResults, shownResults, setShownResults, hasError, errorMessage, hasSearched } = useContext(UserContext);
+    const { 
+        searchResults, shownResults, setShownResults,
+        hasError, errorMessage,
+    } = useContext(UserContext);
     const moreToShow = shownResults <= searchResults.length;
-    const showMoreButtonText = moreToShow ? "Show more" : "No more to show";
+    const showMoreButtonText = "Show more";
 
     const handleResults = () => {
         const results = searchResults.slice(0, shownResults);
@@ -19,24 +23,35 @@ function NewsCardList() {
 
     return (
         <div className='card-list'>
-            {hasSearched && <h2 className='card-list__title'>Search Results</h2>}
             {
                 searchResults &&
                     hasError ?
-                            <div className='card-list__message-group'>
-                                <h3 className='card-list__message-title'>{errorMessage}</h3>
-                            </div>
+                            <>
+                                <h2 className='card-list__title'>Search Results</h2>
+                                <div className='card-list__message-group'>
+                                    <h3 className='card-list__message-title'>{errorMessage}</h3>
+                                </div>
+                            </>
                         :
                             searchResults.length === 0 ?
-                                    <div className='card-list__message-group'>
-                                        <h3 className='card-list__message-title'>Nothing found</h3>
-                                    </div>
+                                    <>
+                                        <div className='card-list__message-group'>
+                                            <img className='card-list__not-found-img' src={notFoundImage} alt='Nothing found' />
+                                            <h3 className='card-list__message-title'>Nothing found</h3>
+                                            <p className='card-list__message'>Sorry, but nothing matched your search terms.</p>
+                                        </div>
+                                    </>
                                 :
                                     <>
+                                        <h2 className='card-list__title'>Search Results</h2>
                                         <div className='card-list__grid'>
-                                            {searchResults && (handleResults().map((article, index) => <NewsCard key={index} article={article} />))}
+                                            {
+                                                searchResults && (handleResults().map((articleCard, index) => {
+                                                    return articleCard? (<NewsCard key={index} articleCard={articleCard} />) : null;
+                                                }))
+                                            }
                                         </div>
-                                        <button className='card-list__button' type='button' onClick={incrementResults}>{showMoreButtonText}</button>
+                                        <button className='card-list__button' type='button' disabled={!moreToShow} onClick={incrementResults}>{showMoreButtonText}</button>
                                     </>
             }
         </div>

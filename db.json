@@ -5,54 +5,53 @@
       "name": "example",
       "email": "example@example.com",
       "password": "password",
-      "token": "eeeom710lzo"
+      "token": "eeeom710lzo",
+      "keywords": [
+        "trump"
+      ]
+    },
+    {
+      "id": "44d2",
+      "name": "ex",
+      "email": "example@gmail.com",
+      "password": "password",
+      "token": "qknqu9s059b"
+    },
+    {
+      "id": "3140",
+      "name": "exam",
+      "email": "example@example.com",
+      "password": "pass",
+      "token": "q4t3v7ffonf"
+    },
+    {
+      "id": "6d69",
+      "name": "exam",
+      "email": "example@example.com",
+      "password": "pass",
+      "token": "u88u221e64n"
+    },
+    {
+      "id": "7f82",
+      "name": "exam",
+      "email": "example@example.com",
+      "password": "pass",
+      "token": "9vzwd3oe99u"
+    },
+    {
+      "id": "13ff",
+      "name": "Example",
+      "email": "example@example.com",
+      "password": "pass",
+      "token": "07u7p5n5tthq"
+    },
+    {
+      "id": "72a0",
+      "name": "typo",
+      "email": "example@gmail.com",
+      "password": "pass",
+      "token": "lh6d9j7qcj8"
     }
   ],
-  "articles": [
-    {
-      "id": "0fea",
-      "source": {
-        "id": null,
-        "name": "Gizmodo.com"
-      },
-      "author": "Thomas Maxwell",
-      "title": "National Park Summer Bookings Down Amid DOGE-Fueled Turmoil",
-      "description": "Industry insiders say uncertainty around park access is causing travelers to hold off on bookings or cancel plans entirely.",
-      "url": "https://gizmodo.com/national-park-summer-bookings-down-amid-doge-fueled-turmoil-2000579301",
-      "urlToImage": "https://gizmodo.com/app/uploads/2023/05/de952e4f1465864a1970d92453362e0e.jpg",
-      "publishedAt": "2025-03-22T13:00:52Z",
-      "content": "After recent years of overcrowding, this summer might be a good time to visit your favorite national park, and you can thank Elon Musk and Big Balls for that. Tourist reservations at key hot spots ar… [+4312 chars]",
-      "token": "eeeom710lzo"
-    },
-    {
-      "id": "d4be",
-      "source": {
-        "id": "the-verge",
-        "name": "The Verge"
-      },
-      "author": "Kylie Robison",
-      "title": "X’s head of engineering is out",
-      "description": "Xâs director of engineering, Haofei Wang, has suddenly left the company, according to sources with knowledge of the matter. Wang first joined Elon Muskâs X in July 2023 and has been an integral part of the companyâs leadership, often serving as a condui…",
-      "url": "https://www.theverge.com/twitter/634833/x-head-engineering-leaves-elon-musk",
-      "urlToImage": "https://platform.theverge.com/wp-content/uploads/sites/2/2025/02/STK160_X_TWITTER_2__C.jpg?quality=90&strip=all&crop=0%2C10.732984293194%2C100%2C78.534031413613&w=1200",
-      "publishedAt": "2025-03-24T19:32:25Z",
-      "content": "The sudden departure comes after Musk shifted his attention to DOGE and xAI.\r\nThe sudden departure comes after Musk shifted his attention to DOGE and xAI.\r\nXs director of engineering, Haofei Wang, ha… [+1790 chars]",
-      "token": "eeeom710lzo"
-    },
-    {
-      "id": "be93",
-      "source": {
-        "id": "the-verge",
-        "name": "The Verge"
-      },
-      "author": "Justine Calma",
-      "title": "“This man is not our boss” — EPA workers rally against DOGE cuts",
-      "description": "Environmental Protection Agency workers took to the streets across the US today to protest drastic cuts President Donald Trump and Elon Musk’s DOGE have made at the federal agency whose mission is to “protect human health and the environment.”  Musk, the face…",
-      "url": "https://www.theverge.com/news/635710/doge-musk-trump-environmental-protection-agency-epa",
-      "urlToImage": "https://platform.theverge.com/wp-content/uploads/sites/2/2025/03/257640_EPA_workers_protest_AKrales_0285.jpg?quality=90&strip=all&crop=0%2C10.732984293194%2C100%2C78.534031413613&w=1200",
-      "publishedAt": "2025-03-25T21:48:56Z",
-      "content": "How do you spell corruption? E-L-O-N, demonstrators chanted while marching in support of the Environmental Protection Agency.\r\nHow do you spell corruption? E-L-O-N, demonstrators chanted while marchi… [+4522 chars]",
-      "token": "eeeom710lzo"
-    }
-  ]
+  "articles": []
 }

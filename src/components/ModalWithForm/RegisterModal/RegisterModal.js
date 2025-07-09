@@ -19,6 +19,7 @@ const RegisterModal = () => {
 
   const handleUserRegistration = () => {
     handleRegistration(values);
+    handleModalChange("success");
   };
 
   return (
@@ -30,7 +31,7 @@ const RegisterModal = () => {
             className="form__input"
             id="user-email"
             name="email"
-            placeholder="Email"
+            placeholder="Enter email"
             minLength="2"
             maxLength="40"
             type="email"
@@ -46,7 +47,7 @@ const RegisterModal = () => {
             className="form__input"
             id="user-password"
             name="password"
-            placeholder="Password"
+            placeholder="Enter password"
             minLength="2"
             maxLength="40"
             type="password"
@@ -62,7 +63,7 @@ const RegisterModal = () => {
             className="form__input"
             id="user-name"
             name="name"
-            placeholder="Name"
+            placeholder="Enter your username"
             minLength="2"
             maxLength="40"
             type="text"
@@ -76,9 +77,12 @@ const RegisterModal = () => {
         <button className="form__submit" type="submit">
           {isLoading ? signupLoadingText : signupButton}
         </button>
-        <NavLink className="form__link" to={"/"} onClick={() => handleModalChange("signin")}>
-          <p className="form__text">or {loginButton}</p>
-        </NavLink>
+        <p className="form__text">
+          or{" "}
+          <NavLink className="form__link" to={"/"} onClick={() => handleModalChange("signin")}>
+            {loginButton}
+          </NavLink>
+        </p>
       </div>
     </ModalWithForm>
   )
