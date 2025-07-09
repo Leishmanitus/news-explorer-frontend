@@ -61,7 +61,7 @@ News Explorer is a web application that allows users to search for news articles
 ### Steps
 1. Clone the repository:
    ```bash
-   git clone https://github.com/your-username/news-explorer.git
+   git clone https://github.com/your-username/news-explorer-frontend.git
    cd news-explorer
    ```
 
@@ -88,10 +88,6 @@ News Explorer is a web application that allows users to search for news articles
 ---
 
 ## API Endpoints
-
-### Placeholder Links
-- **Frontend:** [News Explorer Website](https://news-explorer-frontend.example.com)
-- **Backend API:** [News Explorer API](https://news-explorer-api.example.com)
 
 ### Backend API Endpoints
 - **User Authentication:**
@@ -169,4 +165,4 @@ This project is licensed under the MIT License. See the [LICENSE](LICENSE) file 
 ## Acknowledgments
 
 - [News API](https://newsapi.org/) for providing the news data.
-- [JSON Server](https://github.com/typicode/json-server) for simulating the backend API during development.
+- [GitHub Pages Server](https://Leishmanitus.github.io/news-explorer-frontend) for simulating the web app during development.
