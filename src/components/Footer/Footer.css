@@ -140,8 +140,7 @@
     .footer {
         height: fit-content;
         flex-flow: column-reverse nowrap;
-        padding: 0 16px;
-        margin-top: 148px;
+        padding: 20px 16px 0 16px;
     }
     
     .footer__copyright {

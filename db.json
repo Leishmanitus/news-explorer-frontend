@@ -53,5 +53,38 @@
       "token": "lh6d9j7qcj8"
     }
   ],
-  "articles": []
+  "articles": [
+    {
+      "id": "5dd0",
+      "source": {
+        "id": "wired",
+        "name": "Wired"
+      },
+      "author": "Matt Burgess",
+      "title": "Android May Soon Warn You About Fake Cell Towers",
+      "description": "Plus: Iran-linked hackers threaten to release Trump campaign emails, Chinese hackers still in US telecoms networks, and an abusive deepfake website plans an expansion.",
+      "url": "https://www.wired.com/story/android-may-soon-warn-you-about-fake-cell-towers/",
+      "urlToImage": "https://media.wired.com/photos/6866ab5363e768478a3a2979/191:100/w_1280,c_limit/andriod-fake-towers-sec-2209377981.jpg",
+      "publishedAt": "2025-07-05T10:30:00Z",
+      "content": "In recent years, North Korea has deployed thousands of so-called IT workers to infiltrate Western businesses, get paid salaries, and send money back to support the regime. As the schemes have become … [+5574 chars]",
+      "keyword": "trump",
+      "token": "eeeom710lzo"
+    },
+    {
+      "id": "4b93",
+      "source": {
+        "id": null,
+        "name": "Gizmodo.com"
+      },
+      "author": "AJ Dellinger",
+      "title": "Trump Expects Paramount to Run Conservative PSAs Following Hush Money Payments",
+      "description": "It's unclear if that was part of any formal deal.",
+      "url": "https://gizmodo.com/trump-expects-paramount-to-run-conservative-psas-following-hush-money-payments-2000623843",
+      "urlToImage": "https://gizmodo.com/app/uploads/2025/07/GettyImages-1229297602-1200x675.jpg",
+      "publishedAt": "2025-07-03T18:25:27Z",
+      "content": "Paramount is learning the hard way why you don’t simply acquiesce to bullies.\r\nEarlier this week, the company came to a preliminary settlement agreement with Donald Trump in a case where the Presiden… [+2596 chars]",
+      "keyword": "trump",
+      "token": "eeeom710lzo"
+    }
+  ]
 }

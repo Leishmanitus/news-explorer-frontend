@@ -19,7 +19,7 @@
 }
 
 .news__subtitle {
-  font-family: "Roboto Slab";
+  font-family: "Roboto-Slab";
   font-size: 40px;
   line-height: 46px;
   font-weight: 400;
@@ -39,7 +39,7 @@
 }
 
 .news__bold {
-  font-family: "Roboto";
+  font-family: "Roboto-700";
   font-size: 18px;
   line-height: 24px;
   font-weight: 700;
