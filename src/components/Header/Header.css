@@ -7,9 +7,13 @@
     display: flex;
     flex-flow: row nowrap;
     align-items: center;
-    border-bottom: 1px solid #545454;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
     margin: 0;
     padding: 0 104px;
+}
+
+.header_alt {
+    border-bottom: 1px solid rgba(209, 210, 214, 1);
 }
 
 .header__title {

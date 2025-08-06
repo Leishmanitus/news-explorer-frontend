@@ -20,7 +20,6 @@
 .modal__container {
   z-index: 1;
   width: 430px;
-  height: 380px;
   position: relative;
   display: flex;
   flex-flow: column nowrap;
@@ -34,8 +33,7 @@
   transition: top 0.3s, left 0.3s, width 0.3s, height 0.3s;
 }
 
-.modal__type_success {
-  height: 182px;
+.modal__container_success {
   position: relative;
   display: flex;
   flex-flow: column nowrap;
@@ -53,7 +51,7 @@
 
 .modal__title_success {
   width: 315px;
-  height: 56px;
+  height: fit-content;
   font-family: "Roboto-900";
   font-size: 24px;
   line-height: 100%;
@@ -88,6 +86,10 @@
   display: flex;
   flex-flow: column nowrap;
   justify-content: flex-start;
+}
+
+.form_success {
+  margin: 0;
 }
 
 .form__label {
@@ -129,24 +131,26 @@
   font-size: 18px;
   line-height: 125%;
   font-weight: 500;
+  color: #fff;
   cursor: pointer;
   border-radius: 50px;
   border: none;
-  background-color: rgba(0, 0, 0, 0.3);
+  background-color: #2F71E5;
   padding: 0;
   margin: 8px 0 16px 0;
 }
 
 .form__submit_success {
-  width: 228px;
-  height: 18px;
+  width: fit-content;
+  height: fit-content;
   font-family: "Inter";
   font-size: 18px;
   line-height: 100%;
   font-weight: 400;
   text-wrap: nowrap;
   text-decoration: none;
-  color: #2f71e5;
+  color: #2F71E5;
+  background-color: transparent;
   padding: 0;
   margin: 14px 166px 51px 36px;
 }
@@ -156,7 +160,7 @@
   height: 20px;
   text-wrap: nowrap;
   text-decoration: none;
-  color: #2f71e5;
+  color: #2F71E5;
   padding: 0;
   margin: 0;
 }

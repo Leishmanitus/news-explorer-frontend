@@ -3,7 +3,6 @@ body {
     margin: 0;
     padding: 0 auto;
     font-family: 'Roboto', 'Inter', 'Times New Roman', Times, serif;
-    overflow-x: hidden;
 }
 
 @media screen and (min-width: 1442px) {

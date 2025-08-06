@@ -86,4 +86,8 @@
         width: calc(100% - 32px);
         margin: 0 0 128px 0;
     }
+
+    .about__description {
+        text-align: center;
+    }
 }

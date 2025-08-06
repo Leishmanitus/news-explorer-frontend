@@ -9,27 +9,40 @@ function ModalWithForm({ children, handleSubmit, formName }) {
   useEscape(handleClose);
 
   return (
-    <div onClick={(event) => handleOverlay(event)} className={`modal modal__type_${formName}`}>
-      <div className={`modal__container`}>
-        {
-          activeModal === "success" ?
-              <div className={`modal__type_${formName}`}>{children}</div>
-            :
-              <form
-                className="modal__form form"
-                name={formName}
-                id={formName}
-                onSubmit={(event) => {
-                  event.preventDefault();
-                  handleSubmit();
-                }}
-              >
-                {children}
-              </form>
-        }
-        <span className="modal__close-button" onClick={handleClose} />
+    activeModal === "success" ?
+      <div onClick={(event) => handleOverlay(event)} className={`modal modal__type_${formName}`}>
+        <div className={`modal__container modal__container_${formName}`}>
+          <form
+            className={`modal__form form form_${formName}`}
+            name={formName}
+            id={formName}
+            onSubmit={(event) => {
+              event.preventDefault();
+              handleSubmit();
+            }}
+          >
+            {children}
+          </form>
+          <span className="modal__close-button" onClick={handleClose} />
+        </div>
       </div>
-    </div>
+      :
+      <div onClick={(event) => handleOverlay(event)} className={`modal modal__type_${formName}`}>
+        <div className={`modal__container`}>
+          <form
+            className="modal__form form"
+            name={formName}
+            id={formName}
+            onSubmit={(event) => {
+              event.preventDefault();
+              handleSubmit();
+            }}
+          >
+            {children}
+          </form>
+          <span className="modal__close-button" onClick={handleClose} />
+        </div>
+      </div>
   );
 }
 

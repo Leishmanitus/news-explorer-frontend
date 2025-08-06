@@ -81,10 +81,10 @@ function Nav() {
         </>
     ) : (isLoggedIn ? (
         <nav className='nav nav_login'>
-            <Link className={handleAltClassName('nav__link')} to='/'>
+            <Link className={`${handleAltClassName('nav__link')} ${!isSavedNews ? "nav__link_selected" : ""}`} to='/'>
                 <p className={handleAltClassName('nav__text')}>Home</p>
             </Link>
-            <Link className={handleAltClassName('nav__link')} to='saved-news'>
+            <Link className={`${handleAltClassName('nav__link')} ${isSavedNews ? "nav__link_selected" : ""}`} to='saved-news'>
                 <p className={handleAltClassName('nav__text')}>Saved articles</p>
             </Link>
             <div className={`${handleAltClassName('nav__logout')} ${handleAltClassName('nav__profile')}`} border-image={navButtonBorder}>
@@ -96,7 +96,7 @@ function Nav() {
         </nav>
     ) : (
         <nav className='nav'>
-            <Link className={handleAltClassName('nav__link')} to='/'>
+            <Link className={`${handleAltClassName('nav__link')} nav__link_selected`} to='/'>
                 Home
             </Link>
             <div className={`nav__link ${handleAltClassName('nav__profile')}`} border-image={navButtonBorder} onClick={() => setActiveModal('signin')}>

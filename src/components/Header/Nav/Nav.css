@@ -159,36 +159,23 @@
     color: #1a1b22;
 }
 
-.nav__link_alt p {
-    color: #1a1b22;
+.nav__link.nav__link_selected {
+    position: relative;
 }
 
-.nav__link:hover {
-    color: #fff;
-}
-
-.nav__link_alt:hover {
-    color: #1a1b22;
-}
-
-.nav__link::after {
+.nav__link.nav__link_selected::after {
     content: '';
     position: absolute;
     bottom: -23px;
-    left: 50%;
-    width: 0%;
+    left: 0;
+    width: 100%;
     height: 3px;
     background-color: #fff;
     transition: width 0.1s ease-in-out, left 0.1s ease-in-out;
 }
 
-.nav__link_alt::after {
+.nav__link_alt.nav__link_selected::after {
     background-color: #1a1b22;
-}
-
-.nav__link:hover::after {
-    width: calc(100% + 40%);
-    left: calc(70% - 70% - 17.5%);
 }
 
 .nav__profile {

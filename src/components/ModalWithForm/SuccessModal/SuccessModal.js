@@ -14,7 +14,7 @@ const SuccessModal = () => {
     return (
         <ModalWithForm handleSubmit={handleSubmit} formName={successFormName}>
             <h3 className={`modal__title modal__title_${successFormName}`}>{successTitle}</h3>
-            <button className={`form__submit form__submit_${successFormName}`} type="button">
+            <button className={`form__submit form__submit_${successFormName}`} type="submit">
                 {successText}
             </button>
         </ModalWithForm>

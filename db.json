@@ -51,6 +51,90 @@
       "email": "example@gmail.com",
       "password": "pass",
       "token": "lh6d9j7qcj8"
+    },
+    {
+      "id": "7d2f",
+      "name": "example@example.com",
+      "email": "tyler.leishman0@gmail.com",
+      "password": "password",
+      "token": "wwqp1z59b7"
+    },
+    {
+      "id": "421f",
+      "name": "filler",
+      "email": "hello.world@globe.com",
+      "password": "password",
+      "token": "eozwi2yysu8"
+    },
+    {
+      "id": "69b5",
+      "name": "filler",
+      "email": "filler.fill@fill.com",
+      "password": "password",
+      "token": "8ai0w7a17tt"
+    },
+    {
+      "id": "f0b4",
+      "name": "filler",
+      "email": "filler.fill@fill.com",
+      "password": "password",
+      "token": "u2zoag78wa"
+    },
+    {
+      "id": "97bc",
+      "name": "filler",
+      "email": "filler.fill@fill.com",
+      "password": "password",
+      "token": "44cl52ged28"
+    },
+    {
+      "id": "0589",
+      "name": "filler",
+      "email": "filler.fill@fill.com",
+      "password": "password",
+      "token": "h9tstoj7hpw"
+    },
+    {
+      "id": "aa04",
+      "name": "filler",
+      "email": "filler.fill@fill.com",
+      "password": "password",
+      "token": "ib12yz3dpt"
+    },
+    {
+      "id": "da90",
+      "name": "filler",
+      "email": "filler.fill@fill.com",
+      "password": "password",
+      "token": "um1igodsnu"
+    },
+    {
+      "id": "6694",
+      "name": "filler",
+      "email": "filler.fill@fill.com",
+      "password": "password",
+      "token": "23e9yf9s7za"
+    },
+    {
+      "id": "faae",
+      "name": "filler",
+      "email": "filler.fill@fill.com",
+      "password": "password",
+      "token": "qh4vhetzvnm"
+    },
+    {
+      "id": "48de",
+      "name": "example",
+      "email": "example@example.com",
+      "password": "password",
+      "token": "mwv5oyv2h0a"
+    },
+    {
+      "id": "dccd",
+      "name": "fill",
+      "email": "filler.fill@fill.com",
+      "password": "password",
+      "token": "6bi03qh5qcx"
     }
   ],
   "articles": [
@@ -85,6 +169,54 @@
       "content": "Paramount is learning the hard way why you don’t simply acquiesce to bullies.\r\nEarlier this week, the company came to a preliminary settlement agreement with Donald Trump in a case where the Presiden… [+2596 chars]",
       "keyword": "trump",
       "token": "eeeom710lzo"
+    },
+    {
+      "id": "34ca",
+      "source": {
+        "id": "wired",
+        "name": "Wired"
+      },
+      "author": "Zeyi Yang",
+      "title": "Trump Ends Tariff Exemption For Small Packages",
+      "description": "Starting in September, US buyers on sites like Etsy and eBay may face higher tariffs on goods from abroad.",
+      "url": "https://www.wired.com/story/president-trump-suspends-de-minimis/",
+      "urlToImage": "https://media.wired.com/photos/688a6a43cc8f3bb66a9b9682/191:100/w_1280,c_limit/Trump-De-Minimis-Pause-Business-2227052943.jpg",
+      "publishedAt": "2025-07-30T22:17:11Z",
+      "content": "US President Donald Trump just dealt another blow to the embattled ecommerce industry, which is still reeling from sweeping tariffs Trump announced in the spring. On Wednesday, Trump signed an execut… [+2883 chars]",
+      "keyword": "trump",
+      "token": "8ai0w7a17tt"
+    },
+    {
+      "id": "2e46",
+      "source": {
+        "id": null,
+        "name": "BBC News"
+      },
+      "author": "Dan Roan",
+      "title": "Trump deserves Open at Turnberry, says son",
+      "description": "Eric Trump - US President Donald Trump's son - says his father \"deserves\" to have his Turnberry course host The Open again.",
+      "url": "https://www.bbc.com/sport/golf/articles/c70x49kzwkyo",
+      "urlToImage": "https://ichef.bbci.co.uk/ace/branded_sport/1200/cpsprodpb/a3c2/live/77f82510-6d14-11f0-a945-3d3a0230d9a7.jpg",
+      "publishedAt": "2025-07-30T11:15:57Z",
+      "content": "Darbon has acknowledged that UK government officials have also spoken with the R&amp;A about the possibility of Turnberry hosting The Open.\r\nPresident Trump hosted the Prime Minister Sir Keir Starmer… [+1985 chars]",
+      "keyword": "trump",
+      "token": "8ai0w7a17tt"
+    },
+    {
+      "id": "d6f0",
+      "source": {
+        "id": null,
+        "name": "Petsradar.com"
+      },
+      "author": "Becks Shepherd",
+      "title": "Looking for a beautiful, low-maintenance, quiet and long-living cat? This is the breed for you –and everything you need to know",
+      "description": "Intelligent, sweet-natured and relatively quiet, discover whether this breed could be right for your home",
+      "url": "https://www.petsradar.com/cats/cat-breeds/russian-blue-breed-profile",
+      "urlToImage": "https://s.yimg.com/ny/api/res/1.2/z2ZrTdc2OWcnxxQrG9Scog--/YXBwaWQ9aGlnaGxhbmRlcjt3PTEyMDA7aD02NzU7Y2Y9d2VicA--/https://media.zenfs.com/en/petsradar_797/a6c6cca295df53e65d04a520fa7ec846",
+      "publishedAt": "2025-08-01T12:25:00Z",
+      "content": "When you buy through links on our articles, Future and its syndication partners may earn a commission.\r\nRussian Blue cat overview\r\nRussian Blue cat headshot\r\nOther names: Archangel Blues\r\nLife expect… [+8418 chars]",
+      "keyword": "cats",
+      "token": "8ai0w7a17tt"
     }
   ]
 }

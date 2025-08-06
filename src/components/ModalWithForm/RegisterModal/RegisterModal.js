@@ -18,8 +18,8 @@ const RegisterModal = () => {
   }, [setValues, modalOptions.registrationValues]);
 
   const handleUserRegistration = () => {
-    handleRegistration(values);
-    handleModalChange("success");
+    handleRegistration(values)
+    .then(() => handleModalChange("success"));
   };
 
   return (
