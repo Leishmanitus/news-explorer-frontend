@@ -139,38 +139,6 @@
   ],
   "articles": [
     {
-      "id": "5dd0",
-      "source": {
-        "id": "wired",
-        "name": "Wired"
-      },
-      "author": "Matt Burgess",
-      "title": "Android May Soon Warn You About Fake Cell Towers",
-      "description": "Plus: Iran-linked hackers threaten to release Trump campaign emails, Chinese hackers still in US telecoms networks, and an abusive deepfake website plans an expansion.",
-      "url": "https://www.wired.com/story/android-may-soon-warn-you-about-fake-cell-towers/",
-      "urlToImage": "https://media.wired.com/photos/6866ab5363e768478a3a2979/191:100/w_1280,c_limit/andriod-fake-towers-sec-2209377981.jpg",
-      "publishedAt": "2025-07-05T10:30:00Z",
-      "content": "In recent years, North Korea has deployed thousands of so-called IT workers to infiltrate Western businesses, get paid salaries, and send money back to support the regime. As the schemes have become … [+5574 chars]",
-      "keyword": "trump",
-      "token": "eeeom710lzo"
-    },
-    {
-      "id": "4b93",
-      "source": {
-        "id": null,
-        "name": "Gizmodo.com"
-      },
-      "author": "AJ Dellinger",
-      "title": "Trump Expects Paramount to Run Conservative PSAs Following Hush Money Payments",
-      "description": "It's unclear if that was part of any formal deal.",
-      "url": "https://gizmodo.com/trump-expects-paramount-to-run-conservative-psas-following-hush-money-payments-2000623843",
-      "urlToImage": "https://gizmodo.com/app/uploads/2025/07/GettyImages-1229297602-1200x675.jpg",
-      "publishedAt": "2025-07-03T18:25:27Z",
-      "content": "Paramount is learning the hard way why you don’t simply acquiesce to bullies.\r\nEarlier this week, the company came to a preliminary settlement agreement with Donald Trump in a case where the Presiden… [+2596 chars]",
-      "keyword": "trump",
-      "token": "eeeom710lzo"
-    },
-    {
       "id": "34ca",
       "source": {
         "id": "wired",
@@ -217,6 +185,86 @@
       "content": "When you buy through links on our articles, Future and its syndication partners may earn a commission.\r\nRussian Blue cat overview\r\nRussian Blue cat headshot\r\nOther names: Archangel Blues\r\nLife expect… [+8418 chars]",
       "keyword": "cats",
       "token": "8ai0w7a17tt"
+    },
+    {
+      "id": "bc32",
+      "source": {
+        "id": null,
+        "name": "NPR"
+      },
+      "author": "The Associated Press",
+      "title": "Who's the top dog? Wave-riding canines compete in the World Dog Surfing Championships",
+      "description": "Pooches competed against similarly sized peers for a chance to appear in the finals. Additional heats featured multiple dogs surfing tandem or riding with people.",
+      "url": "https://www.npr.org/2025/08/03/nx-s1-5491443/dog-world-surfing-championships",
+      "urlToImage": "https://npr.brightspotcdn.com/dims3/default/strip/false/crop/7805x4390+0+407/resize/1400/quality/100/format/jpeg/?url=http%3A%2F%2Fnpr-brightspot.s3.amazonaws.com%2Fcd%2F35%2F50a8fa0f40e389e874b2368af361%2Fap25214752428859.jpg",
+      "publishedAt": "2025-08-03T09:34:13Z",
+      "content": "Charlie the 10-year-old yellow lab likes surfing so much, he will grab his surfboard and run toward the water. His humans sometimes have to hide his board if they want to chat with friends on the bea… [+2979 chars]",
+      "keyword": "dogs",
+      "token": "8ai0w7a17tt"
+    },
+    {
+      "id": "2087",
+      "source": {
+        "id": null,
+        "name": "Gizmodo.com"
+      },
+      "author": "Bruce Gil",
+      "title": "Tesla Approves Elon Musk’s $29 Billion Pay Package Despite Political Risks",
+      "description": "Amid falling sales, Tesla's board still thinks Musk is worth all the trouble.",
+      "url": "https://gizmodo.com/tesla-approves-elon-musks-29-billion-pay-package-despite-political-risks-2000638504",
+      "urlToImage": "https://gizmodo.com/app/uploads/2025/07/elon-musk-april-30-2025-1200x675.jpg",
+      "publishedAt": "2025-08-04T15:45:09Z",
+      "content": "Despite the headaches Tesla has faced from Elon Musks political antics, the companys board just signed off on a new pay package for the CEO that is worth a whopping $29 billion.\r\nThe new compensation… [+2858 chars]",
+      "keyword": "doge",
+      "token": "eeeom710lzo"
+    },
+    {
+      "id": "8d9a",
+      "source": {
+        "id": null,
+        "name": "Gizmodo.com"
+      },
+      "author": "Lucas Ropek",
+      "title": "Elon Musk Gave Millions to Trump After Publicly Blowing Up Their Bromance",
+      "description": "Musk seems to still want to be in Trump's good graces, even after accusing the President of being in the Epstein files.",
+      "url": "https://gizmodo.com/elon-musk-gave-millions-to-trump-after-publicly-blowing-up-their-bromance-2000637951",
+      "urlToImage": "https://gizmodo.com/app/uploads/2025/06/elon-musk-trump-1200x675.jpg",
+      "publishedAt": "2025-08-01T21:00:40Z",
+      "content": "Newly disclosed federal filings show that Elon Musk gave President Trump’s super PAC $5 million and congressional Republicans $10 million during the same period when he was experiencing a very public… [+4295 chars]",
+      "keyword": "doge",
+      "token": "eeeom710lzo"
+    },
+    {
+      "id": "554c",
+      "source": {
+        "id": null,
+        "name": "Gizmodo.com"
+      },
+      "author": "Bruce Gil",
+      "title": "Judge Accuses Elon Musk and Sam Altman of ‘Gamesmanship’ in Court",
+      "description": "The federal judge said both sides “repeatedly over-litigated the case.”",
+      "url": "https://gizmodo.com/judge-accuses-elon-musk-and-sam-altman-of-gamesmanship-in-court-2000636637",
+      "urlToImage": "https://gizmodo.com/app/uploads/2024/12/GettyImages-1499013185.jpg",
+      "publishedAt": "2025-07-30T16:35:11Z",
+      "content": "Elon Musk scored a small win in court on Tuesday in his case against Sam Altman, but the judge wasnt impressed with either sides tactics, reprimanding them for gamesmanship.\r\nCalling out both sides f… [+3046 chars]",
+      "keyword": "doge",
+      "token": "eeeom710lzo"
+    },
+    {
+      "id": "4a4b",
+      "source": {
+        "id": "the-verge",
+        "name": "The Verge"
+      },
+      "author": "Lauren Feiner",
+      "title": "Democrats ask how Trump’s government will regulate Trump Mobile",
+      "description": "When a Trump-branded phone on a Trump-branded mobile network launches sometime this year (if all goes according to plan), US regulators will face what's become a recurring conundrum in Donald Trump's presidency: how to regulate a product with ties to the head…",
+      "url": "https://www.theverge.com/policy/718880/trump-mobile-letter-democrats-regulators",
+      "urlToImage": "https://platform.theverge.com/wp-content/uploads/sites/2/2025/06/t1-phone-trump.jpg?quality=90&strip=all&crop=0,1.7328436659964,100,78.534031413613",
+      "publishedAt": "2025-08-05T15:03:05Z",
+      "content": "<ul><li></li><li></li><li></li></ul>\r\nThe opportunities for corruption and self-dealing will be even greater, they warn.\r\nThe opportunities for corruption and self-dealing will be even greater, they … [+5276 chars]",
+      "keyword": "trump",
+      "token": "eeeom710lzo"
     }
   ]
 }

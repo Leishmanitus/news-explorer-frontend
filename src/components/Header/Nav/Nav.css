@@ -166,7 +166,7 @@
 .nav__link.nav__link_selected::after {
     content: '';
     position: absolute;
-    bottom: -23px;
+    bottom: -29px;
     left: 0;
     width: 100%;
     height: 3px;
