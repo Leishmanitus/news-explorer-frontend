@@ -140,6 +140,12 @@
   margin: 8px 0 16px 0;
 }
 
+.form__submit:disabled {
+  background-color: #E6E8EB;
+  color: #B6BCBF;
+  cursor: not-allowed;
+}
+
 .form__submit_success {
   width: fit-content;
   height: fit-content;
@@ -156,11 +162,12 @@
 }
 
 .form__link {
-  width: 73px;
-  height: 20px;
   text-wrap: nowrap;
   text-decoration: none;
   color: #2F71E5;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
   padding: 0;
   margin: 0;
 }
@@ -171,8 +178,6 @@
   font-size: 14px;
   line-height: 100%;
   font-weight: 400;
-  cursor: pointer;
-  border: none;
   padding: 0;
   margin: 0;
 }

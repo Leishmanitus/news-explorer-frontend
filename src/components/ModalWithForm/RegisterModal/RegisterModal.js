@@ -11,8 +11,9 @@ const RegisterModal = () => {
   const { handleRegistration, modalOptions, handleModalChange } = useContext(ModalContext);
   const { signupFormName, signupTitle, loginButton, signupButton, signupLoadingText } = modalOptions.loginOptions;
   const { values, handleChange, setValues } = useForm(modalOptions.registrationValues);
-
   const { name, email, password } = values;
+  const isFormValid = name && email && password;
+
   useEffect(() => {
     setValues(modalOptions.registrationValues);
   }, [setValues, modalOptions.registrationValues]);
@@ -74,7 +75,7 @@ const RegisterModal = () => {
       </label>
 
       <div className="form__button-group">
-        <button className="form__submit" type="submit">
+        <button className="form__submit" type="submit" disabled={!isFormValid || isLoading}>
           {isLoading ? signupLoadingText : signupButton}
         </button>
         <p className="form__text">

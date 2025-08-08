@@ -47,7 +47,7 @@ function Nav() {
                                 <Link className='burger__link' to='saved-news' onClick={() => setIsBurgerMenuOpen(false)}>
                                     <p className='nav__text'>Saved articles</p>
                                 </Link>
-                                <div className='nav__logout nav__profile nav__profile_burger' border-image={navButtonBorder}>
+                                <div className='nav__profile nav__profile_burger' border-image={navButtonBorder}>
                                     <p className='nav__text nav__text_profile' >{user.name ? userName : "Anonymous"}</p>
                                     <Link className='nav__logout' to='/' onClick={(e) => { e.preventDefault(); handleLogout(); }}>
                                         <img className='nav__img nav__img_logout' src={logoutButton} alt='logout' />

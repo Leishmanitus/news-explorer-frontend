@@ -203,10 +203,6 @@
     margin-left: 64px;
 }
 
-.nav__logout {
-    /* display: flow-root; */
-}
-
 .nav__text {
     font-family: 'Roboto-500';
     font-weight: 500;
