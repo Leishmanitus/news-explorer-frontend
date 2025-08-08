@@ -1,9 +1,9 @@
 {
   "files": {
-    "main.css": "/news-explorer-frontend/static/css/main.ee6d75f9.css",
-    "main.js": "/news-explorer-frontend/static/js/main.35e3e2c1.js",
-    "static/media/main-background.svg": "/news-explorer-frontend/static/media/main-background.13f096027309d3f74f2280f3a6835222.svg",
-    "static/media/author.jpg": "/news-explorer-frontend/static/media/author.8afaabcfdfdb19500857.jpg",
+    "main.css": "/news-explorer-frontend/static/css/main.8dfa0007.css",
+    "main.js": "/news-explorer-frontend/static/js/main.2e268e2f.js",
+    "static/media/author.jpg": "/news-explorer-frontend/static/media/author.f937805bf81b313c4957.jpg",
+    "static/media/main-background.png": "/news-explorer-frontend/static/media/main-background.ba1d68368d2f8d700003.png",
     "static/media/roboto-slab-700.woff": "/news-explorer-frontend/static/media/roboto-slab-700.7cb09bef6990e87c9e2b.woff",
     "static/media/roboto-slab-400-regular.woff": "/news-explorer-frontend/static/media/roboto-slab-400-regular.b46b2661355d7b1e9e9e.woff",
     "static/media/inter-500.woff": "/news-explorer-frontend/static/media/inter-500.f6376d37d92d3a818283.woff",
@@ -35,11 +35,11 @@
     "static/media/mobile-menu-icon.svg": "/news-explorer-frontend/static/media/mobile-menu-icon.e36517e53a511b70bfb8.svg",
     "static/media/bookmark-checked.svg": "/news-explorer-frontend/static/media/bookmark-checked.cac3d1946138504db688.svg",
     "static/media/nav-button-border.svg": "/news-explorer-frontend/static/media/nav-button-border.1bc9d4030928ab131e8023dacf6203d4.svg",
-    "main.ee6d75f9.css.map": "/news-explorer-frontend/static/css/main.ee6d75f9.css.map",
-    "main.35e3e2c1.js.map": "/news-explorer-frontend/static/js/main.35e3e2c1.js.map"
+    "main.8dfa0007.css.map": "/news-explorer-frontend/static/css/main.8dfa0007.css.map",
+    "main.2e268e2f.js.map": "/news-explorer-frontend/static/js/main.2e268e2f.js.map"
   },
   "entrypoints": [
-    "static/css/main.ee6d75f9.css",
-    "static/js/main.35e3e2c1.js"
+    "static/css/main.8dfa0007.css",
+    "static/js/main.2e268e2f.js"
   ]
 }
