@@ -97,6 +97,15 @@
     margin: 16px 0 80px 0;
 }
 
+@media screen and (min-width: 1442px) {
+    .card-list__grid {
+        max-width: 100%;
+        grid-template-columns: repeat(auto-fill, minmax(224px, 400px));
+        grid-template-rows: repeat(auto-fill, minmax(576px, auto));
+        gap: 8px;
+    }
+}
+
 @media screen and (max-width: 1025px) {
     .card-list {
         padding: 0 40px;

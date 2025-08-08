@@ -4,7 +4,7 @@ import './App.css';
 import auth from '../utils/auth';
 import api from '../utils/api';
 import { modalOptions } from '../utils/constants';
-import mainBackground from '../assets/main-background.svg';
+import mainBackground from '../assets/main-background.png';
 import UserContext from '../contexts/UserContext';
 import ModalContext from '../contexts/ModalContext';
 import Main from './Main/Main';

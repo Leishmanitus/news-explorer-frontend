@@ -1,18 +1,20 @@
 .nav {
     width: fit-content;
-    max-width: 425px;
     height: 80px;
     position: relative;
     display: flex;
     flex-flow: row nowrap;
     align-items: center;
-    justify-content: space-between;
     margin: 0;
     padding: 0;
 }
 
-.nav .nav__link:last-child {
-    margin-left: 64px;
+.nav .nav__link:first-child {
+    margin-right: 42px;
+}
+
+.nav .nav__link:nth-child(2) {
+    margin-left: 34px;
 }
 
 .nav_burger {
@@ -126,10 +128,6 @@
     background: url('../../../assets/active-close-button.svg') center/cover no-repeat;
 }
 
-.nav_login {
-    width: 382px;
-}
-
 .nav__element_inactive {
     width: 100%;
     max-width: 425px;
@@ -196,19 +194,17 @@
     margin: 0;
 }
 
-.nav__profile .nav__text_profile {
-    margin-right: 15px;
-}
-
 .nav__profile_alt {
     border: #1a1b22 1px solid;
     color: #1a1b22;
 }
 
+.nav__profile_login {
+    margin-left: 64px;
+}
+
 .nav__logout {
-    display: flex;
-    flex-flow: row nowrap;
-    align-items: center;
+    /* display: flow-root; */
 }
 
 .nav__text {
@@ -225,6 +221,10 @@
     cursor: default;
     padding: 0 0 0 16px;
     margin: 0;
+}
+
+.nav__profile .nav__text_profile {
+    margin-right: 15px;
 }
 
 .nav__text_alt {
@@ -264,8 +264,8 @@
         height: 40px;
     }
 
-    .nav__link::after {
-        bottom: -17px;
+    .nav__link.nav__link_selected::after {
+        bottom: -22px;
     }
 }
 

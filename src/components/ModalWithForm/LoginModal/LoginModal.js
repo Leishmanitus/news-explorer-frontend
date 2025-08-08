@@ -61,9 +61,9 @@ const LoginModal = () => {
         </button>
         <p className="form__text">
           or{" "}
-          <NavLink className="form__link" to={"/"} onClick={() => handleModalChange("signup")}>
+          <button className="form__link" type="button" onClick={() => handleModalChange("signup")}>
              {signupButton}
-          </NavLink>
+          </button>
         </p>
       </div>
     </ModalWithForm>
