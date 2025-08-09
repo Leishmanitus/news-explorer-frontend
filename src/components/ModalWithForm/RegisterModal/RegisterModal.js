@@ -11,14 +11,16 @@ const RegisterModal = () => {
   const { handleRegistration, modalOptions, handleModalChange } = useContext(ModalContext);
   const { signupFormName, signupTitle, loginButton, signupButton, signupLoadingText } = modalOptions.loginOptions;
   const { values, handleChange, setValues } = useForm(modalOptions.registrationValues);
-
   const { name, email, password } = values;
+  const isFormValid = name && email && password;
+
   useEffect(() => {
     setValues(modalOptions.registrationValues);
   }, [setValues, modalOptions.registrationValues]);
 
   const handleUserRegistration = () => {
-    handleRegistration(values);
+    handleRegistration(values)
+    .then(() => handleModalChange("success"));
   };
 
   return (
@@ -30,7 +32,7 @@ const RegisterModal = () => {
             className="form__input"
             id="user-email"
             name="email"
-            placeholder="Email"
+            placeholder="Enter email"
             minLength="2"
             maxLength="40"
             type="email"
@@ -46,7 +48,7 @@ const RegisterModal = () => {
             className="form__input"
             id="user-password"
             name="password"
-            placeholder="Password"
+            placeholder="Enter password"
             minLength="2"
             maxLength="40"
             type="password"
@@ -62,7 +64,7 @@ const RegisterModal = () => {
             className="form__input"
             id="user-name"
             name="name"
-            placeholder="Name"
+            placeholder="Enter your username"
             minLength="2"
             maxLength="40"
             type="text"
@@ -73,12 +75,15 @@ const RegisterModal = () => {
       </label>
 
       <div className="form__button-group">
-        <button className="form__submit" type="submit">
+        <button className="form__submit" type="submit" disabled={!isFormValid || isLoading}>
           {isLoading ? signupLoadingText : signupButton}
         </button>
-        <NavLink className="form__link" to={"/"} onClick={() => handleModalChange("signin")}>
-          <p className="form__text">or {loginButton}</p>
-        </NavLink>
+        <p className="form__text">
+          or{" "}
+          <button className="form__link" type="button" onClick={() => handleModalChange("signin")}>
+            {loginButton}
+          </button>
+        </p>
       </div>
     </ModalWithForm>
   )

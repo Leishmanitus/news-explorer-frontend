@@ -18,6 +18,7 @@ const getArticleList = (token) => {
     },
   }).then((articles) => {
     const filteredArticles = articles.filter((article) => article.token === token);
+    
     if (filteredArticles.length === 0) {
       return Promise.reject({ message: "Articles not found" })
     }

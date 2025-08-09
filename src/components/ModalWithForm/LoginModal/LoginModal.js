@@ -4,7 +4,6 @@ import ModalWithForm from "../ModalWithForm";
 import { useForm } from "../../../hooks/useForm";
 import ModalContext from "../../../contexts/ModalContext";
 import UserContext from "../../../contexts/UserContext";
-import { NavLink } from "react-router-dom";
 
 const LoginModal = () => {
   const { isLoading } = useContext(UserContext);
@@ -12,6 +11,7 @@ const LoginModal = () => {
   const { loginFormName, loginTitle, loginButton, signupButton, loginLoadingText } = modalOptions.loginOptions;
   const { values, handleChange, setValues } = useForm(modalOptions.loginValues);
   const { email, password } = values;
+  const isFormValid = email && password;
 
   useEffect(() => {
     setValues(modalOptions.loginValues);
@@ -30,7 +30,7 @@ const LoginModal = () => {
           className="form__input"
           id="user-email"
           name="email"
-          placeholder="Email"
+          placeholder="Enter email"
           minLength="2"
           maxLength="40"
           type="email"
@@ -45,7 +45,7 @@ const LoginModal = () => {
           className="form__input"
           id="user-password"
           name="password"
-          placeholder="Password"
+          placeholder="Enter password"
           minLength="2"
           maxLength="40"
           type="password"
@@ -56,12 +56,15 @@ const LoginModal = () => {
       </label>
       
       <div className="form__button-group">
-        <button className="form__submit" type="submit">
+        <button className="form__submit" type="submit" disabled={!isFormValid || isLoading}>
           {isLoading ? loginLoadingText : loginButton}
         </button>
-        <NavLink className="form__link" to={"/"} onClick={() => handleModalChange("signup")}>
-          <p className="form__text">or {signupButton}</p>
-        </NavLink>
+        <p className="form__text">
+          or{" "}
+          <button className="form__link" type="button" onClick={() => handleModalChange("signup")}>
+             {signupButton}
+          </button>
+        </p>
       </div>
     </ModalWithForm>
   )

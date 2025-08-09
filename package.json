@@ -2,7 +2,7 @@
   "name": "news-explorer-frontend",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://localhost:3000",
+  "homepage": "https://leishmanitus.github.io/news-explorer-frontend/",
   "description": "Frontend for the News Explorer project",
   "dependencies": {
     "@testing-library/jest-dom": "^5.17.0",
@@ -42,6 +42,7 @@
     ]
   },
   "devDependencies": {
+    "gh-pages": "^6.3.0",
     "prettier": "3.5.3"
   },
   "prettier": {
